@@ -417,7 +417,13 @@ code {
 .btn:active {
   transform: scale(0.98);
 }
-.btn:focus-visible {
+.btn:focus-visible,
+.icon-btn:focus-visible,
+.toggle-pill:focus-visible,
+.page-btn:focus-visible,
+.modal-tab-btn:focus-visible,
+.tier1-tab:focus-visible,
+.scenario-chip:focus-visible {
   outline: none;
   box-shadow: 0 0 0 2px var(--bg-base), 0 0 0 4px var(--border-active);
 }
@@ -1784,6 +1790,11 @@ section[id], #packagesSection {
   background: var(--bg-surface-raised);
   border-bottom: 1px solid var(--border-subtle);
   overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.modal-tabs::-webkit-scrollbar {
+  display: none;
 }
 
 .modal-tab-btn {
