@@ -733,9 +733,11 @@ section[id], #packagesSection {
   left: 0;
   right: 0;
   background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border-normal);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-xl);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   padding: 14px 16px;
   z-index: 50;
   text-align: left;
@@ -1066,7 +1068,9 @@ section[id], #packagesSection {
   border: 1px solid var(--border-subtle);
   margin-bottom: 12px;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
+  scroll-snap-type: x mandatory;
 }
 .tier1-tabs::-webkit-scrollbar {
   display: none;
@@ -1108,8 +1112,10 @@ section[id], #packagesSection {
   align-items: center;
   gap: 6px;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   padding-bottom: 2px;
+  scroll-snap-type: x mandatory;
 }
 .tier2-chips::-webkit-scrollbar {
   display: none;
@@ -1933,11 +1939,18 @@ section[id], #packagesSection {
 .readme-markdown-box pre {
   background: var(--bg-code);
   color: var(--bg-code-text);
-  padding: 12px;
-  border-radius: var(--radius-sm);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   overflow-x: auto;
-  margin: 10px 0;
+  margin: 12px 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.5;
+}
+.readme-markdown-box code {
+  font-family: var(--font-mono);
+  font-size: 12px;
 }
 
 .modal-footer {
