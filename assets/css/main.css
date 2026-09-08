@@ -350,6 +350,7 @@ code {
   font-size: 14px;
   letter-spacing: -0.02em;
   color: var(--text-primary);
+  white-space: nowrap;
 }
 
 .logo-subtitle {
@@ -1042,6 +1043,16 @@ section[id], #packagesSection {
   gap: 6px;
   margin-top: 10px;
   height: 32px;
+}
+
+.trending-actions .btn,
+.package-actions-footer .btn,
+.package-row-actions .btn {
+  height: 32px;
+  font-size: 12px;
+  line-height: 1;
+  border-radius: var(--radius-sm);
+  box-sizing: border-box;
 }
 
 /* ==========================================================================
@@ -1829,8 +1840,8 @@ section[id], #packagesSection {
 }
 
 .install-box {
-  background: var(--bg-code);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--bg-surface-raised);
+  border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
   padding: 10px 14px;
   display: flex;
@@ -1839,8 +1850,18 @@ section[id], #packagesSection {
   gap: 12px;
   font-family: var(--font-mono);
   font-size: 12.5px;
-  color: #34d399;
+  color: var(--emerald-text);
   margin-bottom: 8px;
+}
+[data-theme="dark"] .install-box {
+  background: #09090b;
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #34d399;
+}
+[data-theme="light"] .install-box {
+  background: #f4f4f5;
+  border-color: #e4e4e7;
+  color: #047857;
 }
 .install-box code {
   overflow: hidden;
@@ -1849,7 +1870,7 @@ section[id], #packagesSection {
   user-select: all;
 }
 .install-box .prefix {
-  color: #71717a;
+  color: var(--text-tertiary);
   margin-right: 6px;
   user-select: none;
 }
@@ -2250,7 +2271,16 @@ section[id], #packagesSection {
   .trust-grid {
     grid-template-columns: 1fr;
   }
+  .brand-group {
+    gap: 12px;
+  }
   .nav-links {
+    display: none;
+  }
+  .nav-actions {
+    gap: 6px;
+  }
+  .nav-btn-text {
     display: none;
   }
   .hero-title {
@@ -2261,6 +2291,19 @@ section[id], #packagesSection {
   }
   .package-row-desc {
     display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-subtitle {
+    display: none;
+  }
+  .container {
+    padding: 0 12px;
+  }
+  .hero-quick-links {
+    font-size: 11.5px;
+    gap: 6px 10px;
   }
 }
 
