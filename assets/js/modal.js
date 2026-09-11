@@ -225,6 +225,9 @@
       // 可信度面板（AST 安全扫描 + 健康检查 + 最后验证时间）
       renderTrustPanel(pkg);
 
+      // 资源画像面板（静态推断 Token 消耗与事件 Hook 挂载情况）
+      renderResourceProfilePanel(pkg);
+
       // Reviews & Discussions
       renderModalRating(pkg);
       renderGiscus(pkg);
@@ -240,6 +243,68 @@
     function closeDetailModal() {
       detailModal.classList.remove("open");
       currentModalTab = "overview"; // 下次打开默认回到概览页
+    }
+
+    // —— 资源画像面板 ——
+    function renderResourceProfilePanel(pkg) {
+      const panel = document.getElementById("modalResPanel");
+      if (!panel) return;
+      const r = pkg.resource;
+
+      if (!r) {
+        panel.innerHTML = '<div class="trust-box trust-box-muted">' +
+          '<p class="trust-desc" style="margin-top:0;">' + t('resDisclaimer') + '</p>' +
+        '</div>';
+        return;
+      }
+
+      const weightKey = {
+        heavy: 'resWeightHeavy',
+        medium: 'resWeightMedium',
+        light: 'resWeightLight'
+      }[r.weight] || 'resWeightLight';
+
+      const weightBadgeCls = {
+        heavy: 'badge-res-heavy',
+        medium: 'badge-trust-warn',
+        light: 'badge-trust-pass'
+      }[r.weight] || 'badge-trust-pass';
+
+      const hotHooks = r.hotPathHooks || [];
+      const lifeHooks = r.lifecycleHooks || [];
+
+      const hotHooksHtml = hotHooks.length > 0
+        ? hotHooks.map(h => '<span class="res-hook-chip">' + escapeHtml(h) + '</span>').join("")
+        : '<span style="color:var(--text-tertiary); font-size:12px;">-</span>';
+
+      const lifeHooksHtml = lifeHooks.length > 0
+        ? lifeHooks.map(h => '<span class="res-hook-chip">' + escapeHtml(h) + '</span>').join("")
+        : '<span style="color:var(--text-tertiary); font-size:12px;">-</span>';
+
+      panel.innerHTML = '<div class="trust-box">' +
+        '<div class="trust-score-row" style="border-bottom:none; padding-bottom:0;">' +
+          '<div style="display:flex; flex-direction:column; gap:4px;">' +
+            '<span class="trust-confidence-label">' + t('resWeightLabel') + '</span>' +
+            '<div><span class="badge ' + weightBadgeCls + '" style="font-size:12px; padding:3px 8px;">' + t(weightKey) + '</span></div>' +
+          '</div>' +
+          '<div class="trust-meta-right">' +
+            '<span class="badge ' + (r.modelCalls ? 'badge-res-model' : 'badge-verified') + '">' +
+              (r.modelCalls ? t('resModelCalls') : t('resNoModelCalls')) +
+            '</span>' +
+          '</div>' +
+        '</div>' +
+        '<div class="trust-sections" style="margin-top:10px;">' +
+          '<div class="trust-col">' +
+            '<h5 class="trust-col-title">' + t('resHotHooks') + '</h5>' +
+            '<div class="res-hooks">' + hotHooksHtml + '</div>' +
+          '</div>' +
+          '<div class="trust-col">' +
+            '<h5 class="trust-col-title">' + t('resLifeHooks') + '</h5>' +
+            '<div class="res-hooks">' + lifeHooksHtml + '</div>' +
+          '</div>' +
+        '</div>' +
+        '<p class="trust-desc" style="margin-top:12px; font-size:11.5px; color:var(--text-tertiary);">' + t('resDisclaimer') + '</p>' +
+      '</div>';
     }
 
     // —— 可信度面板 ——
@@ -544,6 +609,15 @@
       s.src = "https://giscus.app/client.js";
       s.async = true;
       s.crossOrigin = "anonymous";
+      s.onerror = () => {
+        const sk = box.querySelector(".giscus-skeleton");
+        if (sk) sk.remove();
+        const fallbackMsg = document.createElement("div");
+        fallbackMsg.style.cssText = "color:var(--text-tertiary); font-size:12.5px; padding:12px; background:var(--bg-surface-raised); border-radius:6px; margin-top:8px;";
+        const issuesUrl = currentOpenPlugin.repoUrl ? (currentOpenPlugin.repoUrl + '/issues') : "#";
+        fallbackMsg.innerHTML = t('modalDiscussionsFallback', escapeHtml(issuesUrl));
+        box.appendChild(fallbackMsg);
+      };
       [
         ["data-repo", cfg.repo],
         ["data-repo-id", cfg.repoId],
