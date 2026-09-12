@@ -732,7 +732,9 @@ section[id], #packagesSection {
   top: calc(100% + 6px);
   left: 0;
   right: 0;
-  background: var(--bg-card);
+  background: var(--bg-surface);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-xl);
@@ -1301,8 +1303,8 @@ section[id], #packagesSection {
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 4px;
-  flex-shrink: 1;
-  min-width: 0;
+  flex-shrink: 0;
+  max-width: 55%;
 }
 
 .package-name {
