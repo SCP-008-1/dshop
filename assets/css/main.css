@@ -2219,9 +2219,28 @@ section[id], #packagesSection {
   background: var(--bg-surface-raised);
 }
 
+/* Focus Ring Accessibility Improvements (Geist Standard) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--border-active);
+  outline-offset: 2px;
+}
+
 /* ==========================================================================
-   Responsive Adaptations
+   Responsive Adaptations & Mobile UX Polish
    ========================================================================== */
+.tier1-tabs, .tier2-chips {
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+  -webkit-overflow-scrolling: touch;
+}
+.tier1-tabs::-webkit-scrollbar, .tier2-chips::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
 @media (max-width: 1024px) {
   .packages-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -2261,6 +2280,22 @@ section[id], #packagesSection {
   }
   .package-row-desc {
     display: none;
+  }
+  .toolbar-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .toolbar-left, .toolbar-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .omnibar-shortcut {
+    display: none;
+  }
+  .modal-card {
+    max-height: 90vh;
+    border-radius: var(--radius-lg);
   }
 }
 
