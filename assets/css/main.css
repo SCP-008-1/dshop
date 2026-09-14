@@ -1280,7 +1280,7 @@ section[id], #packagesSection {
 
 .package-card-header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 8px;
   margin-bottom: 8px;
@@ -1293,6 +1293,7 @@ section[id], #packagesSection {
   gap: 8px;
   min-width: 0;
   flex: 1;
+  padding-top: 2px;
 }
 
 .package-header-badges {
@@ -1303,6 +1304,7 @@ section[id], #packagesSection {
   gap: 4px;
   flex-shrink: 1;
   min-width: 0;
+  max-width: 100%;
 }
 
 .package-name {
@@ -2259,8 +2261,36 @@ section[id], #packagesSection {
   .compat-grid, .meta-grid-table {
     grid-template-columns: 1fr;
   }
+  .package-row {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 12px;
+    gap: 10px;
+  }
+  .package-row-actions {
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: 4px;
+    padding-top: 8px;
+    border-top: 1px dashed var(--border-subtle);
+  }
   .package-row-desc {
     display: none;
+  }
+  .modal-card {
+    max-height: 92vh;
+    border-radius: var(--radius-lg);
+  }
+  .modal-header {
+    padding: 12px 16px;
+    flex-wrap: wrap;
+  }
+  .modal-tabs {
+    padding: 4px 12px;
+  }
+  .modal-body {
+    padding: 16px;
   }
 }
 
