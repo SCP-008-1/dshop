@@ -203,6 +203,12 @@
       applyFilters();
     }
 
+    function toggleVerifiedFromChip() {
+      omnibarDropdown.classList.remove("open");
+      toggleVerifiedOnly();
+      document.getElementById("packagesSection").scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
     function toggleShowDead() {
       showDead = !showDead;
       const btn = document.getElementById("showDeadBtn");
