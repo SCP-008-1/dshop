@@ -225,6 +225,9 @@
       // 可信度面板（AST 安全扫描 + 健康检查 + 最后验证时间）
       renderTrustPanel(pkg);
 
+      // 资源画像面板（静态推断 token 消耗与事件分桶）
+      renderResourcePanel(pkg);
+
       // Reviews & Discussions
       renderModalRating(pkg);
       renderGiscus(pkg);
@@ -326,6 +329,52 @@
             '<ul class="trust-findings">' + findingsHtml + '</ul>' +
           '</div>' +
         '</div>' +
+      '</div>';
+    }
+
+    // —— 资源画像面板 ——
+    // 数据来自静态推断 (apply(ctx) 挂载 Hook 分桶、模型调用与仪表盘统计)
+    function renderResourcePanel(pkg) {
+      const panel = document.getElementById("modalResPanel");
+      if (!panel) return;
+      const r = pkg.resource;
+
+      if (!r) {
+        panel.innerHTML = '<div class="trust-box trust-box-muted">' +
+          '<p class="trust-desc" style="margin-top:0;">' + escapeHtml(t('resDisclaimer')) + '</p>' +
+        '</div>';
+        return;
+      }
+
+      const weightKey = r.weight === "heavy" ? "resWeightHeavy" : (r.weight === "medium" ? "resWeightMedium" : "resWeightLight");
+      const weightBadgeClass = r.weight === "heavy" ? "badge-res-heavy" : "badge";
+
+      const hotHooks = (r.hotPathHooks || []).map(h => '<span class="res-hook-chip">' + escapeHtml(h) + '</span>').join("");
+      const lifeHooks = (r.lifecycleHooks || []).map(h => '<span class="res-hook-chip">' + escapeHtml(h) + '</span>').join("");
+
+      panel.innerHTML = '<div class="trust-box">' +
+        '<div class="trust-score-row" style="border-bottom:none; padding-bottom:0;">' +
+          '<div>' +
+            '<span class="trust-confidence-label">' + t('resWeightLabel') + ': </span>' +
+            '<span class="badge ' + weightBadgeClass + '" style="margin-left:4px; font-size:12px;">' + t(weightKey) + '</span>' +
+          '</div>' +
+          '<div class="trust-meta-right">' +
+            (r.modelCalls ? '<span class="badge badge-res-model">' + t('resModelCalls') + '</span>' : '<span class="badge" style="color:var(--text-tertiary);">' + t('resNoModelCalls') + '</span>') +
+          '</div>' +
+        '</div>' +
+
+        '<div class="trust-sections" style="padding-top:12px; border-top:1px solid var(--border-subtle); margin-top:10px;">' +
+          '<div class="trust-col">' +
+            '<h5 class="trust-col-title">' + t('resHotHooks') + '</h5>' +
+            '<div class="res-hooks">' + (hotHooks || '<span style="font-size:12px; color:var(--text-muted);">None</span>') + '</div>' +
+          '</div>' +
+          '<div class="trust-col">' +
+            '<h5 class="trust-col-title">' + t('resLifeHooks') + '</h5>' +
+            '<div class="res-hooks">' + (lifeHooks || '<span style="font-size:12px; color:var(--text-muted);">None</span>') + '</div>' +
+          '</div>' +
+        '</div>' +
+
+        '<p class="trust-desc" style="font-size:11.5px; color:var(--text-muted); margin-top:12px; font-style:italic;">' + escapeHtml(t('resDisclaimer')) + '</p>' +
       '</div>';
     }
 
