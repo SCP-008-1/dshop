@@ -88,7 +88,7 @@
       if (!text) return "";
       const escaped = escapeHtml(text);
       if (!query || !query.trim()) return escaped;
-      const cleanQ = query.replace(/\b(author|type|tag|verified):\S+/gi, "").trim();
+      const cleanQ = query.replace(/\b(author|type|tag|verified|weight):\S+/gi, "").trim();
       if (!cleanQ) return escaped;
       const safeQ = cleanQ.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
       const regex = new RegExp("(" + safeQ + ")", "gi");
