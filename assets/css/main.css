@@ -476,6 +476,7 @@ code {
   background: var(--emerald-light) !important;
   color: var(--emerald-text) !important;
   border-color: var(--emerald-border) !important;
+  transform: scale(1.02);
 }
 
 /* Icon Buttons */
@@ -672,7 +673,7 @@ section[id], #packagesSection {
 }
 .omnibar-wrapper:focus-within {
   border-color: var(--border-active);
-  box-shadow: 0 0 0 2px var(--bg-base), 0 0 0 4px var(--border-active);
+  box-shadow: 0 0 0 2px var(--bg-base), 0 0 0 3px var(--border-active);
 }
 
 .omnibar-icon {
@@ -1260,7 +1261,7 @@ section[id], #packagesSection {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: var(--transition);
+  transition: border-color 0.15s cubic-bezier(0.16, 1, 0.3, 1), transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.15s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.15s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   box-shadow: var(--shadow-sm);
   height: 100%;
@@ -1376,7 +1377,7 @@ section[id], #packagesSection {
   cursor: pointer;
   transition: var(--transition-fast);
   white-space: nowrap;
-  max-width: 120px;
+  max-width: 110px;
   overflow: hidden;
   text-overflow: ellipsis;
   flex-shrink: 1;
@@ -1754,7 +1755,7 @@ section[id], #packagesSection {
   border-radius: var(--radius-xl);
   width: 100%;
   max-width: 800px;
-  max-height: 88vh;
+  max-height: min(88vh, 720px);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -1813,6 +1814,7 @@ section[id], #packagesSection {
 .modal-body {
   padding: 20px;
   overflow-y: auto;
+  overscroll-behavior: contain;
   flex: 1;
 }
 
@@ -2233,7 +2235,7 @@ section[id], #packagesSection {
     grid-template-columns: repeat(2, 1fr);
   }
   .package-row {
-    grid-template-columns: 180px 1fr 110px;
+    grid-template-columns: 180px 1fr 140px;
   }
   .package-row-meta {
     display: none;
@@ -2261,6 +2263,17 @@ section[id], #packagesSection {
   }
   .package-row-desc {
     display: none;
+  }
+  .modal-card {
+    max-height: 94vh;
+    margin: 10px;
+    border-radius: var(--radius-lg);
+  }
+  .modal-header {
+    padding: 12px 16px;
+  }
+  .modal-body {
+    padding: 16px;
   }
 }
 
