@@ -364,7 +364,7 @@
         const rating = displayRating(pkg);
         const installCmd = pkgInstallCmd(pkg);
 
-        return '<article class="package-card" data-id="' + pkg.id + '">' +
+        return '<article class="package-card" data-id="' + pkg.id + '" onclick="openDetailModal(\'' + jsAttr(pkg.id) + '\')">' +
           '<div class="package-card-body">' +
             '<div class="package-card-header">' +
               '<div class="package-header-left">' +
@@ -393,7 +393,7 @@
 
             (visibleTags.length > 0 ? (
               '<div class="package-tags-row">' +
-                visibleTags.map(tag => '<span class="tag-chip" onclick="applyQuickSearch(\'' + jsAttr(tag) + '\')" title="#' + escapeHtml(tag) + '">#' + escapeHtml(tag) + '</span>').join("") +
+                visibleTags.map(tag => '<span class="tag-chip" onclick="event.stopPropagation(); applyQuickSearch(\'' + jsAttr(tag) + '\')" title="#' + escapeHtml(tag) + '">#' + escapeHtml(tag) + '</span>').join("") +
                 (extraTags > 0 ? '<span class="tag-chip tag-chip-count" style="color:var(--text-muted);">+' + extraTags + '</span>' : '') +
               '</div>'
             ) : '<div class="package-tags-row"></div>') +
@@ -410,7 +410,7 @@
               '<span class="metric-item package-metric-date" title="' + t('cardUpdatedTitle') + escapeHtml(pkg.updatedAt || '') + '">⏱ ' + formatDate(pkg.updatedAt) + '</span>' +
             '</div>' +
             '<div class="package-actions-footer">' +
-              '<button class="btn btn-ghost" style="flex:1;" onclick="openDetailModal(\'' + jsAttr(pkg.id) + '\')">' + t('viewDetailsBtn') + '</button>' +
+              '<button class="btn btn-ghost" style="flex:1;" onclick="event.stopPropagation(); openDetailModal(\'' + jsAttr(pkg.id) + '\')">' + t('viewDetailsBtn') + '</button>' +
               installActionHtml(pkg, installCmd, 'flex:1;') +
             '</div>' +
           '</div>' +
@@ -425,7 +425,7 @@
         const rating = displayRating(pkg);
         const installCmd = pkgInstallCmd(pkg);
 
-        return '<div class="package-row" data-id="' + pkg.id + '">' +
+        return '<div class="package-row" data-id="' + pkg.id + '" onclick="openDetailModal(\'' + jsAttr(pkg.id) + '\')">' +
           '<div class="package-row-title">' +
             bookmarkButtonHtml(pkg, isBookmarked, null) +
             renderAvatar(pkg.author, pkg.authorAvatar, 26) +
@@ -454,7 +454,7 @@
 
           '<div class="package-row-actions">' +
             installActionHtml(pkg, installCmd) +
-            '<button class="btn btn-ghost" style="padding:5px 10px; font-size:12px;" onclick="openDetailModal(\'' + jsAttr(pkg.id) + '\')">' + t('viewBtn') + '</button>' +
+            '<button class="btn btn-ghost" style="padding:5px 10px; font-size:12px;" onclick="event.stopPropagation(); openDetailModal(\'' + jsAttr(pkg.id) + '\')">' + t('viewBtn') + '</button>' +
           '</div>' +
         '</div>';
       }).join("");
