@@ -364,7 +364,7 @@
         const rating = displayRating(pkg);
         const installCmd = pkgInstallCmd(pkg);
 
-        return '<article class="package-card" data-id="' + pkg.id + '">' +
+        return '<article class="package-card" data-id="' + pkg.id + '" onclick="openDetailModal(\'' + jsAttr(pkg.id) + '\')">' +
           '<div class="package-card-body">' +
             '<div class="package-card-header">' +
               '<div class="package-header-left">' +
@@ -393,7 +393,7 @@
 
             (visibleTags.length > 0 ? (
               '<div class="package-tags-row">' +
-                visibleTags.map(tag => '<span class="tag-chip" onclick="applyQuickSearch(\'' + jsAttr(tag) + '\')" title="#' + escapeHtml(tag) + '">#' + escapeHtml(tag) + '</span>').join("") +
+                visibleTags.map(tag => '<span class="tag-chip" onclick="applyQuickSearch(\'' + jsAttr(tag) + '\'); event.stopPropagation();" title="#' + escapeHtml(tag) + '">#' + escapeHtml(tag) + '</span>').join("") +
                 (extraTags > 0 ? '<span class="tag-chip tag-chip-count" style="color:var(--text-muted);">+' + extraTags + '</span>' : '') +
               '</div>'
             ) : '<div class="package-tags-row"></div>') +
@@ -425,7 +425,7 @@
         const rating = displayRating(pkg);
         const installCmd = pkgInstallCmd(pkg);
 
-        return '<div class="package-row" data-id="' + pkg.id + '">' +
+        return '<div class="package-row" data-id="' + pkg.id + '" onclick="openDetailModal(\'' + jsAttr(pkg.id) + '\')">' +
           '<div class="package-row-title">' +
             bookmarkButtonHtml(pkg, isBookmarked, null) +
             renderAvatar(pkg.author, pkg.authorAvatar, 26) +
