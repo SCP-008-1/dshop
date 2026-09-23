@@ -1280,7 +1280,7 @@ section[id], #packagesSection {
 
 .package-card-header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 8px;
   margin-bottom: 8px;
@@ -1301,7 +1301,9 @@ section[id], #packagesSection {
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 4px;
-  flex-shrink: 1;
+  row-gap: 3px;
+  max-width: 60%;
+  flex-shrink: 0;
   min-width: 0;
 }
 
@@ -2344,6 +2346,24 @@ section[id], #packagesSection {
 }
 @media (max-width: 640px) {
   .trust-sections { grid-template-columns: 1fr; }
+  .omnibar-shortcut {
+    display: none;
+  }
+  .omnibar-input {
+    padding-right: 28px;
+  }
+  .omnibar-wrapper {
+    padding: 3px 8px 3px 12px;
+  }
+  .modal-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .modal-header > div:last-child {
+    width: 100%;
+    justify-content: space-between;
+  }
 }
 .trust-col-title {
   margin: 0 0 8px;
