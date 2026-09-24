@@ -740,6 +740,8 @@ section[id], #packagesSection {
   z-index: 50;
   text-align: left;
   display: none;
+  max-height: 75vh;
+  overflow-y: auto;
   animation: fadeInDown 0.15s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .omnibar-dropdown.open {
@@ -2259,9 +2261,63 @@ section[id], #packagesSection {
   .compat-grid, .meta-grid-table {
     grid-template-columns: 1fr;
   }
+  .package-row {
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+  }
   .package-row-desc {
     display: none;
   }
+}
+
+@media (max-width: 640px) {
+  .modal-backdrop {
+    padding: 10px;
+  }
+  .modal-card {
+    max-height: 94vh;
+    border-radius: var(--radius-lg);
+  }
+  .modal-header {
+    padding: 12px 14px;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .modal-tabs {
+    padding: 6px 12px;
+  }
+  .modal-body {
+    padding: 14px;
+  }
+  .modal-footer {
+    padding: 10px 14px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .package-row {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  .package-row-actions {
+    justify-content: flex-start;
+    width: 100%;
+  }
+}
+
+/* Accessibility Focus Ring Enhancements */
+.tier1-tab:focus-visible,
+.scenario-chip:focus-visible,
+.dropdown-chip:focus-visible,
+.dropdown-syntax-item:focus-visible,
+.icon-btn:focus-visible,
+.toggle-pill:focus-visible,
+.page-btn:focus-visible,
+.view-btn:focus-visible,
+.select-control:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--bg-base), 0 0 0 4px var(--border-active);
 }
 
 /* ===== 可信度面板（Trust Panel）===== */
