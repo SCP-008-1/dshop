@@ -1067,6 +1067,8 @@ section[id], #packagesSection {
   margin-bottom: 12px;
   overflow-x: auto;
   scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
 }
 .tier1-tabs::-webkit-scrollbar {
   display: none;
@@ -1110,6 +1112,8 @@ section[id], #packagesSection {
   overflow-x: auto;
   scrollbar-width: none;
   padding-bottom: 2px;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
 }
 .tier2-chips::-webkit-scrollbar {
   display: none;
@@ -1784,6 +1788,12 @@ section[id], #packagesSection {
   background: var(--bg-surface-raised);
   border-bottom: 1px solid var(--border-subtle);
   overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
+}
+.modal-tabs::-webkit-scrollbar {
+  display: none;
 }
 
 .modal-tab-btn {
@@ -2241,6 +2251,36 @@ section[id], #packagesSection {
 }
 
 @media (max-width: 768px) {
+  .site-header {
+    padding: 0 4px;
+  }
+  .nav-inner {
+    height: 52px;
+  }
+  .brand-group {
+    gap: 8px;
+    min-width: 0;
+  }
+  .logo {
+    gap: 6px;
+    min-width: 0;
+  }
+  .logo-title {
+    font-size: 13.5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .logo-subtitle {
+    display: none;
+  }
+  .nav-actions {
+    gap: 4px;
+  }
+  .nav-actions .btn-ghost {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
   .packages-grid {
     grid-template-columns: 1fr;
   }
@@ -2344,6 +2384,25 @@ section[id], #packagesSection {
 }
 @media (max-width: 640px) {
   .trust-sections { grid-template-columns: 1fr; }
+  .modal-backdrop {
+    padding: 10px;
+  }
+  .modal-card {
+    max-height: 94vh;
+    border-radius: var(--radius-lg);
+  }
+  .modal-header {
+    padding: 12px 14px;
+  }
+  .modal-tabs {
+    padding: 6px 10px;
+  }
+  .modal-body {
+    padding: 14px;
+  }
+  .modal-footer {
+    padding: 10px 14px;
+  }
 }
 .trust-col-title {
   margin: 0 0 8px;
