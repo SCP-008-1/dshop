@@ -127,6 +127,19 @@
         readmeContent.innerHTML = '<div class="readme-toolbar"><button id="readmeLangToggle" class="toggle-pill" onclick="onReadmeLangToggle()"></button><span id="readmeZhHint" class="readme-zh-hint"></span></div>' + html;
         updateReadmeToggle();
       } catch (err) {
+        // 如果尝试获取中文文档失败，降级回退到英文主文档
+        if (lang === "zh") {
+          const fallbackUrl = pkg.readmeUrl || buildRawUrl(pkg, "README.md");
+          try {
+            const html = await fetchReadmeHtml(fallbackUrl);
+            const fallbackKey = pkg.id + ":en";
+            readmeCache[fallbackKey] = html;
+            readmeLoadedLang = "en";
+            readmeContent.innerHTML = '<div class="readme-toolbar"><button id="readmeLangToggle" class="toggle-pill" onclick="onReadmeLangToggle()"></button><span id="readmeZhHint" class="readme-zh-hint"></span></div>' + html;
+            updateReadmeToggle();
+            return;
+          } catch (fallbackErr) {}
+        }
         // 英文主文档也失败时才显示错误态
         readmeContent.innerHTML = '<div style="text-align:center; padding:32px; color:var(--text-secondary);">' +
           '<p>' + t('readmeError') + '</p>' +
