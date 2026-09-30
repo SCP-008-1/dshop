@@ -225,6 +225,9 @@
       // 可信度面板（AST 安全扫描 + 健康检查 + 最后验证时间）
       renderTrustPanel(pkg);
 
+      // 资源画像面板（若有 resource 字段则注入展示）
+      renderResourcePanel(pkg);
+
       // Reviews & Discussions
       renderModalRating(pkg);
       renderGiscus(pkg);
@@ -240,6 +243,44 @@
     function closeDetailModal() {
       detailModal.classList.remove("open");
       currentModalTab = "overview"; // 下次打开默认回到概览页
+    }
+
+    // —— 资源画像面板 ——
+    function renderResourcePanel(pkg) {
+      const wrapper = document.getElementById("modalResourceWrapper");
+      const panel = document.getElementById("modalResourcePanel");
+      if (!panel) return;
+      const r = pkg.resource;
+      if (!r) {
+        if (wrapper) wrapper.style.display = "none";
+        else panel.style.display = "none";
+        return;
+      }
+      if (wrapper) wrapper.style.display = "block";
+      panel.style.display = "block";
+      const wMap = {
+        heavy: [t('resWeightHeavy'), 'badge-res-heavy'],
+        medium: [t('resWeightMedium'), 'badge-trust-warn'],
+        light: [t('resWeightLight'), 'badge-trust-pass']
+      };
+      const [wText, wClass] = wMap[r.weight] || wMap.light;
+      const hotHooks = (r.hotPathHooks || []).map(h => '<span class="res-hook-chip">' + escapeHtml(h) + '</span>').join("");
+      const lifeHooks = (r.lifecycleHooks || []).map(h => '<span class="res-hook-chip">' + escapeHtml(h) + '</span>').join("");
+
+      panel.innerHTML = '<div class="trust-box">' +
+        '<div class="trust-score-row" style="border-bottom:none; padding-bottom:0;">' +
+          '<div style="display:flex; flex-direction:column; gap:4px;">' +
+            '<span class="trust-confidence-label">' + t('resWeightLabel') + '</span>' +
+            '<span class="badge ' + wClass + '" style="font-size:12px; padding:3px 10px;">' + wText + '</span>' +
+          '</div>' +
+          '<div style="display:flex; gap:6px; flex-wrap:wrap;">' +
+            '<span class="badge ' + (r.modelCalls ? 'badge-res-model' : 'badge-trust-pass') + '">' + (r.modelCalls ? t('resModelCalls') : t('resNoModelCalls')) + '</span>' +
+          '</div>' +
+        '</div>' +
+        (hotHooks ? '<div style="margin-top:10px;"><span class="trust-col-title">' + t('resHotHooks') + '</span><div class="res-hooks">' + hotHooks + '</div></div>' : '') +
+        (lifeHooks ? '<div style="margin-top:10px;"><span class="trust-col-title">' + t('resLifeHooks') + '</span><div class="res-hooks">' + lifeHooks + '</div></div>' : '') +
+        '<p class="trust-desc" style="font-size:11.5px; color:var(--text-muted); margin-top:10px;">' + t('resDisclaimer') + '</p>' +
+      '</div>';
     }
 
     // —— 可信度面板 ——
