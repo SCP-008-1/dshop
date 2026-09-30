@@ -1774,6 +1774,7 @@ section[id], #packagesSection {
   justify-content: space-between;
   gap: 16px;
   background: var(--bg-surface);
+  flex-shrink: 0;
 }
 
 .modal-tabs {
@@ -1784,6 +1785,7 @@ section[id], #packagesSection {
   background: var(--bg-surface-raised);
   border-bottom: 1px solid var(--border-subtle);
   overflow-x: auto;
+  flex-shrink: 0;
 }
 
 .modal-tab-btn {
@@ -1814,6 +1816,7 @@ section[id], #packagesSection {
   padding: 20px;
   overflow-y: auto;
   flex: 1;
+  min-height: 0;
 }
 
 .modal-section-title {
@@ -1947,6 +1950,7 @@ section[id], #packagesSection {
   align-items: center;
   justify-content: space-between;
   background: var(--bg-surface);
+  flex-shrink: 0;
 }
 
 .step-item {
