@@ -235,11 +235,13 @@
       const restoreBtnId = 'modalTabBtn' + restoreTab.charAt(0).toUpperCase() + restoreTab.slice(1);
       switchModalTab(restoreTab, document.getElementById(restoreBtnId));
       detailModal.classList.add("open");
+      updateModalBodyScroll();
     }
 
     function closeDetailModal() {
       detailModal.classList.remove("open");
       currentModalTab = "overview"; // 下次打开默认回到概览页
+      updateModalBodyScroll();
     }
 
     // —— 可信度面板 ——
@@ -572,14 +574,25 @@
 
     function openPublishModal() {
       publishModal.classList.add("open");
+      updateModalBodyScroll();
     }
     function closePublishModal() {
       publishModal.classList.remove("open");
+      updateModalBodyScroll();
+    }
+
+    function updateModalBodyScroll() {
+      const isAnyModalOpen = (detailModal && detailModal.classList.contains("open")) ||
+                             (publishModal && publishModal.classList.contains("open"));
+      document.body.classList.toggle("modal-open", isAnyModalOpen);
     }
 
     // Modal click backdrop to close
     [detailModal, publishModal].forEach(modal => {
       modal.addEventListener("click", e => {
-        if (e.target === modal) modal.classList.remove("open");
+        if (e.target === modal) {
+          modal.classList.remove("open");
+          updateModalBodyScroll();
+        }
       });
     });
