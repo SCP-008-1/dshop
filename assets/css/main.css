@@ -709,8 +709,9 @@ section[id], #packagesSection {
   padding: 2px 6px;
   border-radius: var(--radius-xs);
   user-select: none;
-  margin-left: 8px;
+  margin-left: 6px;
   line-height: 1;
+  flex-shrink: 0;
 }
 
 .omnibar-clear-btn {
@@ -718,10 +719,12 @@ section[id], #packagesSection {
   border: none;
   color: var(--text-tertiary);
   cursor: pointer;
-  padding: 4px 8px;
+  padding: 4px 6px;
   font-size: 13px;
   display: none;
   border-radius: var(--radius-xs);
+  flex-shrink: 0;
+  transition: color 0.15s ease;
 }
 .omnibar-clear-btn:hover {
   color: var(--text-primary);
@@ -1280,7 +1283,7 @@ section[id], #packagesSection {
 
 .package-card-header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 8px;
   margin-bottom: 8px;
@@ -1292,7 +1295,7 @@ section[id], #packagesSection {
   align-items: center;
   gap: 8px;
   min-width: 0;
-  flex: 1;
+  flex: 1 1 auto;
 }
 
 .package-header-badges {
@@ -1300,8 +1303,9 @@ section[id], #packagesSection {
   align-items: center;
   flex-wrap: wrap;
   justify-content: flex-end;
-  gap: 4px;
-  flex-shrink: 1;
+  gap: 3px;
+  max-width: 60%;
+  flex-shrink: 0;
   min-width: 0;
 }
 
@@ -1774,6 +1778,15 @@ section[id], #packagesSection {
   justify-content: space-between;
   gap: 16px;
   background: var(--bg-surface);
+}
+
+.modal-header > div:first-child {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.modal-header > div:last-child {
+  flex-shrink: 0;
 }
 
 .modal-tabs {
