@@ -180,6 +180,19 @@
             escapeHtml(t('noNpmCmdNote')) +
           '</div>');
 
+      // Header Install button behavior fallback: for non-npm/no-package.json plugins, convert to GitHub repo link
+      const headerInstallBtn = document.getElementById("modalHeaderInstallBtn");
+      const headerInstallBtnText = document.getElementById("modalHeaderInstallBtnText");
+      if (headerInstallBtn) {
+        if (installCmd) {
+          headerInstallBtn.onclick = function() { copyModalInstall(this); };
+          if (headerInstallBtnText) headerInstallBtnText.textContent = t('modalInstallBtn');
+        } else {
+          headerInstallBtn.onclick = function() { window.open(pkg.repoUrl, "_blank", "noopener"); };
+          if (headerInstallBtnText) headerInstallBtnText.textContent = t('modalGithubBtn');
+        }
+      }
+
       // Meta Table
       modalMetaGrid.innerHTML = '<div class="meta-grid-cell">' +
           '<span class="meta-grid-label">' + t('modalMetaRepo') + '</span>' +
@@ -224,6 +237,9 @@
 
       // 可信度面板（AST 安全扫描 + 健康检查 + 最后验证时间）
       renderTrustPanel(pkg);
+
+      // 资源画像面板（静态推断 token 消耗特征/事件钩子）
+      renderResourcePanel(pkg);
 
       // Reviews & Discussions
       renderModalRating(pkg);
@@ -575,6 +591,49 @@
     }
     function closePublishModal() {
       publishModal.classList.remove("open");
+    }
+
+    // —— 资源画像面板 ——
+    function renderResourcePanel(pkg) {
+      const panel = document.getElementById("modalResPanel");
+      if (!panel) return;
+      const r = pkg.resource;
+      if (!r) {
+        panel.innerHTML = '<div class="trust-box trust-box-muted" style="margin-bottom:18px;">' +
+          '<p class="trust-desc" style="margin-top:0;">' + t('resDisclaimer') + '</p>' +
+        '</div>';
+        return;
+      }
+
+      const weightKey = { heavy: "resWeightHeavy", medium: "resWeightMedium", light: "resWeightLight" }[r.weight] || "resWeightLight";
+      const hotHooks = r.hotPathHooks || [];
+      const lifeHooks = r.lifecycleHooks || [];
+
+      const renderHookChips = hooks => hooks.length === 0
+        ? '<span style="font-size:12px; color:var(--text-muted);">-</span>'
+        : '<div class="res-hooks">' + hooks.map(h => '<span class="res-hook-chip">' + escapeHtml(h) + '</span>').join("") + '</div>';
+
+      panel.innerHTML = '<div class="trust-box trust-box-muted" style="margin-bottom:18px;">' +
+        '<div style="font-size:12px; color:var(--text-tertiary); margin-bottom:10px;">' +
+          '<span style="font-weight:600; color:var(--text-secondary);">' + t('resWeightLabel') + ': </span>' +
+          '<span class="badge badge-res-' + (r.weight === 'heavy' ? 'heavy' : 'skill') + '">' + t(weightKey) + '</span>' +
+        '</div>' +
+        '<div class="trust-sections" style="padding-top:8px;">' +
+          '<div class="trust-col">' +
+            '<h5 class="trust-col-title">' + t('resHotHooks') + '</h5>' +
+            renderHookChips(hotHooks) +
+          '</div>' +
+          '<div class="trust-col">' +
+            '<h5 class="trust-col-title">' + t('resLifeHooks') + '</h5>' +
+            renderHookChips(lifeHooks) +
+          '</div>' +
+        '</div>' +
+        '<div style="margin-top:10px; font-size:12px; color:var(--text-tertiary); display:flex; gap:12px; flex-wrap:wrap;">' +
+          '<span>' + (r.modelCalls ? '🤖 ' + t('resModelCalls') : '✓ ' + t('resNoModelCalls')) + '</span>' +
+          (r.hasDashboard ? '<span>📊 ' + t('resDashboards') + '</span>' : '') +
+        '</div>' +
+        '<p class="trust-desc" style="margin-top:10px; font-size:11.5px; color:var(--text-muted);">' + t('resDisclaimer') + '</p>' +
+      '</div>';
     }
 
     // Modal click backdrop to close
