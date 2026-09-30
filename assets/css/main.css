@@ -665,9 +665,9 @@ section[id], #packagesSection {
   align-items: center;
   background: var(--bg-card);
   border: 1px solid var(--border-normal);
-  border-radius: var(--radius-md);
-  padding: 3px 8px 3px 14px;
-  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-lg);
+  padding: 4px 10px 4px 16px;
+  box-shadow: var(--shadow-md);
   transition: var(--transition-fast);
 }
 .omnibar-wrapper:focus-within {
@@ -733,10 +733,10 @@ section[id], #packagesSection {
   left: 0;
   right: 0;
   background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
+  border: 1px solid var(--border-normal);
+  border-radius: var(--radius-lg);
   box-shadow: var(--shadow-xl);
-  padding: 14px 16px;
+  padding: 16px 18px;
   z-index: 50;
   text-align: left;
   display: none;
@@ -1225,14 +1225,16 @@ section[id], #packagesSection {
 }
 .active-tag-badge {
   background: var(--bg-surface-raised);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border-normal);
   color: var(--text-primary);
-  padding: 2px 8px;
-  border-radius: var(--radius-xs);
+  padding: 3px 10px;
+  border-radius: var(--radius-sm);
   display: inline-flex;
   align-items: center;
   gap: 6px;
   font-size: 12px;
+  font-weight: 500;
+  box-shadow: var(--shadow-sm);
 }
 .active-tag-remove {
   cursor: pointer;
@@ -1280,7 +1282,7 @@ section[id], #packagesSection {
 
 .package-card-header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 8px;
   margin-bottom: 8px;
@@ -1292,7 +1294,7 @@ section[id], #packagesSection {
   align-items: center;
   gap: 8px;
   min-width: 0;
-  flex: 1;
+  flex: 1 1 auto;
 }
 
 .package-header-badges {
@@ -1301,8 +1303,8 @@ section[id], #packagesSection {
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 4px;
-  flex-shrink: 1;
-  min-width: 0;
+  flex-shrink: 0;
+  max-width: 60%;
 }
 
 .package-name {
@@ -2267,10 +2269,11 @@ section[id], #packagesSection {
 /* ===== 可信度面板（Trust Panel）===== */
 .trust-box {
   background: var(--bg-surface-raised);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
-  padding: 16px;
+  border: 1px solid var(--border-normal);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
   margin-bottom: 18px;
+  box-shadow: var(--shadow-sm);
 }
 .trust-box-muted {
   opacity: 0.85;
