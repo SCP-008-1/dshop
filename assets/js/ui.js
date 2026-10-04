@@ -105,10 +105,31 @@
     }
 
     function applyQuickSearch(text) {
-      searchInput.value = text;
       omnibarDropdown.classList.remove("open");
+      if (text === "verified:true") {
+        isVerifiedOnly = true;
+        if (verifiedOnlyBtn) verifiedOnlyBtn.classList.add("active");
+        searchInput.value = "";
+      } else if (text === "mcp") {
+        selectScenario("mcp");
+        typeFilter.value = "mcp";
+        searchInput.value = "";
+      } else if (text === "skill") {
+        selectScenario("coding");
+        typeFilter.value = "skill";
+        searchInput.value = "";
+      } else if (text === "agent") {
+        selectScenario("ai");
+        searchInput.value = "";
+      } else if (text === "theme") {
+        selectScenario("themes");
+        typeFilter.value = "theme";
+        searchInput.value = "";
+      } else {
+        searchInput.value = text;
+      }
       applyFilters();
-      saveRecentSearch(text);
+      if (text) saveRecentSearch(text);
       document.getElementById("packagesSection").scrollIntoView({ behavior: "smooth", block: "start" });
     }
 

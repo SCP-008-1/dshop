@@ -90,6 +90,17 @@
       if (rawQ) {
         activeTagsHtml.push('<span class="active-tag-badge">' + t('filterTagQuery') + '"' + escapeHtml(rawQ) + '" <span class="active-tag-remove" onclick="clearSearch()">✕</span></span>');
       }
+      if (currentTier1Tab !== "all") {
+        const tabLabelMap = {
+          popular: t('tabPopular'),
+          new: t('tabNew'),
+          recent: t('tabRecent'),
+          observability: t('tabObservability'),
+          favorites: t('tabFavorites')
+        };
+        const label = tabLabelMap[currentTier1Tab] || currentTier1Tab;
+        activeTagsHtml.push('<span class="active-tag-badge">' + escapeHtml(label) + ' <span class="active-tag-remove" onclick="selectTier1Tab(\'all\')">✕</span></span>');
+      }
       if (currentScenario !== "all") {
         activeTagsHtml.push('<span class="active-tag-badge">' + t('filterTagScenario') + currentScenario + ' <span class="active-tag-remove" onclick="selectScenario(\'all\')">✕</span></span>');
       }
