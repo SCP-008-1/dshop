@@ -225,6 +225,9 @@
       // 可信度面板（AST 安全扫描 + 健康检查 + 最后验证时间）
       renderTrustPanel(pkg);
 
+      // 资源画像面板
+      renderResourcePanel(pkg);
+
       // Reviews & Discussions
       renderModalRating(pkg);
       renderGiscus(pkg);
@@ -325,6 +328,62 @@
             '<h5 class="trust-col-title">' + t('trustFindingsTitle') + '</h5>' +
             '<ul class="trust-findings">' + findingsHtml + '</ul>' +
           '</div>' +
+        '</div>' +
+      '</div>';
+    }
+
+    // —— 资源画像面板 ——
+    function renderResourcePanel(pkg) {
+      const panel = document.getElementById("modalResourcePanel");
+      if (!panel) return;
+      const res = pkg.resource || (pkg.verification && pkg.verification.resource);
+
+      if (!res) {
+        panel.innerHTML = '<div class="trust-box trust-box-muted">' +
+          '<p class="trust-desc" style="margin:0;">' + t('resDisclaimer') + '</p>' +
+        '</div>';
+        return;
+      }
+
+      const weightKeyMap = {
+        heavy: "resWeightHeavy",
+        medium: "resWeightMedium",
+        light: "resWeightLight"
+      };
+      const weightLabel = t(weightKeyMap[res.weight] || "resWeightLight");
+
+      const hotPathHooks = Array.isArray(res.hotPathHooks) ? res.hotPathHooks : [];
+      const lifecycleHooks = Array.isArray(res.lifecycleHooks) ? res.lifecycleHooks : [];
+
+      const renderHookChips = (hooks) => {
+        if (!hooks.length) return '<span style="color:var(--text-tertiary); font-size:12px;">无</span>';
+        return '<div class="res-hooks">' +
+          hooks.map(h => '<span class="res-hook-chip">' + escapeHtml(h) + '</span>').join("") +
+        '</div>';
+      };
+
+      panel.innerHTML = '<div class="trust-box">' +
+        '<div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; padding-bottom:12px; border-bottom:1px solid var(--border-subtle);">' +
+          '<div>' +
+            '<span class="trust-confidence-label">' + t('resWeightLabel') + '</span>' +
+            '<div style="font-size:1rem; font-weight:700; color:var(--text-primary); margin-top:2px;">' + weightLabel + '</div>' +
+          '</div>' +
+          '<div>' +
+            (res.modelCalls ? '<span class="badge badge-res-model">' + t('resModelCalls') + '</span>' : '<span class="badge" style="background:var(--bg-surface); color:var(--text-tertiary); border:1px solid var(--border-subtle);">' + t('resNoModelCalls') + '</span>') +
+          '</div>' +
+        '</div>' +
+        '<div class="trust-sections">' +
+          '<div class="trust-col">' +
+            '<h5 class="trust-col-title">' + t('resHotHooks') + '</h5>' +
+            renderHookChips(hotPathHooks) +
+          '</div>' +
+          '<div class="trust-col">' +
+            '<h5 class="trust-col-title">' + t('resLifeHooks') + '</h5>' +
+            renderHookChips(lifecycleHooks) +
+          '</div>' +
+        '</div>' +
+        '<div style="margin-top:12px; padding-top:10px; border-top:1px dashed var(--border-subtle); font-size:11.5px; color:var(--text-tertiary); line-height:1.5;">' +
+          t('resDisclaimer') +
         '</div>' +
       '</div>';
     }
