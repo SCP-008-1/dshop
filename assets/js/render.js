@@ -331,12 +331,12 @@
       if (!v || v.status !== "verified" || !v.security) return "";
       const level = v.security.level;
       if (!level || level === "pass") {
-        return '<span class="badge badge-trust-pass" title="' + jsAttr(t('trustConfidence') + ': ' + (v.confidence ?? '-')) + '">' + t('trustCardPass') + '</span>';
+        return '<span class="badge badge-trust-pass" title="' + jsAttr(t('trustConfidence') + ': ' + (v.confidence ?? '-')) + '">✓ ' + t('trustCardPass') + '</span>';
       }
       if (level === "warn") {
-        return '<span class="badge badge-trust-warn" title="' + jsAttr(t('trustConfidence') + ': ' + (v.confidence ?? '-')) + '">' + t('trustCardWarn') + '</span>';
+        return '<span class="badge badge-trust-warn" title="' + jsAttr(t('trustConfidence') + ': ' + (v.confidence ?? '-')) + '">⚠️ ' + t('trustCardWarn') + '</span>';
       }
-      return '<span class="badge badge-trust-danger" title="' + jsAttr(t('trustSecDanger')) + '">' + t('trustCardDanger') + '</span>';
+      return '<span class="badge badge-trust-danger" title="' + jsAttr(t('trustSecDanger')) + '">⛔ ' + t('trustCardDanger') + '</span>';
     }
 
     function bookmarkButtonHtml(pkg, isBookmarked, title) {
@@ -372,7 +372,7 @@
                 packageNameHtml(pkg, query) +
               '</div>' +
               '<div class="package-header-badges">' +
-                (pkg.hasNpm ? '<span class="badge badge-verified" title="' + t('badgeVerifiedTitle') + '">' + t('badgeVerified') + '</span>' : '') +
+                (pkg.hasNpm ? '<span class="badge badge-verified" title="' + t('badgeVerifiedTitle') + '">NPM</span>' : '') +
                 trustBadgeHtml(pkg) +
                 resourceBadgeHtml(pkg) +
                 lifecycleBadgeHtml(pkg) +
