@@ -225,6 +225,9 @@
       // 可信度面板（AST 安全扫描 + 健康检查 + 最后验证时间）
       renderTrustPanel(pkg);
 
+      // 资源画像面板（token 消耗与事件钩子推断）
+      renderResourcePanel(pkg);
+
       // Reviews & Discussions
       renderModalRating(pkg);
       renderGiscus(pkg);
@@ -240,6 +243,53 @@
     function closeDetailModal() {
       detailModal.classList.remove("open");
       currentModalTab = "overview"; // 下次打开默认回到概览页
+    }
+
+    // —— 资源画像面板（token 消耗与事件钩子推断） ——
+    function renderResourcePanel(pkg) {
+      const panel = document.getElementById("modalResourcePanel");
+      if (!panel) return;
+
+      const r = pkg.resource || { weight: "light", modelCalls: false };
+      const weight = r.weight || "light";
+
+      const weightTextKey = {
+        heavy: "resWeightHeavy",
+        medium: "resWeightMedium",
+        light: "resWeightLight"
+      }[weight] || "resWeightLight";
+
+      const weightBadgeCls = {
+        heavy: "res-badge-heavy",
+        medium: "res-badge-medium",
+        light: "res-badge-light"
+      }[weight] || "res-badge-light";
+
+      const hotHooks = (r.hotPathHooks || []).map(h => '<code class="res-hook-chip">' + escapeHtml(h) + '</code>').join(" ");
+      const lifeHooks = (r.lifecycleHooks || []).map(h => '<code class="res-hook-chip">' + escapeHtml(h) + '</code>').join(" ");
+
+      panel.innerHTML = '<div class="res-box res-weight-' + weight + '">' +
+        '<div class="res-header-row">' +
+          '<div class="res-weight-wrap">' +
+            '<span class="res-label">' + t('resWeightLabel') + '</span>' +
+            '<span class="res-badge ' + weightBadgeCls + '">' + t(weightTextKey) + '</span>' +
+          '</div>' +
+          '<div class="res-model-badge">' +
+            (r.modelCalls ? '<span class="res-badge res-badge-model">' + t('resModelCalls') + '</span>' : '<span class="res-badge res-badge-nomodel">' + t('resNoModelCalls') + '</span>') +
+          '</div>' +
+        '</div>' +
+        '<div class="res-details-grid">' +
+          '<div class="res-col">' +
+            '<span class="res-col-title">' + t('resHotHooks') + '</span>' +
+            '<div class="res-hooks-list">' + (hotHooks || '<span class="res-empty-text">None</span>') + '</div>' +
+          '</div>' +
+          '<div class="res-col">' +
+            '<span class="res-col-title">' + t('resLifeHooks') + '</span>' +
+            '<div class="res-hooks-list">' + (lifeHooks || '<span class="res-empty-text">None</span>') + '</div>' +
+          '</div>' +
+        '</div>' +
+        '<p class="res-disclaimer">' + t('resDisclaimer') + '</p>' +
+      '</div>';
     }
 
     // —— 可信度面板 ——
