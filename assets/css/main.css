@@ -2443,3 +2443,87 @@ section[id], #packagesSection {
   border:1px solid var(--border-subtle);
   font-variant-numeric:tabular-nums;
 }
+
+/* ===== 资源画像面板（Resource Profile Panel）===== */
+.res-box {
+  background: var(--bg-surface-raised);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin-bottom: 18px;
+}
+.res-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.res-weight-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.res-label {
+  font-size: 12.5px;
+  color: var(--text-tertiary);
+  font-weight: 500;
+}
+.res-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  border: 1px solid transparent;
+}
+.res-badge-heavy { background: rgba(245,158,11,0.12); color: var(--trust-warn-text); border-color: rgba(245,158,11,0.25); }
+.res-badge-medium { background: rgba(59,130,246,0.12); color: #3b82f6; border-color: rgba(59,130,246,0.25); }
+[data-theme="dark"] .res-badge-medium { color: #60a5fa; }
+.res-badge-light { background: rgba(16,185,129,0.12); color: var(--trust-pass-text); border-color: rgba(16,185,129,0.25); }
+.res-badge-model { background: rgba(139,92,246,0.12); color: #8b5cf6; border-color: rgba(139,92,246,0.25); }
+[data-theme="dark"] .res-badge-model { color: #a78bfa; }
+.res-badge-nomodel { background: var(--bg-surface); color: var(--text-tertiary); border-color: var(--border-subtle); }
+
+.res-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding-top: 12px;
+}
+@media (max-width: 640px) {
+  .res-details-grid { grid-template-columns: 1fr; }
+}
+.res-col {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.res-col-title {
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+.res-hooks-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-height: 24px;
+  align-items: center;
+}
+.res-empty-text {
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
+.res-disclaimer {
+  margin-top: 12px;
+  font-size: 11.5px;
+  color: var(--text-tertiary);
+  line-height: 1.5;
+}
