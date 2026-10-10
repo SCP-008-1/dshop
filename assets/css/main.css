@@ -2262,6 +2262,61 @@ section[id], #packagesSection {
   .package-row-desc {
     display: none;
   }
+
+  /* Header Mobile Adaptations */
+  .site-header .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .nav-inner {
+    gap: 8px;
+  }
+  .logo-subtitle {
+    display: none;
+  }
+  .nav-actions {
+    gap: 6px;
+  }
+
+  /* Tabs Horizontal Scroll */
+  .tier1-tabs, .tier2-chips {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    padding-bottom: 4px;
+  }
+  .tier1-tabs::-webkit-scrollbar, .tier2-chips::-webkit-scrollbar {
+    display: none; /* Safari/Chrome */
+  }
+  .tier1-tab, .scenario-chip {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  /* Modal Card Mobile Adaptations */
+  .modal-card {
+    max-height: 92vh;
+    margin: 8px;
+    padding: 16px;
+  }
+  .modal-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .modal-tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .modal-tabs::-webkit-scrollbar {
+    display: none;
+  }
+  .modal-tab-btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
 }
 
 /* ===== 可信度面板（Trust Panel）===== */
