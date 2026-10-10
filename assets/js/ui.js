@@ -24,12 +24,7 @@
     }
 
     function copyCommand(text, btnElement, toastCustomMsg) {
-      // Clipboard API 仅在安全上下文（https / localhost）可用；HTTP 或 file:// 下为 undefined
-      if (!navigator.clipboard || typeof navigator.clipboard.writeText !== "function") {
-        showToast(t('toastCopyFail'), "⚠️");
-        return;
-      }
-      navigator.clipboard.writeText(text).then(() => {
+      const handleSuccess = () => {
         if (btnElement) {
           const origText = btnElement.innerHTML;
           btnElement.classList.add("copied");
@@ -40,9 +35,41 @@
           }, 1600);
         }
         showToast(toastCustomMsg || t('toastCopiedGeneric', text));
-      }).catch(err => {
-        console.error("Copy failed", err);
-      });
+      };
+
+      // 1. 尝试使用 Clipboard API
+      if (navigator.clipboard && typeof navigator.clipboard.writeText === "function") {
+        navigator.clipboard.writeText(text).then(handleSuccess).catch(err => {
+          fallbackCopyText(text, handleSuccess);
+        });
+        return;
+      }
+
+      // 2. 降级方案：动态创建 textarea
+      fallbackCopyText(text, handleSuccess);
+    }
+
+    function fallbackCopyText(text, onSuccess) {
+      try {
+        const textarea = document.createElement("textarea");
+        textarea.value = text;
+        textarea.style.position = "fixed";
+        textarea.style.left = "-9999px";
+        textarea.style.top = "-9999px";
+        document.body.appendChild(textarea);
+        textarea.focus();
+        textarea.select();
+        const successful = document.execCommand("copy");
+        document.body.removeChild(textarea);
+        if (successful) {
+          onSuccess();
+        } else {
+          showToast(t('toastCopyFail'), "⚠️");
+        }
+      } catch (err) {
+        console.error("Fallback copy failed", err);
+        showToast(t('toastCopyFail'), "⚠️");
+      }
     }
 
     // 仅返回数据中已验证的安装命令；无 package.json 的仓库返回 null（不可 npm 安装）

@@ -323,11 +323,12 @@ code {
 }
 
 .logo {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 10px;
   cursor: pointer;
   user-select: none;
+  vertical-align: middle;
 }
 
 .logo-icon {
@@ -350,6 +351,8 @@ code {
   font-size: 14px;
   letter-spacing: -0.02em;
   color: var(--text-primary);
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .logo-subtitle {
@@ -362,6 +365,9 @@ code {
   border: 1px solid var(--border-subtle);
   padding: 1px 6px;
   border-radius: var(--radius-xs);
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
 }
 
 .nav-links {
@@ -2261,6 +2267,17 @@ section[id], #packagesSection {
   }
   .package-row-desc {
     display: none;
+  }
+  .trust-box {
+    padding: 12px;
+  }
+  .compat-item, .meta-grid-cell {
+    padding: 6px 10px;
+  }
+  .rating-hero {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
   }
 }
 
