@@ -225,6 +225,9 @@
       // 可信度面板（AST 安全扫描 + 健康检查 + 最后验证时间）
       renderTrustPanel(pkg);
 
+      // 资源画像面板（token 消耗与 hook 静态推断）
+      renderResourcePanel(pkg);
+
       // Reviews & Discussions
       renderModalRating(pkg);
       renderGiscus(pkg);
@@ -240,6 +243,57 @@
     function closeDetailModal() {
       detailModal.classList.remove("open");
       currentModalTab = "overview"; // 下次打开默认回到概览页
+    }
+
+    // —— 资源画像面板 ——
+    // 数据来自静态代码扫描生成的 pkg.resource 对象
+    function renderResourcePanel(pkg) {
+      const panel = document.getElementById("modalResourcePanel");
+      if (!panel) return;
+
+      const r = pkg.resource;
+      if (!r) {
+        panel.innerHTML = '<div class="res-box res-box-muted">' +
+          '<p class="res-desc" style="margin:0; color:var(--text-tertiary); font-size:12.5px;">' + t('resNoDataDesc') + '</p>' +
+        '</div>';
+        return;
+      }
+
+      const weightKey = { heavy: "resWeightHeavy", medium: "resWeightMedium", light: "resWeightLight" }[r.weight] || "resWeightLight";
+      const weightPillCls = "res-weight-" + (r.weight || "light");
+
+      const hotHooks = r.hotPathHooks || [];
+      const lifeHooks = r.lifecycleHooks || [];
+      const dashboards = r.dashboards || [];
+
+      const renderHookChips = (list) => {
+        if (!list || list.length === 0) return '<span style="color:var(--text-tertiary); font-size:12px;">-</span>';
+        return '<div class="res-hooks">' +
+          list.map(h => '<code class="res-hook-chip">' + escapeHtml(h) + '</code>').join("") +
+        '</div>';
+      };
+
+      panel.innerHTML = '<div class="res-box res-box-' + (r.weight || 'light') + '">' +
+        '<div class="res-weight-row">' +
+          '<span class="res-weight-label">' + t('resWeightLabel') + '</span>' +
+          '<span class="res-weight-pill ' + weightPillCls + '">' + t(weightKey) + '</span>' +
+        '</div>' +
+        '<p class="res-disclaimer">' + t('resDisclaimer') + '</p>' +
+        '<div class="res-sections">' +
+          '<div class="res-col">' +
+            '<h5 class="res-col-title">' + t('resHotHooks') + '</h5>' +
+            renderHookChips(hotHooks) +
+          '</div>' +
+          '<div class="res-col">' +
+            '<h5 class="res-col-title">' + t('resLifeHooks') + '</h5>' +
+            renderHookChips(lifeHooks) +
+          '</div>' +
+        '</div>' +
+        '<div class="res-footer-meta">' +
+          '<span class="res-meta-item">' + (r.modelCalls ? '🤖 ' + t('resModelCalls') : '✓ ' + t('resNoModelCalls')) + '</span>' +
+          (dashboards.length > 0 ? '<span class="res-meta-item">📊 ' + t('resDashboards') + ': ' + escapeHtml(dashboards.join(", ")) + '</span>' : '') +
+        '</div>' +
+      '</div>';
     }
 
     // —— 可信度面板 ——

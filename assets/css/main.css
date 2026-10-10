@@ -2262,6 +2262,22 @@ section[id], #packagesSection {
   .package-row-desc {
     display: none;
   }
+  .omnibar-shortcut {
+    display: none;
+  }
+  .modal-card {
+    padding: 20px 16px;
+    max-height: 90vh;
+  }
+  .modal-header {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .modal-tabs {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 4px;
+  }
 }
 
 /* ===== 可信度面板（Trust Panel）===== */
@@ -2431,15 +2447,82 @@ section[id], #packagesSection {
 .badge-trust-warn { background: rgba(245,158,11,0.12); color: var(--trust-warn-text); border:1px solid rgba(245,158,11,0.25); }
 .badge-trust-danger { background: rgba(239,68,68,0.12); color: var(--trust-danger-text); border:1px solid rgba(239,68,68,0.25); }
 
-/* 资源画像：卡片角标（仅成本信号上卡）与弹窗事件 chip */
+/* 资源画像：卡片角标（仅成本信号上卡）与弹窗事件 chip 及面板样式 */
 .badge-res-heavy { background: rgba(245,158,11,0.12); color: var(--trust-warn-text); border:1px solid rgba(245,158,11,0.25); }
 .badge-res-model { background: rgba(139,92,246,0.12); color:#8b5cf6; border:1px solid rgba(139,92,246,0.25); }
 [data-theme="dark"] .badge-res-model { color:#a78bfa; }
-.res-hooks { display:flex; flex-wrap:wrap; gap:4px; margin-top:4px; }
+
+.res-box {
+  background: var(--bg-surface-raised, rgba(255,255,255,0.02));
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin-bottom: 18px;
+}
+.res-box-heavy { border-color: rgba(245,158,11,0.25); }
+.res-box-medium { border-color: rgba(56,189,248,0.2); }
+.res-box-light { border-color: var(--border-subtle); }
+
+.res-weight-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+.res-weight-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.res-weight-pill {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 9999px;
+}
+.res-weight-heavy { background: rgba(245,158,11,0.12); color: #f59e0b; border: 1px solid rgba(245,158,11,0.25); }
+.res-weight-medium { background: rgba(56,189,248,0.12); color: #38bdf8; border: 1px solid rgba(56,189,248,0.25); }
+.res-weight-light { background: rgba(16,185,129,0.12); color: #10b981; border: 1px solid rgba(16,185,129,0.25); }
+
+.res-disclaimer {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  margin: 0 0 12px 0;
+  line-height: 1.5;
+}
+.res-sections {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+@media (max-width: 640px) {
+  .res-sections { grid-template-columns: 1fr; }
+}
+.res-col-title {
+  margin: 0 0 6px 0;
+  font-size: 11.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+.res-hooks { display: flex; flex-wrap: wrap; gap: 4px; }
 .res-hook-chip {
-  font-family:'Geist Mono','Fira Code',ui-monospace,monospace;
-  font-size:11px; padding:2px 7px; border-radius:999px;
-  background:var(--bg-surface-raised, rgba(127,127,127,0.08));
-  border:1px solid var(--border-subtle);
-  font-variant-numeric:tabular-nums;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 2px 7px;
+  border-radius: 9999px;
+  background: var(--bg-surface, rgba(127,127,127,0.08));
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+}
+.res-footer-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  padding-top: 10px;
+  border-top: 1px dashed var(--border-subtle);
 }
