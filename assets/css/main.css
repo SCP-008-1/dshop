@@ -1161,6 +1161,18 @@ section[id], #packagesSection {
   flex-wrap: wrap;
 }
 
+@media (max-width: 768px) {
+  .toolbar-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .toolbar-left, .toolbar-right {
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
 .select-control {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
@@ -1280,7 +1292,7 @@ section[id], #packagesSection {
 
 .package-card-header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 8px;
   margin-bottom: 8px;
@@ -1292,16 +1304,16 @@ section[id], #packagesSection {
   align-items: center;
   gap: 8px;
   min-width: 0;
-  flex: 1;
+  flex: 1 1 auto;
 }
 
 .package-header-badges {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: flex-end;
   gap: 4px;
-  flex-shrink: 1;
+  flex-shrink: 0;
   min-width: 0;
 }
 
