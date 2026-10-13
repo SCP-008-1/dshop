@@ -1265,6 +1265,7 @@ section[id], #packagesSection {
   box-shadow: var(--shadow-sm);
   height: 100%;
   box-sizing: border-box;
+  cursor: pointer;
 }
 .package-card:hover {
   border-color: var(--border-hover);
@@ -1482,6 +1483,7 @@ section[id], #packagesSection {
   gap: 16px;
   transition: var(--transition-fast);
   box-shadow: var(--shadow-sm);
+  cursor: pointer;
 }
 .package-row:hover {
   border-color: var(--border-hover);
@@ -2237,6 +2239,29 @@ section[id], #packagesSection {
   }
   .package-row-meta {
     display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .brand-group {
+    gap: 10px;
+  }
+  .logo-subtitle {
+    display: none;
+  }
+  .nav-actions {
+    gap: 4px;
+  }
+  .toggle-pill {
+    padding: 0 6px;
+    font-size: 11.5px;
+  }
+  .back-to-top {
+    left: 16px;
+    bottom: 16px;
+    width: 34px;
+    height: 34px;
+    z-index: 100;
   }
 }
 
