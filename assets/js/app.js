@@ -177,6 +177,19 @@
       omnibarDropdown.classList.add("open");
     });
 
+    searchInput.addEventListener("keydown", e => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        const q = searchInput.value.trim();
+        if (q) {
+          saveRecentSearch(q);
+        }
+        omnibarDropdown.classList.remove("open");
+        searchInput.blur();
+        document.getElementById("packagesSection").scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+
     // Close omnibar dropdown on click outside
     document.addEventListener("click", e => {
       if (!omnibarContainer.contains(e.target)) {

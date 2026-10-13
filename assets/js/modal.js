@@ -224,6 +224,7 @@
 
       // 可信度面板（AST 安全扫描 + 健康检查 + 最后验证时间）
       renderTrustPanel(pkg);
+      renderResourcePanel(pkg);
 
       // Reviews & Discussions
       renderModalRating(pkg);
@@ -240,6 +241,72 @@
     function closeDetailModal() {
       detailModal.classList.remove("open");
       currentModalTab = "overview"; // 下次打开默认回到概览页
+    }
+
+    // —— 资源画像面板（静态推断 token 消耗特征） ——
+    function renderResourcePanel(pkg) {
+      let panel = document.getElementById("modalResourcePanel");
+      let title = document.getElementById("modalResTitle");
+      if (!panel) {
+        const trustPanel = document.getElementById("modalTrustPanel");
+        if (trustPanel) {
+          title = document.createElement("h4");
+          title.className = "modal-section-title";
+          title.id = "modalResTitle";
+          title.textContent = t('resPanelTitle');
+          panel = document.createElement("div");
+          panel.id = "modalResourcePanel";
+          trustPanel.parentNode.insertBefore(title, trustPanel.nextSibling);
+          trustPanel.parentNode.insertBefore(panel, title.nextSibling);
+        }
+      }
+
+      const res = pkg.resource;
+      if (!res) {
+        if (panel) panel.style.display = "none";
+        if (title) title.style.display = "none";
+        return;
+      }
+
+      if (title) {
+        title.textContent = t('resPanelTitle');
+        title.style.display = "block";
+      }
+      if (panel) panel.style.display = "block";
+
+      const weightKey = res.weight === "heavy" ? "resWeightHeavy" : res.weight === "medium" ? "resWeightMedium" : "resWeightLight";
+      const weightBadgeCls = res.weight === "heavy" ? "badge-res-heavy" : "badge";
+
+      const hotHooksHtml = (res.hotPathHooks && res.hotPathHooks.length)
+        ? res.hotPathHooks.map(h => '<span class="res-hook-chip">' + escapeHtml(h) + '</span>').join(" ")
+        : '<span style="color:var(--text-tertiary); font-size:12px;">-</span>';
+
+      const lifeHooksHtml = (res.lifecycleHooks && res.lifecycleHooks.length)
+        ? res.lifecycleHooks.map(h => '<span class="res-hook-chip">' + escapeHtml(h) + '</span>').join(" ")
+        : '<span style="color:var(--text-tertiary); font-size:12px;">-</span>';
+
+      panel.innerHTML = '<div class="trust-box">' +
+        '<div style="display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:10px; flex-wrap:wrap;">' +
+          '<div>' +
+            '<span style="font-size:11.5px; color:var(--text-tertiary); margin-right:8px;">' + t('resWeightLabel') + ':</span>' +
+            '<span class="badge ' + weightBadgeCls + '">' + t(weightKey) + '</span>' +
+          '</div>' +
+          '<div>' +
+            '<span class="badge ' + (res.modelCalls ? 'badge-res-model' : 'badge') + '">' + (res.modelCalls ? t('resModelCalls') : t('resNoModelCalls')) + '</span>' +
+          '</div>' +
+        '</div>' +
+        '<div class="meta-grid-table" style="margin-bottom:8px;">' +
+          '<div class="meta-grid-cell">' +
+            '<span class="meta-grid-label">' + t('resHotHooks') + '</span>' +
+            '<div class="res-hooks">' + hotHooksHtml + '</div>' +
+          '</div>' +
+          '<div class="meta-grid-cell">' +
+            '<span class="meta-grid-label">' + t('resLifeHooks') + '</span>' +
+            '<div class="res-hooks">' + lifeHooksHtml + '</div>' +
+          '</div>' +
+        '</div>' +
+        '<p style="font-size:11.5px; color:var(--text-tertiary); margin:0;">' + t('resDisclaimer') + '</p>' +
+      '</div>';
     }
 
     // —— 可信度面板 ——
