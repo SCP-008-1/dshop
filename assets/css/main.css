@@ -2443,3 +2443,74 @@ section[id], #packagesSection {
   border:1px solid var(--border-subtle);
   font-variant-numeric:tabular-nums;
 }
+
+/* ==========================================================================
+   UI Optimizations: Smooth Touch Scrolling, Focus Rings & Mobile Adaptations
+   ========================================================================== */
+.tier1-tabs,
+.tier2-chips,
+.modal-tabs {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Focus rings for keyboard navigation */
+.btn:focus-visible,
+.tier1-tab:focus-visible,
+.scenario-chip:focus-visible,
+.select-control:focus-visible,
+.modal-tab-btn:focus-visible,
+.toggle-pill:focus-visible,
+.icon-btn:focus-visible,
+.back-to-top:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--bg-base), 0 0 0 4px var(--border-active);
+}
+
+@media (max-width: 640px) {
+  .modal-backdrop {
+    padding: 12px 10px;
+  }
+  .modal-card {
+    max-height: 92vh;
+    border-radius: var(--radius-lg);
+  }
+  .modal-header {
+    padding: 12px 14px;
+  }
+  .modal-tabs {
+    padding: 4px 12px;
+  }
+  .modal-tab-btn {
+    padding: 5px 9px;
+    font-size: 12px;
+  }
+  .modal-body {
+    padding: 14px;
+  }
+  .install-box {
+    padding: 8px 10px;
+    gap: 8px;
+    overflow-x: auto;
+  }
+  .install-box code {
+    white-space: nowrap;
+    font-size: 12px;
+  }
+  .omnibar-dropdown {
+    max-height: 55vh;
+    overflow-y: auto;
+  }
+  .toolbar-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .toolbar-left, .toolbar-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .select-control {
+    flex: 1;
+    min-width: 0;
+  }
+}
