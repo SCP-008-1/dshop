@@ -86,13 +86,30 @@
 
     function highlightSearch(text, query) {
       if (!text) return "";
-      const escaped = escapeHtml(text);
-      if (!query || !query.trim()) return escaped;
-      const cleanQ = query.replace(/\b(author|type|tag|verified):\S+/gi, "").trim();
-      if (!cleanQ) return escaped;
+      if (!query || !query.trim()) return escapeHtml(text);
+      const cleanQ = query.replace(/\b(author|type|tag|verified|weight):\S+/gi, "").trim();
+      if (!cleanQ) return escapeHtml(text);
+
       const safeQ = cleanQ.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-      const regex = new RegExp("(" + safeQ + ")", "gi");
-      return escaped.replace(regex, '<mark class="highlight-match">$1</mark>');
+      const regex = new RegExp(safeQ, "gi");
+
+      let result = "";
+      let lastIdx = 0;
+      let match;
+      while ((match = regex.exec(text)) !== null) {
+        if (match.index > lastIdx) {
+          result += escapeHtml(text.slice(lastIdx, match.index));
+        }
+        result += '<mark class="highlight-match">' + escapeHtml(match[0]) + '</mark>';
+        lastIdx = regex.lastIndex;
+        if (match[0].length === 0) {
+          regex.lastIndex++;
+        }
+      }
+      if (lastIdx < text.length) {
+        result += escapeHtml(text.slice(lastIdx));
+      }
+      return result;
     }
 
     function renderAvatar(author, avatarUrl, size) {
