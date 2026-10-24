@@ -55,7 +55,7 @@
       if (installCmd) {
         return '<button class="btn btn-install" ' + (styleAttr ? 'style="' + styleAttr + '" ' : '') + 'onclick="copyPkgInstall(\'' + jsAttr(installCmd) + '\', this, event)">' + t('installBtn') + '</button>';
       }
-      return '<a class="btn btn-ghost" href="' + escapeHtml(pkg.repoUrl || ('https://github.com/' + (pkg.fullName || pkg.name))) + '" target="_blank" rel="noopener" ' + (styleAttr ? 'style="' + styleAttr + '; text-decoration:none;" ' : '') + '>' + t('githubBtn') + '</a>';
+      return '<a class="btn btn-ghost" href="' + escapeHtml(pkg.repoUrl || ('https://github.com/' + (pkg.fullName || pkg.name))) + '" target="_blank" rel="noopener" ' + (styleAttr ? 'style="' + styleAttr + '; text-decoration:none;" ' : '') + 'onclick="event.stopPropagation()">' + t('githubBtn') + '</a>';
     }
 
     function copyPkgInstall(cmd, btnElement, e) {
