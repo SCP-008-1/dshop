@@ -1784,6 +1784,12 @@ section[id], #packagesSection {
   background: var(--bg-surface-raised);
   border-bottom: 1px solid var(--border-subtle);
   overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.modal-tabs::-webkit-scrollbar {
+  display: none;
 }
 
 .modal-tab-btn {
@@ -1799,6 +1805,8 @@ section[id], #packagesSection {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 .modal-tab-btn:hover {
   color: var(--text-primary);
@@ -2344,6 +2352,18 @@ section[id], #packagesSection {
 }
 @media (max-width: 640px) {
   .trust-sections { grid-template-columns: 1fr; }
+  .toolbar-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .toolbar-left, .toolbar-right {
+    justify-content: space-between;
+    width: 100%;
+  }
+  .select-control {
+    flex: 1;
+    min-width: 0;
+  }
 }
 .trust-col-title {
   margin: 0 0 8px;
