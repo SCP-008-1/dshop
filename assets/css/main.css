@@ -1280,7 +1280,7 @@ section[id], #packagesSection {
 
 .package-card-header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 8px;
   margin-bottom: 8px;
@@ -1301,8 +1301,8 @@ section[id], #packagesSection {
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 4px;
-  flex-shrink: 1;
-  min-width: 0;
+  max-width: 55%;
+  flex-shrink: 0;
 }
 
 .package-name {
@@ -2344,6 +2344,15 @@ section[id], #packagesSection {
 }
 @media (max-width: 640px) {
   .trust-sections { grid-template-columns: 1fr; }
+  .tier1-tabs, .tier2-chips {
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+  .package-header-badges {
+    max-width: 100%;
+    justify-content: flex-start;
+    margin-top: 2px;
+  }
 }
 .trust-col-title {
   margin: 0 0 8px;
