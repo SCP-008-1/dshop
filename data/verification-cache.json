@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-11-22T11:09:32.997Z",
+  "updatedAt": "2026-11-22T19:25:05.726Z",
   "entries": {
     "volcengine/OpenViking": {
-      "pushedAt": "2026-11-22T10:47:36Z",
-      "scannedAt": "2026-11-22T11:07:49.233Z",
+      "pushedAt": "2026-11-22T14:57:55Z",
+      "scannedAt": "2026-11-22T19:23:18.599Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:07:49.233Z",
+        "scannedAt": "2026-11-22T19:23:18.599Z",
         "confidence": 5,
         "security": {
           "level": "danger",
@@ -153,17 +153,17 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:07:49.233Z",
+        "lastVerifiedAt": "2026-11-22T19:23:18.599Z",
         "resource": null
       },
       "resource": null
     },
     "nexu-io/open-design": {
-      "pushedAt": "2026-11-22T04:19:58Z",
-      "scannedAt": "2026-11-22T11:07:47.681Z",
+      "pushedAt": "2026-11-22T18:04:52Z",
+      "scannedAt": "2026-11-22T19:23:16.997Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:07:47.681Z",
+        "scannedAt": "2026-11-22T19:23:16.997Z",
         "confidence": 55,
         "security": {
           "level": "warn",
@@ -212,7 +212,7 @@
           "applyEntry": false,
           "buildStatus": "passing"
         },
-        "lastVerifiedAt": "2026-11-22T11:07:47.681Z",
+        "lastVerifiedAt": "2026-11-22T19:23:16.997Z",
         "resource": null
       },
       "resource": null
@@ -436,11 +436,11 @@
       "resource": null
     },
     "anywhere-labs/dsh-desktop": {
-      "pushedAt": "2026-11-22T04:45:19Z",
-      "scannedAt": "2026-11-22T11:07:50.938Z",
+      "pushedAt": "2026-11-22T18:55:57Z",
+      "scannedAt": "2026-11-22T19:23:20.706Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:07:50.937Z",
+        "scannedAt": "2026-11-22T19:23:20.705Z",
         "confidence": 30,
         "security": {
           "level": "warn",
@@ -594,7 +594,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:07:50.937Z",
+        "lastVerifiedAt": "2026-11-22T19:23:20.705Z",
         "resource": null
       },
       "resource": null
@@ -694,11 +694,11 @@
       "resource": null
     },
     "awesome-dsh-plugin/awesome-dsh-plugin": {
-      "pushedAt": "2026-11-21T23:19:51Z",
-      "scannedAt": "2026-11-22T03:00:51.572Z",
+      "pushedAt": "2026-11-22T17:11:11Z",
+      "scannedAt": "2026-11-22T19:23:22.529Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T03:00:51.572Z",
+        "scannedAt": "2026-11-22T19:23:22.529Z",
         "confidence": 45,
         "security": {
           "level": "warn",
@@ -810,7 +810,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T03:00:51.572Z",
+        "lastVerifiedAt": "2026-11-22T19:23:22.529Z",
         "resource": null
       },
       "resource": null
@@ -1116,11 +1116,11 @@
       "resource": null
     },
     "tt-a1i/archify": {
-      "pushedAt": "2026-11-22T09:42:11Z",
-      "scannedAt": "2026-11-22T11:07:47.369Z",
+      "pushedAt": "2026-11-22T18:17:36Z",
+      "scannedAt": "2026-11-22T19:23:16.815Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:07:47.369Z",
+        "scannedAt": "2026-11-22T19:23:16.815Z",
         "confidence": 30,
         "security": {
           "level": "warn",
@@ -1156,6 +1156,13 @@
             {
               "rule": "dangerous-module",
               "severity": "medium",
+              "file": "scripts/integrate-pr-zip.mjs",
+              "line": 5,
+              "detail": "静态引入 node:child_process（工具链脚本）"
+            },
+            {
+              "rule": "dangerous-module",
+              "severity": "medium",
               "file": "scripts/package-smoke.mjs",
               "line": 3,
               "detail": "静态引入 node:child_process（工具链脚本）"
@@ -1171,7 +1178,7 @@
               "rule": "dynamic-import-dynamic",
               "severity": "medium",
               "file": "scripts/package-smoke.mjs",
-              "line": 190,
+              "line": 241,
               "detail": "import() 参数为运行时表达式，路径不可静态审计"
             },
             {
@@ -1227,14 +1234,14 @@
               "rule": "external-endpoint",
               "severity": "low",
               "file": "scripts/check-release-identity.mjs",
-              "line": 122,
+              "line": 124,
               "detail": "硬编码外联地址 www.w3.org（非生态白名单域）"
             },
             {
               "rule": "dynamic-import-literal",
               "severity": "low",
               "file": "scripts/run-windows-path-tests.mjs",
-              "line": 497,
+              "line": 501,
               "detail": "动态 import() 固定路径 ../archify/bin/preview.mjs"
             },
             {
@@ -1257,13 +1264,6 @@
               "file": "scripts/third-party-notices-contract.mjs",
               "line": 14,
               "detail": "硬编码外联地址 www.apache.org（非生态白名单域）"
-            },
-            {
-              "rule": "external-endpoint",
-              "severity": "low",
-              "file": "scripts/third-party-notices-contract.mjs",
-              "line": 19,
-              "detail": "硬编码外联地址 get.jenkins.io（非生态白名单域）"
             }
           ],
           "scannedFiles": 30
@@ -1274,7 +1274,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:07:47.369Z",
+        "lastVerifiedAt": "2026-11-22T19:23:16.815Z",
         "resource": null
       },
       "resource": null
@@ -1599,11 +1599,11 @@
       "resource": null
     },
     "zhu1090093659/dsh-web": {
-      "pushedAt": "2026-11-22T07:11:34Z",
-      "scannedAt": "2026-11-22T11:07:54.561Z",
+      "pushedAt": "2026-11-22T16:46:37Z",
+      "scannedAt": "2026-11-22T19:23:26.162Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:07:54.561Z",
+        "scannedAt": "2026-11-22T19:23:26.162Z",
         "confidence": 45,
         "security": {
           "level": "warn",
@@ -1729,17 +1729,17 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:07:54.561Z",
+        "lastVerifiedAt": "2026-11-22T19:23:26.162Z",
         "resource": null
       },
       "resource": null
     },
     "Q00/ouroboros": {
-      "pushedAt": "2026-11-22T06:46:26Z",
-      "scannedAt": "2026-11-22T11:07:59.200Z",
+      "pushedAt": "2026-11-22T17:18:36Z",
+      "scannedAt": "2026-11-22T19:23:30.900Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:07:59.200Z",
+        "scannedAt": "2026-11-22T19:23:30.900Z",
         "confidence": 55,
         "security": {
           "level": "pass",
@@ -1752,7 +1752,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:07:59.200Z",
+        "lastVerifiedAt": "2026-11-22T19:23:30.900Z",
         "resource": null
       },
       "resource": null
@@ -1949,11 +1949,11 @@
       "resource": null
     },
     "ZSeven-W/openpencil": {
-      "pushedAt": "2026-11-22T10:36:43Z",
-      "scannedAt": "2026-11-22T11:07:58.401Z",
+      "pushedAt": "2026-11-22T15:57:50Z",
+      "scannedAt": "2026-11-22T19:23:30.070Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:07:58.401Z",
+        "scannedAt": "2026-11-22T19:23:30.070Z",
         "confidence": 5,
         "security": {
           "level": "danger",
@@ -2037,17 +2037,17 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:07:58.401Z",
+        "lastVerifiedAt": "2026-11-22T19:23:30.070Z",
         "resource": null
       },
       "resource": null
     },
     "edison7009/EchoBird": {
-      "pushedAt": "2026-11-22T10:01:01Z",
-      "scannedAt": "2026-11-22T11:08:06.336Z",
+      "pushedAt": "2026-11-22T17:42:55Z",
+      "scannedAt": "2026-11-22T19:23:35.674Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:08:06.336Z",
+        "scannedAt": "2026-11-22T19:23:35.674Z",
         "confidence": 45,
         "security": {
           "level": "warn",
@@ -2117,7 +2117,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:08:06.336Z",
+        "lastVerifiedAt": "2026-11-22T19:23:35.674Z",
         "resource": null
       },
       "resource": null
@@ -2318,11 +2318,11 @@
       "resource": null
     },
     "strukto-ai/mirage": {
-      "pushedAt": "2026-11-22T11:05:17Z",
-      "scannedAt": "2026-11-22T11:08:04.428Z",
+      "pushedAt": "2026-11-22T18:06:54Z",
+      "scannedAt": "2026-11-22T19:23:33.938Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:08:04.428Z",
+        "scannedAt": "2026-11-22T19:23:33.938Z",
         "confidence": 5,
         "security": {
           "level": "danger",
@@ -2364,17 +2364,17 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:08:04.428Z",
+        "lastVerifiedAt": "2026-11-22T19:23:33.938Z",
         "resource": null
       },
       "resource": null
     },
     "whiteguo233/OpenBiliClaw": {
-      "pushedAt": "2026-11-22T10:17:45Z",
-      "scannedAt": "2026-11-22T11:08:04.561Z",
+      "pushedAt": "2026-11-22T19:11:42Z",
+      "scannedAt": "2026-11-22T19:23:34.048Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:08:04.561Z",
+        "scannedAt": "2026-11-22T19:23:34.048Z",
         "confidence": 5,
         "security": {
           "level": "danger",
@@ -2486,7 +2486,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:08:04.561Z",
+        "lastVerifiedAt": "2026-11-22T19:23:34.048Z",
         "resource": null
       },
       "resource": null
@@ -2940,11 +2940,11 @@
       "resource": null
     },
     "dsh-market/dsh-market": {
-      "pushedAt": "2026-11-21T18:46:23Z",
-      "scannedAt": "2026-11-21T22:59:31.380Z",
+      "pushedAt": "2026-11-22T16:40:23Z",
+      "scannedAt": "2026-11-22T19:23:23.764Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-21T22:59:31.380Z",
+        "scannedAt": "2026-11-22T19:23:23.764Z",
         "confidence": 45,
         "security": {
           "level": "warn",
@@ -2954,6 +2954,13 @@
               "severity": "medium",
               "file": "scripts/install-e2e-host.mjs",
               "line": 41,
+              "detail": "静态引入 node:child_process（工具链脚本）"
+            },
+            {
+              "rule": "dangerous-module",
+              "severity": "medium",
+              "file": "scripts/offline-pack.mjs",
+              "line": 30,
               "detail": "静态引入 node:child_process（工具链脚本）"
             },
             {
@@ -2999,7 +3006,7 @@
               "detail": "硬编码外联地址 awesome-dsh-plugin.com（非生态白名单域）"
             }
           ],
-          "scannedFiles": 17
+          "scannedFiles": 19
         },
         "health": {
           "manifestValid": true,
@@ -3007,17 +3014,17 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-21T22:59:31.380Z",
+        "lastVerifiedAt": "2026-11-22T19:23:23.764Z",
         "resource": null
       },
       "resource": null
     },
     "ccch1mneyyy/dsh-TUI": {
-      "pushedAt": "2026-11-22T10:11:05Z",
-      "scannedAt": "2026-11-22T11:07:56.431Z",
+      "pushedAt": "2026-11-22T18:42:38Z",
+      "scannedAt": "2026-11-22T19:23:27.967Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:07:56.431Z",
+        "scannedAt": "2026-11-22T19:23:27.967Z",
         "confidence": 20,
         "security": {
           "level": "danger",
@@ -3143,7 +3150,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:07:56.431Z",
+        "lastVerifiedAt": "2026-11-22T19:23:27.967Z",
         "resource": null
       },
       "resource": null
@@ -3698,11 +3705,11 @@
       "resource": null
     },
     "bowenliang123/dsh-context": {
-      "pushedAt": "2026-11-22T03:07:10Z",
-      "scannedAt": "2026-11-22T11:08:01.238Z",
+      "pushedAt": "2026-11-22T18:14:37Z",
+      "scannedAt": "2026-11-22T19:23:32.288Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:08:01.238Z",
+        "scannedAt": "2026-11-22T19:23:32.288Z",
         "confidence": 45,
         "security": {
           "level": "warn",
@@ -3800,17 +3807,17 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:08:01.238Z",
+        "lastVerifiedAt": "2026-11-22T19:23:32.288Z",
         "resource": null
       },
       "resource": null
     },
     "agentrq/agentrq": {
-      "pushedAt": "2026-11-22T04:07:31Z",
-      "scannedAt": "2026-11-22T11:08:17.168Z",
+      "pushedAt": "2026-11-22T19:01:24Z",
+      "scannedAt": "2026-11-22T19:23:46.377Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:08:17.168Z",
+        "scannedAt": "2026-11-22T19:23:46.377Z",
         "confidence": 5,
         "security": {
           "level": "danger",
@@ -3964,7 +3971,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:08:17.168Z",
+        "lastVerifiedAt": "2026-11-22T19:23:46.377Z",
         "resource": null
       },
       "resource": null
@@ -4335,11 +4342,11 @@
       "resource": null
     },
     "ysr666/dsh-vision-router": {
-      "pushedAt": "2026-11-21T02:12:16Z",
-      "scannedAt": "2026-11-21T09:31:53.130Z",
+      "pushedAt": "2026-11-22T17:21:52Z",
+      "scannedAt": "2026-11-22T19:23:44.849Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-21T09:31:53.130Z",
+        "scannedAt": "2026-11-22T19:23:44.849Z",
         "confidence": 20,
         "security": {
           "level": "danger",
@@ -4493,17 +4500,17 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-21T09:31:53.130Z",
+        "lastVerifiedAt": "2026-11-22T19:23:44.849Z",
         "resource": null
       },
       "resource": null
     },
     "vostride/agent-qa": {
-      "pushedAt": "2026-11-20T23:03:57Z",
-      "scannedAt": "2026-11-21T01:18:40.448Z",
+      "pushedAt": "2026-11-22T13:59:33Z",
+      "scannedAt": "2026-11-22T19:23:57.788Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-21T01:18:40.448Z",
+        "scannedAt": "2026-11-22T19:23:57.788Z",
         "confidence": 30,
         "security": {
           "level": "warn",
@@ -4608,7 +4615,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-21T01:18:40.448Z",
+        "lastVerifiedAt": "2026-11-22T19:23:57.788Z",
         "resource": null
       },
       "resource": null
@@ -5648,11 +5655,11 @@
       "resource": null
     },
     "superdesigndev/treg": {
-      "pushedAt": "2026-11-22T06:21:34Z",
-      "scannedAt": "2026-11-22T11:07:55.924Z",
+      "pushedAt": "2026-11-22T16:20:50Z",
+      "scannedAt": "2026-11-22T19:23:28.405Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:07:55.924Z",
+        "scannedAt": "2026-11-22T19:23:28.405Z",
         "confidence": 80,
         "security": {
           "level": "pass",
@@ -5680,7 +5687,7 @@
           "applyEntry": true,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:07:55.924Z",
+        "lastVerifiedAt": "2026-11-22T19:23:28.405Z",
         "resource": {
           "weight": "light",
           "hotPathHooks": [],
@@ -5689,7 +5696,7 @@
           "hasCommands": false,
           "dashboards": 0,
           "scannedFiles": 1,
-          "scannedAt": "2026-11-22T11:07:55.924Z"
+          "scannedAt": "2026-11-22T19:23:28.405Z"
         }
       },
       "resource": {
@@ -5700,15 +5707,15 @@
         "hasCommands": false,
         "dashboards": 0,
         "scannedFiles": 1,
-        "scannedAt": "2026-11-22T11:07:55.924Z"
+        "scannedAt": "2026-11-22T19:23:28.405Z"
       }
     },
     "sandbaseai/sandbase-harness": {
-      "pushedAt": "2026-11-18T03:37:35Z",
-      "scannedAt": "2026-11-18T12:54:55.167Z",
+      "pushedAt": "2026-11-22T14:16:39Z",
+      "scannedAt": "2026-11-22T19:24:07.193Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-18T12:54:55.167Z",
+        "scannedAt": "2026-11-22T19:24:07.193Z",
         "confidence": 45,
         "security": {
           "level": "warn",
@@ -5757,7 +5764,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-18T12:54:55.167Z",
+        "lastVerifiedAt": "2026-11-22T19:24:07.193Z",
         "resource": null
       },
       "resource": null
@@ -6479,11 +6486,11 @@
       "resource": null
     },
     "syncable-dev/memtrace-public": {
-      "pushedAt": "2026-11-21T06:57:12Z",
-      "scannedAt": "2026-11-21T09:32:41.678Z",
+      "pushedAt": "2026-11-22T12:59:13Z",
+      "scannedAt": "2026-11-22T19:24:14.351Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-21T09:32:41.678Z",
+        "scannedAt": "2026-11-22T19:24:14.351Z",
         "confidence": 55,
         "security": {
           "level": "pass",
@@ -6496,7 +6503,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-21T09:32:41.678Z",
+        "lastVerifiedAt": "2026-11-22T19:24:14.351Z",
         "resource": null
       },
       "resource": null
@@ -7037,11 +7044,11 @@
       "resource": null
     },
     "tingly-dev/tingly-box": {
-      "pushedAt": "2026-11-22T11:05:52Z",
-      "scannedAt": "2026-11-22T11:08:50.759Z",
+      "pushedAt": "2026-11-22T13:38:09Z",
+      "scannedAt": "2026-11-22T19:24:22.188Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:08:50.759Z",
+        "scannedAt": "2026-11-22T19:24:22.188Z",
         "confidence": 55,
         "security": {
           "level": "pass",
@@ -7097,7 +7104,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:08:50.759Z",
+        "lastVerifiedAt": "2026-11-22T19:24:22.188Z",
         "resource": null
       },
       "resource": null
@@ -7148,11 +7155,11 @@
       "resource": null
     },
     "morluto/rea": {
-      "pushedAt": "2026-11-22T11:06:10Z",
-      "scannedAt": "2026-11-22T11:07:47.492Z",
+      "pushedAt": "2026-11-22T19:22:08Z",
+      "scannedAt": "2026-11-22T19:23:16.870Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:07:47.492Z",
+        "scannedAt": "2026-11-22T19:23:16.869Z",
         "confidence": 45,
         "security": {
           "level": "warn",
@@ -7306,7 +7313,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:07:47.492Z",
+        "lastVerifiedAt": "2026-11-22T19:23:16.869Z",
         "resource": null
       },
       "resource": null
@@ -8988,11 +8995,11 @@
       }
     },
     "kelai141/dsh-mobile-apk": {
-      "pushedAt": "2026-11-22T05:16:10Z",
-      "scannedAt": "2026-11-22T11:08:19.341Z",
+      "pushedAt": "2026-11-22T13:43:55Z",
+      "scannedAt": "2026-11-22T19:23:48.493Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:08:19.341Z",
+        "scannedAt": "2026-11-22T19:23:48.493Z",
         "confidence": 30,
         "security": {
           "level": "warn",
@@ -9146,7 +9153,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:08:19.341Z",
+        "lastVerifiedAt": "2026-11-22T19:23:48.493Z",
         "resource": null
       },
       "resource": null
@@ -9490,11 +9497,11 @@
       }
     },
     "omdsh-dev/dsh-mnemon": {
-      "pushedAt": "2026-11-22T10:51:09Z",
-      "scannedAt": "2026-11-22T11:08:21.033Z",
+      "pushedAt": "2026-11-22T12:51:19Z",
+      "scannedAt": "2026-11-22T19:23:50.054Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:08:21.033Z",
+        "scannedAt": "2026-11-22T19:23:50.054Z",
         "confidence": 45,
         "security": {
           "level": "warn",
@@ -9648,7 +9655,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:08:21.033Z",
+        "lastVerifiedAt": "2026-11-22T19:23:50.054Z",
         "resource": null
       },
       "resource": null
@@ -9963,11 +9970,11 @@
       }
     },
     "shanliuling/dsh-image-gen": {
-      "pushedAt": "2026-11-19T12:05:36Z",
-      "scannedAt": "2026-11-19T12:45:34.261Z",
+      "pushedAt": "2026-11-22T13:00:29Z",
+      "scannedAt": "2026-11-22T19:23:39.501Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-19T12:45:34.261Z",
+        "scannedAt": "2026-11-22T19:23:39.501Z",
         "confidence": 20,
         "security": {
           "level": "danger",
@@ -10051,7 +10058,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-19T12:45:34.261Z",
+        "lastVerifiedAt": "2026-11-22T19:23:39.501Z",
         "resource": null
       },
       "resource": null
@@ -10127,11 +10134,11 @@
       }
     },
     "Han-1413141/dsh-cost-meter": {
-      "pushedAt": "2026-11-22T06:03:39Z",
-      "scannedAt": "2026-11-22T11:08:31.845Z",
+      "pushedAt": "2026-11-22T14:39:17Z",
+      "scannedAt": "2026-11-22T19:24:01.383Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:08:31.845Z",
+        "scannedAt": "2026-11-22T19:24:01.383Z",
         "confidence": 20,
         "security": {
           "level": "danger",
@@ -10194,7 +10201,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:08:31.845Z",
+        "lastVerifiedAt": "2026-11-22T19:24:01.383Z",
         "resource": {
           "weight": "light",
           "hotPathHooks": [],
@@ -10203,7 +10210,7 @@
           "hasCommands": false,
           "dashboards": 0,
           "scannedFiles": 1,
-          "scannedAt": "2026-11-22T11:08:31.845Z"
+          "scannedAt": "2026-11-22T19:24:01.383Z"
         }
       },
       "resource": {
@@ -10214,15 +10221,15 @@
         "hasCommands": false,
         "dashboards": 0,
         "scannedFiles": 1,
-        "scannedAt": "2026-11-22T11:08:31.845Z"
+        "scannedAt": "2026-11-22T19:24:01.383Z"
       }
     },
     "imsai-sh/awesome-deepseek-harness-plugins": {
-      "pushedAt": "2026-11-21T13:28:16Z",
-      "scannedAt": "2026-11-21T17:18:28.667Z",
+      "pushedAt": "2026-11-22T18:11:44Z",
+      "scannedAt": "2026-11-22T19:24:18.830Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-21T17:18:28.667Z",
+        "scannedAt": "2026-11-22T19:24:18.830Z",
         "confidence": 45,
         "security": {
           "level": "warn",
@@ -10376,17 +10383,17 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-21T17:18:28.667Z",
+        "lastVerifiedAt": "2026-11-22T19:24:18.830Z",
         "resource": null
       },
       "resource": null
     },
     "zenstory-ai/oh-story-dsh": {
-      "pushedAt": "2026-11-22T01:11:18Z",
-      "scannedAt": "2026-11-22T03:02:12.160Z",
+      "pushedAt": "2026-11-22T13:42:00Z",
+      "scannedAt": "2026-11-22T19:23:57.887Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T03:02:12.160Z",
+        "scannedAt": "2026-11-22T19:23:57.887Z",
         "confidence": 20,
         "security": {
           "level": "danger",
@@ -10395,13 +10402,6 @@
               "rule": "dangerous-module",
               "severity": "high",
               "file": "packages/knowledge/oh-story/skills/story-long-scan/scripts/cdp-utils.js",
-              "line": 11,
-              "detail": "运行时代码引入 child_process"
-            },
-            {
-              "rule": "dangerous-module",
-              "severity": "high",
-              "file": "packages/knowledge/oh-story/skills/story-short-scan/scripts/cdp-utils.js",
               "line": 11,
               "detail": "运行时代码引入 child_process"
             },
@@ -10467,20 +10467,6 @@
               "file": "packages/knowledge/oh-story/skills/story-long-scan/scripts/qimao-rank-scraper.js",
               "line": 27,
               "detail": "硬编码外联地址 www.qimao.com（非生态白名单域）"
-            },
-            {
-              "rule": "external-endpoint",
-              "severity": "low",
-              "file": "packages/knowledge/oh-story/skills/story-short-scan/scripts/dz-browse-scraper.js",
-              "line": 26,
-              "detail": "硬编码外联地址 www.ishugui.com（非生态白名单域）"
-            },
-            {
-              "rule": "external-endpoint",
-              "severity": "low",
-              "file": "packages/knowledge/oh-story/skills/story-short-scan/scripts/dz-browse-scraper.js",
-              "line": 27,
-              "detail": "硬编码外联地址 www.ishugui.com（非生态白名单域）"
             }
           ],
           "scannedFiles": 30
@@ -10491,7 +10477,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T03:02:12.160Z",
+        "lastVerifiedAt": "2026-11-22T19:23:57.887Z",
         "resource": null
       },
       "resource": null
@@ -10594,11 +10580,11 @@
       "resource": null
     },
     "pulseaiclub/phi": {
-      "pushedAt": "2026-11-22T10:52:03Z",
-      "scannedAt": "2026-11-22T11:08:21.725Z",
+      "pushedAt": "2026-11-22T12:00:14Z",
+      "scannedAt": "2026-11-22T19:23:50.785Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:08:21.725Z",
+        "scannedAt": "2026-11-22T19:23:50.785Z",
         "confidence": 55,
         "security": {
           "level": "pass",
@@ -10611,7 +10597,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:08:21.725Z",
+        "lastVerifiedAt": "2026-11-22T19:23:50.785Z",
         "resource": null
       },
       "resource": null
@@ -10963,11 +10949,11 @@
       }
     },
     "dream-num/dsh-univer-office": {
-      "pushedAt": "2026-11-21T11:21:57Z",
-      "scannedAt": "2026-11-21T17:18:02.715Z",
+      "pushedAt": "2026-11-22T16:09:52Z",
+      "scannedAt": "2026-11-22T19:23:58.956Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-21T17:18:02.714Z",
+        "scannedAt": "2026-11-22T19:23:58.956Z",
         "confidence": 45,
         "security": {
           "level": "warn",
@@ -11009,7 +10995,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-21T17:18:02.714Z",
+        "lastVerifiedAt": "2026-11-22T19:23:58.956Z",
         "resource": null
       },
       "resource": null
@@ -11179,11 +11165,11 @@
       "resource": null
     },
     "Mars-Sea/dsh-commandcode-provider": {
-      "pushedAt": "2026-11-22T03:29:22Z",
-      "scannedAt": "2026-11-22T11:08:42.754Z",
+      "pushedAt": "2026-11-22T13:40:10Z",
+      "scannedAt": "2026-11-22T19:24:15.699Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:08:42.754Z",
+        "scannedAt": "2026-11-22T19:24:15.699Z",
         "confidence": 45,
         "security": {
           "level": "warn",
@@ -11234,98 +11220,98 @@
               "rule": "dynamic-import-dynamic",
               "severity": "medium",
               "file": "scripts/verify-engine-load.mjs",
-              "line": 436,
+              "line": 442,
               "detail": "import() 参数为运行时表达式，路径不可静态审计"
             },
             {
               "rule": "dynamic-import-dynamic",
               "severity": "medium",
               "file": "scripts/verify-engine-load.mjs",
-              "line": 492,
+              "line": 488,
               "detail": "import() 参数为运行时表达式，路径不可静态审计"
             },
             {
               "rule": "dynamic-import-dynamic",
               "severity": "medium",
               "file": "scripts/verify-engine-load.mjs",
-              "line": 528,
+              "line": 493,
               "detail": "import() 参数为运行时表达式，路径不可静态审计"
             },
             {
               "rule": "dynamic-import-dynamic",
               "severity": "medium",
               "file": "scripts/verify-engine-load.mjs",
-              "line": 530,
+              "line": 525,
               "detail": "import() 参数为运行时表达式，路径不可静态审计"
             },
             {
               "rule": "dynamic-import-dynamic",
               "severity": "medium",
               "file": "scripts/verify-engine-load.mjs",
-              "line": 574,
+              "line": 561,
               "detail": "import() 参数为运行时表达式，路径不可静态审计"
             },
             {
               "rule": "dynamic-import-dynamic",
               "severity": "medium",
               "file": "scripts/verify-engine-load.mjs",
-              "line": 597,
+              "line": 563,
               "detail": "import() 参数为运行时表达式，路径不可静态审计"
             },
             {
               "rule": "dynamic-import-dynamic",
               "severity": "medium",
               "file": "scripts/verify-engine-load.mjs",
-              "line": 599,
+              "line": 607,
               "detail": "import() 参数为运行时表达式，路径不可静态审计"
             },
             {
               "rule": "dynamic-import-dynamic",
               "severity": "medium",
               "file": "scripts/verify-engine-load.mjs",
-              "line": 751,
+              "line": 630,
               "detail": "import() 参数为运行时表达式，路径不可静态审计"
             },
             {
               "rule": "dynamic-import-dynamic",
               "severity": "medium",
               "file": "scripts/verify-engine-load.mjs",
-              "line": 754,
+              "line": 632,
               "detail": "import() 参数为运行时表达式，路径不可静态审计"
             },
             {
               "rule": "dynamic-import-dynamic",
               "severity": "medium",
               "file": "scripts/verify-engine-load.mjs",
-              "line": 836,
+              "line": 784,
               "detail": "import() 参数为运行时表达式，路径不可静态审计"
             },
             {
               "rule": "dynamic-import-dynamic",
               "severity": "medium",
               "file": "scripts/verify-engine-load.mjs",
-              "line": 839,
+              "line": 787,
               "detail": "import() 参数为运行时表达式，路径不可静态审计"
             },
             {
               "rule": "dynamic-import-dynamic",
               "severity": "medium",
               "file": "scripts/verify-engine-load.mjs",
-              "line": 920,
+              "line": 869,
               "detail": "import() 参数为运行时表达式，路径不可静态审计"
             },
             {
               "rule": "dynamic-import-dynamic",
               "severity": "medium",
               "file": "scripts/verify-engine-load.mjs",
-              "line": 923,
+              "line": 873,
               "detail": "import() 参数为运行时表达式，路径不可静态审计"
             },
             {
               "rule": "dynamic-import-dynamic",
               "severity": "medium",
               "file": "scripts/verify-engine-load.mjs",
-              "line": 979,
+              "line": 955,
               "detail": "import() 参数为运行时表达式，路径不可静态审计"
             }
           ],
@@ -11337,7 +11323,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:08:42.754Z",
+        "lastVerifiedAt": "2026-11-22T19:24:15.699Z",
         "resource": null
       },
       "resource": null
@@ -11607,11 +11593,11 @@
       }
     },
     "flizzywine/dsh-tavern": {
-      "pushedAt": "2026-11-22T10:55:09Z",
-      "scannedAt": "2026-11-22T11:08:12.882Z",
+      "pushedAt": "2026-11-22T16:58:41Z",
+      "scannedAt": "2026-11-22T19:23:40.123Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:08:12.882Z",
+        "scannedAt": "2026-11-22T19:23:40.123Z",
         "confidence": 45,
         "security": {
           "level": "warn",
@@ -11654,6 +11640,13 @@
             {
               "rule": "dangerous-module",
               "severity": "medium",
+              "file": "bin/desktop-update-preflight.mjs",
+              "line": 1,
+              "detail": "静态引入 node:child_process（工具链脚本）"
+            },
+            {
+              "rule": "dangerous-module",
+              "severity": "medium",
               "file": "bin/dev-sync-desktop.mjs",
               "line": 3,
               "detail": "静态引入 node:child_process（工具链脚本）"
@@ -11670,13 +11663,6 @@
               "severity": "medium",
               "file": "bin/dsh-compatibility.mjs",
               "line": 1,
-              "detail": "静态引入 node:child_process（工具链脚本）"
-            },
-            {
-              "rule": "dangerous-module",
-              "severity": "medium",
-              "file": "bin/dsh-tavern-update-helper.mjs",
-              "line": 3,
               "detail": "静态引入 node:child_process（工具链脚本）"
             },
             {
@@ -11723,7 +11709,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:08:12.882Z",
+        "lastVerifiedAt": "2026-11-22T19:23:40.123Z",
         "resource": null
       },
       "resource": null
@@ -11752,11 +11738,11 @@
       "resource": null
     },
     "platonai/Browser4": {
-      "pushedAt": "2026-11-22T09:22:52Z",
-      "scannedAt": "2026-11-22T11:08:17.468Z",
+      "pushedAt": "2026-11-22T17:13:53Z",
+      "scannedAt": "2026-11-22T19:23:46.824Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:08:17.468Z",
+        "scannedAt": "2026-11-22T19:23:46.824Z",
         "confidence": 5,
         "security": {
           "level": "danger",
@@ -11861,17 +11847,17 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:08:17.468Z",
+        "lastVerifiedAt": "2026-11-22T19:23:46.824Z",
         "resource": null
       },
       "resource": null
     },
     "Clarklevis1995/dsh-mobile": {
-      "pushedAt": "2026-11-22T09:53:18Z",
-      "scannedAt": "2026-11-22T11:08:28.730Z",
+      "pushedAt": "2026-11-22T12:45:04Z",
+      "scannedAt": "2026-11-22T19:23:56.127Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:08:28.730Z",
+        "scannedAt": "2026-11-22T19:23:56.127Z",
         "confidence": 30,
         "security": {
           "level": "warn",
@@ -11920,17 +11906,17 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:08:28.730Z",
+        "lastVerifiedAt": "2026-11-22T19:23:56.127Z",
         "resource": null
       },
       "resource": null
     },
     "AdamPlatin123/dsh-plugin-radar": {
-      "pushedAt": "2026-11-22T10:33:25Z",
-      "scannedAt": "2026-11-22T11:08:15.265Z",
+      "pushedAt": "2026-11-22T19:18:33Z",
+      "scannedAt": "2026-11-22T19:23:42.586Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:08:15.265Z",
+        "scannedAt": "2026-11-22T19:23:42.586Z",
         "confidence": 55,
         "security": {
           "level": "pass",
@@ -11965,7 +11951,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:08:15.265Z",
+        "lastVerifiedAt": "2026-11-22T19:23:42.586Z",
         "resource": null
       },
       "resource": null
@@ -12124,11 +12110,11 @@
       "resource": null
     },
     "wecode-ai/Wegent": {
-      "pushedAt": "2026-11-22T11:01:27Z",
-      "scannedAt": "2026-11-22T11:08:27.432Z",
+      "pushedAt": "2026-11-22T17:05:07Z",
+      "scannedAt": "2026-11-22T19:23:54.459Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:08:27.432Z",
+        "scannedAt": "2026-11-22T19:23:54.459Z",
         "confidence": 30,
         "security": {
           "level": "warn",
@@ -12219,17 +12205,17 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:08:27.432Z",
+        "lastVerifiedAt": "2026-11-22T19:23:54.459Z",
         "resource": null
       },
       "resource": null
     },
     "liguobao/ds-harness-remote": {
-      "pushedAt": "2026-11-22T10:46:55Z",
-      "scannedAt": "2026-11-22T11:08:06.331Z",
+      "pushedAt": "2026-11-22T19:17:37Z",
+      "scannedAt": "2026-11-22T19:23:35.519Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:08:06.331Z",
+        "scannedAt": "2026-11-22T19:23:35.519Z",
         "confidence": 20,
         "security": {
           "level": "danger",
@@ -12278,7 +12264,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:08:06.331Z",
+        "lastVerifiedAt": "2026-11-22T19:23:35.519Z",
         "resource": {
           "weight": "light",
           "hotPathHooks": [],
@@ -12287,7 +12273,7 @@
           "hasCommands": false,
           "dashboards": 0,
           "scannedFiles": 2,
-          "scannedAt": "2026-11-22T11:08:06.331Z"
+          "scannedAt": "2026-11-22T19:23:35.519Z"
         }
       },
       "resource": {
@@ -12298,7 +12284,7 @@
         "hasCommands": false,
         "dashboards": 0,
         "scannedFiles": 2,
-        "scannedAt": "2026-11-22T11:08:06.331Z"
+        "scannedAt": "2026-11-22T19:23:35.519Z"
       }
     },
     "anbeime/skill": {
@@ -12919,11 +12905,11 @@
       }
     },
     "DDDMUC/dsh-free-search": {
-      "pushedAt": "2026-11-22T10:58:51Z",
-      "scannedAt": "2026-11-22T11:08:14.453Z",
+      "pushedAt": "2026-11-22T17:03:45Z",
+      "scannedAt": "2026-11-22T19:23:41.697Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:08:14.453Z",
+        "scannedAt": "2026-11-22T19:23:41.697Z",
         "confidence": 20,
         "security": {
           "level": "danger",
@@ -13077,7 +13063,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:08:14.453Z",
+        "lastVerifiedAt": "2026-11-22T19:23:41.697Z",
         "resource": {
           "weight": "light",
           "hotPathHooks": [],
@@ -13086,7 +13072,7 @@
           "hasCommands": false,
           "dashboards": 0,
           "scannedFiles": 1,
-          "scannedAt": "2026-11-22T11:08:14.453Z"
+          "scannedAt": "2026-11-22T19:23:41.697Z"
         }
       },
       "resource": {
@@ -13097,7 +13083,7 @@
         "hasCommands": false,
         "dashboards": 0,
         "scannedFiles": 1,
-        "scannedAt": "2026-11-22T11:08:14.453Z"
+        "scannedAt": "2026-11-22T19:23:41.697Z"
       }
     },
     "theBigGavin/marketingdashboard": {
@@ -13265,11 +13251,11 @@
       "resource": null
     },
     "FuRongJun-1999/dsh-memory": {
-      "pushedAt": "2026-11-22T10:45:22Z",
-      "scannedAt": "2026-11-22T11:08:32.043Z",
+      "pushedAt": "2026-11-22T13:09:12Z",
+      "scannedAt": "2026-11-22T19:24:02.751Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:08:32.043Z",
+        "scannedAt": "2026-11-22T19:24:02.751Z",
         "confidence": 20,
         "security": {
           "level": "danger",
@@ -13304,17 +13290,17 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:08:32.043Z",
+        "lastVerifiedAt": "2026-11-22T19:24:02.751Z",
         "resource": null
       },
       "resource": null
     },
     "xing-shuyin/pi-web-ui": {
-      "pushedAt": "2026-11-22T07:44:38Z",
-      "scannedAt": "2026-11-22T11:08:49.470Z",
+      "pushedAt": "2026-11-22T19:03:42Z",
+      "scannedAt": "2026-11-22T19:24:20.822Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:08:49.470Z",
+        "scannedAt": "2026-11-22T19:24:20.822Z",
         "confidence": 45,
         "security": {
           "level": "warn",
@@ -13468,7 +13454,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:08:49.470Z",
+        "lastVerifiedAt": "2026-11-22T19:24:20.822Z",
         "resource": {
           "weight": "light",
           "hotPathHooks": [],
@@ -13477,7 +13463,7 @@
           "hasCommands": false,
           "dashboards": 0,
           "scannedFiles": 1,
-          "scannedAt": "2026-11-22T11:08:49.470Z"
+          "scannedAt": "2026-11-22T19:24:20.822Z"
         }
       },
       "resource": {
@@ -13488,7 +13474,7 @@
         "hasCommands": false,
         "dashboards": 0,
         "scannedFiles": 1,
-        "scannedAt": "2026-11-22T11:08:49.470Z"
+        "scannedAt": "2026-11-22T19:24:20.822Z"
       }
     },
     "Ayuilos/Miffan": {
@@ -14049,11 +14035,11 @@
       "resource": null
     },
     "ADWMC/helm-d": {
-      "pushedAt": "2026-11-19T11:28:16Z",
-      "scannedAt": "2026-11-19T12:45:39.287Z",
+      "pushedAt": "2026-11-22T13:56:57Z",
+      "scannedAt": "2026-11-22T19:23:43.302Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-19T12:45:39.287Z",
+        "scannedAt": "2026-11-22T19:23:43.302Z",
         "confidence": 5,
         "security": {
           "level": "danger",
@@ -14207,7 +14193,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-19T12:45:39.287Z",
+        "lastVerifiedAt": "2026-11-22T19:23:43.302Z",
         "resource": null
       },
       "resource": null
@@ -14244,11 +14230,11 @@
       "resource": null
     },
     "agentic-os-org/ANOLISA": {
-      "pushedAt": "2026-11-22T10:04:23Z",
-      "scannedAt": "2026-11-22T11:08:35.279Z",
+      "pushedAt": "2026-11-22T16:15:42Z",
+      "scannedAt": "2026-11-22T19:24:06.309Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:08:35.279Z",
+        "scannedAt": "2026-11-22T19:24:06.309Z",
         "confidence": 5,
         "security": {
           "level": "danger",
@@ -14388,7 +14374,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:08:35.279Z",
+        "lastVerifiedAt": "2026-11-22T19:24:06.309Z",
         "resource": null
       },
       "resource": null
@@ -14651,11 +14637,11 @@
       "resource": null
     },
     "dsh-tauri/deepseek-harness-desktop": {
-      "pushedAt": "2026-11-22T10:40:31Z",
-      "scannedAt": "2026-11-22T11:08:05.999Z",
+      "pushedAt": "2026-11-22T12:55:01Z",
+      "scannedAt": "2026-11-22T19:23:35.223Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:08:05.999Z",
+        "scannedAt": "2026-11-22T19:23:35.223Z",
         "confidence": 20,
         "security": {
           "level": "danger",
@@ -14788,7 +14774,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:08:05.999Z",
+        "lastVerifiedAt": "2026-11-22T19:23:35.223Z",
         "resource": null
       },
       "resource": null
@@ -15153,11 +15139,11 @@
       "resource": null
     },
     "yyh-001/DSH-X": {
-      "pushedAt": "2026-11-21T06:04:58Z",
-      "scannedAt": "2026-11-21T09:32:14.952Z",
+      "pushedAt": "2026-11-22T14:24:29Z",
+      "scannedAt": "2026-11-22T19:23:59.831Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-21T09:32:14.952Z",
+        "scannedAt": "2026-11-22T19:23:59.831Z",
         "confidence": 20,
         "security": {
           "level": "danger",
@@ -15311,7 +15297,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-21T09:32:14.952Z",
+        "lastVerifiedAt": "2026-11-22T19:23:59.831Z",
         "resource": {
           "weight": "light",
           "hotPathHooks": [],
@@ -15320,7 +15306,7 @@
           "hasCommands": false,
           "dashboards": 0,
           "scannedFiles": 1,
-          "scannedAt": "2026-11-21T09:32:14.952Z"
+          "scannedAt": "2026-11-22T19:23:59.831Z"
         }
       },
       "resource": {
@@ -15331,7 +15317,7 @@
         "hasCommands": false,
         "dashboards": 0,
         "scannedFiles": 1,
-        "scannedAt": "2026-11-21T09:32:14.952Z"
+        "scannedAt": "2026-11-22T19:23:59.831Z"
       }
     },
     "lingfengQAQ/webnovel-writer": {
@@ -15358,11 +15344,11 @@
       "resource": null
     },
     "dream-num/univer-workspace": {
-      "pushedAt": "2026-11-22T02:44:39Z",
-      "scannedAt": "2026-11-22T03:01:31.932Z",
+      "pushedAt": "2026-11-22T19:02:44Z",
+      "scannedAt": "2026-11-22T19:23:38.637Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T03:01:31.932Z",
+        "scannedAt": "2026-11-22T19:23:38.637Z",
         "confidence": 5,
         "security": {
           "level": "danger",
@@ -15488,17 +15474,17 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T03:01:31.932Z",
+        "lastVerifiedAt": "2026-11-22T19:23:38.637Z",
         "resource": null
       },
       "resource": null
     },
     "Miaotofu01/Study-Mate": {
-      "pushedAt": "2026-11-21T11:35:53Z",
-      "scannedAt": "2026-11-21T17:17:36.545Z",
+      "pushedAt": "2026-11-22T16:15:36Z",
+      "scannedAt": "2026-11-22T19:23:41.865Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-21T17:17:36.545Z",
+        "scannedAt": "2026-11-22T19:23:41.865Z",
         "confidence": 45,
         "security": {
           "level": "warn",
@@ -15589,7 +15575,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-21T17:17:36.545Z",
+        "lastVerifiedAt": "2026-11-22T19:23:41.865Z",
         "resource": null
       },
       "resource": null
@@ -15717,11 +15703,11 @@
       "resource": null
     },
     "anywhere-labs/Agents-Anywhere": {
-      "pushedAt": "2026-11-22T08:26:52Z",
-      "scannedAt": "2026-11-22T11:08:06.418Z",
+      "pushedAt": "2026-11-22T18:17:08Z",
+      "scannedAt": "2026-11-22T19:23:35.524Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:08:06.418Z",
+        "scannedAt": "2026-11-22T19:23:35.524Z",
         "confidence": 5,
         "security": {
           "level": "danger",
@@ -15875,7 +15861,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:08:06.418Z",
+        "lastVerifiedAt": "2026-11-22T19:23:35.524Z",
         "resource": null
       },
       "resource": null
@@ -16068,11 +16054,11 @@
       "resource": null
     },
     "Ikalus1988/MisakaNet": {
-      "pushedAt": "2026-11-22T10:50:20Z",
-      "scannedAt": "2026-11-22T11:08:39.447Z",
+      "pushedAt": "2026-11-22T16:56:00Z",
+      "scannedAt": "2026-11-22T19:24:12.019Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:08:39.447Z",
+        "scannedAt": "2026-11-22T19:24:12.019Z",
         "confidence": 30,
         "security": {
           "level": "danger",
@@ -16226,7 +16212,7 @@
           "applyEntry": true,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:08:39.447Z",
+        "lastVerifiedAt": "2026-11-22T19:24:12.019Z",
         "resource": {
           "weight": "light",
           "hotPathHooks": [],
@@ -16235,7 +16221,7 @@
           "hasCommands": false,
           "dashboards": 0,
           "scannedFiles": 1,
-          "scannedAt": "2026-11-22T11:08:39.447Z"
+          "scannedAt": "2026-11-22T19:24:12.019Z"
         }
       },
       "resource": {
@@ -16246,7 +16232,7 @@
         "hasCommands": false,
         "dashboards": 0,
         "scannedFiles": 1,
-        "scannedAt": "2026-11-22T11:08:39.447Z"
+        "scannedAt": "2026-11-22T19:24:12.019Z"
       }
     },
     "kenryu42/cc-safety-net": {
@@ -16441,11 +16427,11 @@
       "resource": null
     },
     "Ebony-Vinyl/dsh-our-free-model": {
-      "pushedAt": "2026-11-22T09:19:32Z",
-      "scannedAt": "2026-11-22T11:07:47.330Z",
+      "pushedAt": "2026-11-22T16:01:28Z",
+      "scannedAt": "2026-11-22T19:23:16.704Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:07:47.330Z",
+        "scannedAt": "2026-11-22T19:23:16.704Z",
         "confidence": 30,
         "security": {
           "level": "danger",
@@ -16573,7 +16559,7 @@
               "rule": "dynamic-import-literal",
               "severity": "low",
               "file": "index.js",
-              "line": 1157,
+              "line": 1156,
               "detail": "动态 import() 固定路径 ./vendor/channel-pack/pack.js"
             },
             {
@@ -16599,7 +16585,7 @@
           "applyEntry": true,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:07:47.330Z",
+        "lastVerifiedAt": "2026-11-22T19:23:16.704Z",
         "resource": {
           "weight": "medium",
           "hotPathHooks": [],
@@ -16608,7 +16594,7 @@
           "hasCommands": false,
           "dashboards": 0,
           "scannedFiles": 1,
-          "scannedAt": "2026-11-22T11:07:47.330Z"
+          "scannedAt": "2026-11-22T19:23:16.704Z"
         }
       },
       "resource": {
@@ -16619,7 +16605,7 @@
         "hasCommands": false,
         "dashboards": 0,
         "scannedFiles": 1,
-        "scannedAt": "2026-11-22T11:07:47.330Z"
+        "scannedAt": "2026-11-22T19:23:16.704Z"
       }
     },
     "hanliang97/MatrixMedia": {
@@ -17677,11 +17663,11 @@
       }
     },
     "Nwflower/dsh-claude-style": {
-      "pushedAt": "2026-11-21T17:32:48Z",
-      "scannedAt": "2026-11-21T23:00:11.930Z",
+      "pushedAt": "2026-11-22T19:16:54Z",
+      "scannedAt": "2026-11-22T19:24:06.262Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-21T23:00:11.929Z",
+        "scannedAt": "2026-11-22T19:24:06.262Z",
         "confidence": 20,
         "security": {
           "level": "danger",
@@ -17779,7 +17765,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-21T23:00:11.929Z",
+        "lastVerifiedAt": "2026-11-22T19:24:06.262Z",
         "resource": null
       },
       "resource": null
@@ -19462,11 +19448,11 @@
       }
     },
     "WSL043/dsh-codex-subscription": {
-      "pushedAt": "2026-11-21T14:08:37Z",
-      "scannedAt": "2026-11-21T17:18:24.503Z",
+      "pushedAt": "2026-11-22T16:57:33Z",
+      "scannedAt": "2026-11-22T19:24:13.684Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-21T17:18:24.503Z",
+        "scannedAt": "2026-11-22T19:24:13.684Z",
         "confidence": 45,
         "security": {
           "level": "warn",
@@ -19620,7 +19606,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-21T17:18:24.503Z",
+        "lastVerifiedAt": "2026-11-22T19:24:13.684Z",
         "resource": {
           "weight": "medium",
           "hotPathHooks": [],
@@ -19634,7 +19620,7 @@
           "hasCommands": false,
           "dashboards": 0,
           "scannedFiles": 1,
-          "scannedAt": "2026-11-21T17:18:24.503Z"
+          "scannedAt": "2026-11-22T19:24:13.684Z"
         }
       },
       "resource": {
@@ -19650,7 +19636,7 @@
         "hasCommands": false,
         "dashboards": 0,
         "scannedFiles": 1,
-        "scannedAt": "2026-11-21T17:18:24.503Z"
+        "scannedAt": "2026-11-22T19:24:13.684Z"
       }
     },
     "kingOfSoySauce/dsh-skin-market": {
@@ -19710,11 +19696,11 @@
       }
     },
     "XDTrees/dsh-xdpool": {
-      "pushedAt": "2026-11-22T08:27:36Z",
-      "scannedAt": "2026-11-22T11:08:37.781Z",
+      "pushedAt": "2026-11-22T14:40:22Z",
+      "scannedAt": "2026-11-22T19:24:10.368Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:08:37.781Z",
+        "scannedAt": "2026-11-22T19:24:10.368Z",
         "confidence": 20,
         "security": {
           "level": "danger",
@@ -19868,7 +19854,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:08:37.781Z",
+        "lastVerifiedAt": "2026-11-22T19:24:10.368Z",
         "resource": null
       },
       "resource": null
@@ -20142,11 +20128,11 @@
       "resource": null
     },
     "BotHarness/DeepSeekBot": {
-      "pushedAt": "2026-11-22T10:54:08Z",
-      "scannedAt": "2026-11-22T11:08:24.744Z",
+      "pushedAt": "2026-11-22T19:19:25Z",
+      "scannedAt": "2026-11-22T19:23:52.492Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:08:24.744Z",
+        "scannedAt": "2026-11-22T19:23:52.492Z",
         "confidence": 45,
         "security": {
           "level": "warn",
@@ -20257,13 +20243,6 @@
               "detail": "静态引入 node:child_process（工具链脚本）"
             },
             {
-              "rule": "dangerous-module",
-              "severity": "medium",
-              "file": "scripts/check-regression-proof.mjs",
-              "line": 1,
-              "detail": "静态引入 node:child_process（工具链脚本）"
-            },
-            {
               "rule": "external-endpoint",
               "severity": "low",
               "file": "scripts/check-pr-visual-evidence.mjs",
@@ -20279,17 +20258,17 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:08:24.744Z",
+        "lastVerifiedAt": "2026-11-22T19:23:52.492Z",
         "resource": null
       },
       "resource": null
     },
     "xiajiajun516/dsh-config-manager": {
-      "pushedAt": "2026-11-21T22:00:11Z",
-      "scannedAt": "2026-11-21T23:00:29.682Z",
+      "pushedAt": "2026-11-22T17:23:05Z",
+      "scannedAt": "2026-11-22T19:24:23.889Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-21T23:00:29.682Z",
+        "scannedAt": "2026-11-22T19:24:23.889Z",
         "confidence": 20,
         "security": {
           "level": "danger",
@@ -20345,7 +20324,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-21T23:00:29.682Z",
+        "lastVerifiedAt": "2026-11-22T19:24:23.889Z",
         "resource": null
       },
       "resource": null
@@ -21833,11 +21812,11 @@
       }
     },
     "tencent-connect/dsh-qqbot": {
-      "pushedAt": "2026-11-21T07:26:09Z",
-      "scannedAt": "2026-11-21T09:32:27.818Z",
+      "pushedAt": "2026-11-22T13:57:57Z",
+      "scannedAt": "2026-11-22T19:24:08.606Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-21T09:32:27.818Z",
+        "scannedAt": "2026-11-22T19:24:08.606Z",
         "confidence": 55,
         "security": {
           "level": "warn",
@@ -21853,14 +21832,14 @@
               "rule": "external-endpoint",
               "severity": "low",
               "file": "lib/gateway/bootstrap.js",
-              "line": 54,
+              "line": 64,
               "detail": "硬编码外联地址 api.bot.qq.com（非生态白名单域）"
             },
             {
               "rule": "external-endpoint",
               "severity": "low",
               "file": "lib/gateway/bootstrap.js",
-              "line": 55,
+              "line": 65,
               "detail": "硬编码外联地址 api.bot.qq.com（非生态白名单域）"
             }
           ],
@@ -21872,7 +21851,7 @@
           "applyEntry": true,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-21T09:32:27.818Z",
+        "lastVerifiedAt": "2026-11-22T19:24:08.606Z",
         "resource": {
           "weight": "light",
           "hotPathHooks": [],
@@ -21881,7 +21860,7 @@
           "hasCommands": false,
           "dashboards": 0,
           "scannedFiles": 1,
-          "scannedAt": "2026-11-21T09:32:27.818Z"
+          "scannedAt": "2026-11-22T19:24:08.606Z"
         }
       },
       "resource": {
@@ -21892,7 +21871,7 @@
         "hasCommands": false,
         "dashboards": 0,
         "scannedFiles": 1,
-        "scannedAt": "2026-11-21T09:32:27.818Z"
+        "scannedAt": "2026-11-22T19:24:08.606Z"
       }
     },
     "oil-oil/dsh-oil-creator": {
@@ -22373,11 +22352,11 @@
       }
     },
     "MichengAI/dsh-codex-ui": {
-      "pushedAt": "2026-11-21T02:05:57Z",
-      "scannedAt": "2026-11-21T09:32:59.532Z",
+      "pushedAt": "2026-11-22T12:40:45Z",
+      "scannedAt": "2026-11-22T19:24:30.622Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-21T09:32:59.532Z",
+        "scannedAt": "2026-11-22T19:24:30.622Z",
         "confidence": 20,
         "security": {
           "level": "danger",
@@ -22482,16 +22461,16 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-21T09:32:59.532Z",
+        "lastVerifiedAt": "2026-11-22T19:24:30.622Z",
         "resource": {
           "weight": "light",
           "hotPathHooks": [],
           "lifecycleHooks": [],
           "modelCalls": false,
           "hasCommands": false,
-          "dashboards": 2,
+          "dashboards": 3,
           "scannedFiles": 1,
-          "scannedAt": "2026-11-21T09:32:59.532Z"
+          "scannedAt": "2026-11-22T19:24:30.622Z"
         }
       },
       "resource": {
@@ -22500,9 +22479,9 @@
         "lifecycleHooks": [],
         "modelCalls": false,
         "hasCommands": false,
-        "dashboards": 2,
+        "dashboards": 3,
         "scannedFiles": 1,
-        "scannedAt": "2026-11-21T09:32:59.532Z"
+        "scannedAt": "2026-11-22T19:24:30.622Z"
       }
     },
     "zh667/TokenLedger": {
@@ -22778,11 +22757,11 @@
       "resource": null
     },
     "sorsama/deepseek-harness-mobile": {
-      "pushedAt": "2026-11-22T06:21:06Z",
-      "scannedAt": "2026-11-22T11:08:53.550Z",
+      "pushedAt": "2026-11-22T16:09:21Z",
+      "scannedAt": "2026-11-22T19:24:24.806Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:08:53.550Z",
+        "scannedAt": "2026-11-22T19:24:24.806Z",
         "confidence": 55,
         "security": {
           "level": "pass",
@@ -22795,7 +22774,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:08:53.550Z",
+        "lastVerifiedAt": "2026-11-22T19:24:24.806Z",
         "resource": null
       },
       "resource": null
@@ -23093,11 +23072,11 @@
       }
     },
     "bradeGithub/DSH-Plugins-Marketplace": {
-      "pushedAt": "2026-11-22T10:32:31Z",
-      "scannedAt": "2026-11-22T11:09:15.273Z",
+      "pushedAt": "2026-11-22T18:43:24Z",
+      "scannedAt": "2026-11-22T19:24:44.520Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:09:15.273Z",
+        "scannedAt": "2026-11-22T19:24:44.520Z",
         "confidence": 45,
         "security": {
           "level": "warn",
@@ -23167,7 +23146,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:09:15.273Z",
+        "lastVerifiedAt": "2026-11-22T19:24:44.520Z",
         "resource": {
           "weight": "light",
           "hotPathHooks": [],
@@ -23176,7 +23155,7 @@
           "hasCommands": false,
           "dashboards": 0,
           "scannedFiles": 1,
-          "scannedAt": "2026-11-22T11:09:15.273Z"
+          "scannedAt": "2026-11-22T19:24:44.520Z"
         }
       },
       "resource": {
@@ -23187,7 +23166,7 @@
         "hasCommands": false,
         "dashboards": 0,
         "scannedFiles": 1,
-        "scannedAt": "2026-11-22T11:09:15.273Z"
+        "scannedAt": "2026-11-22T19:24:44.520Z"
       }
     },
     "ZSeven-W/dsh-openpencil": {
@@ -23320,11 +23299,11 @@
       "resource": null
     },
     "lire1131/dsh-undo-savepoint": {
-      "pushedAt": "2026-11-18T12:23:42Z",
-      "scannedAt": "2026-11-18T12:55:35.367Z",
+      "pushedAt": "2026-11-22T15:45:06Z",
+      "scannedAt": "2026-11-22T19:24:43.227Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-18T12:55:35.367Z",
+        "scannedAt": "2026-11-22T19:24:43.227Z",
         "confidence": 30,
         "security": {
           "level": "danger",
@@ -23390,13 +23369,6 @@
               "severity": "medium",
               "file": "tools/home-resolution-test.mjs",
               "line": 18,
-              "detail": "静态引入 node:child_process（工具链脚本）"
-            },
-            {
-              "rule": "dangerous-module",
-              "severity": "medium",
-              "file": "tools/undo-server-smoke.mjs",
-              "line": 19,
               "detail": "静态引入 node:child_process（工具链脚本）"
             },
             {
@@ -23468,6 +23440,13 @@
               "file": "lib/client.js",
               "line": 728,
               "detail": "硬编码外联地址 www.w3.org（非生态白名单域）"
+            },
+            {
+              "rule": "dynamic-import-literal",
+              "severity": "low",
+              "file": "lib/core.mjs",
+              "line": 1802,
+              "detail": "动态 import() 固定路径 node:readline"
             }
           ],
           "scannedFiles": 30
@@ -23478,7 +23457,7 @@
           "applyEntry": true,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-18T12:55:35.367Z",
+        "lastVerifiedAt": "2026-11-22T19:24:43.227Z",
         "resource": {
           "weight": "heavy",
           "hotPathHooks": [
@@ -23489,7 +23468,7 @@
           "hasCommands": false,
           "dashboards": 1,
           "scannedFiles": 1,
-          "scannedAt": "2026-11-18T12:55:35.367Z"
+          "scannedAt": "2026-11-22T19:24:43.227Z"
         }
       },
       "resource": {
@@ -23502,7 +23481,7 @@
         "hasCommands": false,
         "dashboards": 1,
         "scannedFiles": 1,
-        "scannedAt": "2026-11-18T12:55:35.367Z"
+        "scannedAt": "2026-11-22T19:24:43.227Z"
       }
     },
     "a86582751/dsh-nexttavern": {
@@ -24178,11 +24157,11 @@
       }
     },
     "ChisaAlter/WhaleIsle": {
-      "pushedAt": "2026-11-22T10:47:51Z",
-      "scannedAt": "2026-11-22T11:09:16.857Z",
+      "pushedAt": "2026-11-22T12:45:28Z",
+      "scannedAt": "2026-11-22T19:24:47.248Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:09:16.857Z",
+        "scannedAt": "2026-11-22T19:24:47.248Z",
         "confidence": 45,
         "security": {
           "level": "warn",
@@ -24315,7 +24294,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:09:16.857Z",
+        "lastVerifiedAt": "2026-11-22T19:24:47.248Z",
         "resource": {
           "weight": "light",
           "hotPathHooks": [],
@@ -24324,7 +24303,7 @@
           "hasCommands": false,
           "dashboards": 0,
           "scannedFiles": 1,
-          "scannedAt": "2026-11-22T11:09:16.857Z"
+          "scannedAt": "2026-11-22T19:24:47.248Z"
         }
       },
       "resource": {
@@ -24335,15 +24314,15 @@
         "hasCommands": false,
         "dashboards": 0,
         "scannedFiles": 1,
-        "scannedAt": "2026-11-22T11:09:16.857Z"
+        "scannedAt": "2026-11-22T19:24:47.248Z"
       }
     },
     "SiriLee/dsh-rewind": {
-      "pushedAt": "2026-11-22T04:05:09Z",
-      "scannedAt": "2026-11-22T11:09:00.801Z",
+      "pushedAt": "2026-11-22T16:02:59Z",
+      "scannedAt": "2026-11-22T19:24:31.547Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:09:00.801Z",
+        "scannedAt": "2026-11-22T19:24:31.547Z",
         "confidence": 45,
         "security": {
           "level": "warn",
@@ -24385,7 +24364,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:09:00.801Z",
+        "lastVerifiedAt": "2026-11-22T19:24:31.547Z",
         "resource": null
       },
       "resource": null
@@ -24478,11 +24457,11 @@
       "resource": null
     },
     "slow-stack/mneme": {
-      "pushedAt": "2026-11-21T00:33:10Z",
-      "scannedAt": "2026-11-21T01:19:06.545Z",
+      "pushedAt": "2026-11-22T14:38:55Z",
+      "scannedAt": "2026-11-22T19:24:36.538Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-21T01:19:06.545Z",
+        "scannedAt": "2026-11-22T19:24:36.538Z",
         "confidence": 30,
         "security": {
           "level": "danger",
@@ -24510,17 +24489,17 @@
           "applyEntry": false,
           "buildStatus": "passing"
         },
-        "lastVerifiedAt": "2026-11-21T01:19:06.545Z",
+        "lastVerifiedAt": "2026-11-22T19:24:36.538Z",
         "resource": null
       },
       "resource": null
     },
     "flymysql/dsh-remote": {
-      "pushedAt": "2026-11-22T09:06:49Z",
-      "scannedAt": "2026-11-22T11:08:55.209Z",
+      "pushedAt": "2026-11-22T17:02:27Z",
+      "scannedAt": "2026-11-22T19:24:27.847Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:08:55.209Z",
+        "scannedAt": "2026-11-22T19:24:27.847Z",
         "confidence": 30,
         "security": {
           "level": "danger",
@@ -24583,7 +24562,7 @@
           "applyEntry": true,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:08:55.209Z",
+        "lastVerifiedAt": "2026-11-22T19:24:27.847Z",
         "resource": {
           "weight": "light",
           "hotPathHooks": [],
@@ -24592,7 +24571,7 @@
           "hasCommands": false,
           "dashboards": 0,
           "scannedFiles": 2,
-          "scannedAt": "2026-11-22T11:08:55.209Z"
+          "scannedAt": "2026-11-22T19:24:27.847Z"
         }
       },
       "resource": {
@@ -24603,7 +24582,7 @@
         "hasCommands": false,
         "dashboards": 0,
         "scannedFiles": 2,
-        "scannedAt": "2026-11-22T11:08:55.209Z"
+        "scannedAt": "2026-11-22T19:24:27.847Z"
       }
     },
     "Finderchangchang/brewreel": {
@@ -25853,11 +25832,11 @@
       }
     },
     "franksong2702/dsh-codex-connect": {
-      "pushedAt": "2026-11-19T12:05:56Z",
-      "scannedAt": "2026-11-19T12:46:47.480Z",
+      "pushedAt": "2026-11-22T19:05:38Z",
+      "scannedAt": "2026-11-22T19:24:52.229Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-19T12:46:47.480Z",
+        "scannedAt": "2026-11-22T19:24:52.229Z",
         "confidence": 45,
         "security": {
           "level": "warn",
@@ -25962,7 +25941,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-19T12:46:47.480Z",
+        "lastVerifiedAt": "2026-11-22T19:24:52.229Z",
         "resource": null
       },
       "resource": null
@@ -26516,11 +26495,11 @@
       "resource": null
     },
     "Sutera-Diffusus/dsh-whale-musume": {
-      "pushedAt": "2026-11-21T10:55:05Z",
-      "scannedAt": "2026-11-21T17:19:01.479Z",
+      "pushedAt": "2026-11-22T11:12:52Z",
+      "scannedAt": "2026-11-22T19:24:39.388Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-21T17:19:01.479Z",
+        "scannedAt": "2026-11-22T19:24:39.388Z",
         "confidence": 55,
         "security": {
           "level": "warn",
@@ -26674,7 +26653,7 @@
           "applyEntry": true,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-21T17:19:01.479Z",
+        "lastVerifiedAt": "2026-11-22T19:24:39.388Z",
         "resource": {
           "weight": "light",
           "hotPathHooks": [],
@@ -26683,7 +26662,7 @@
           "hasCommands": false,
           "dashboards": 1,
           "scannedFiles": 1,
-          "scannedAt": "2026-11-21T17:19:01.479Z"
+          "scannedAt": "2026-11-22T19:24:39.388Z"
         }
       },
       "resource": {
@@ -26694,19 +26673,26 @@
         "hasCommands": false,
         "dashboards": 1,
         "scannedFiles": 1,
-        "scannedAt": "2026-11-21T17:19:01.479Z"
+        "scannedAt": "2026-11-22T19:24:39.388Z"
       }
     },
     "dingminhua/dsh-connect-trae": {
-      "pushedAt": "2026-11-22T10:17:27Z",
-      "scannedAt": "2026-11-22T11:09:06.592Z",
+      "pushedAt": "2026-11-22T15:55:26Z",
+      "scannedAt": "2026-11-22T19:24:34.054Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:09:06.592Z",
+        "scannedAt": "2026-11-22T19:24:34.054Z",
         "confidence": 45,
         "security": {
           "level": "warn",
           "findings": [
+            {
+              "rule": "dynamic-import-dynamic",
+              "severity": "medium",
+              "file": "scripts/probe-issue94-default-cap.mjs",
+              "line": 27,
+              "detail": "import() 参数为运行时表达式，路径不可静态审计"
+            },
             {
               "rule": "dynamic-import-dynamic",
               "severity": "medium",
@@ -26839,16 +26825,9 @@
               "file": "scripts/probe-intl.mjs",
               "line": 29,
               "detail": "硬编码外联地址 growsg-normal.trae.ai（非生态白名单域）"
-            },
-            {
-              "rule": "external-endpoint",
-              "severity": "low",
-              "file": "scripts/probe-intl.mjs",
-              "line": 30,
-              "detail": "硬编码外联地址 api16-normal-alisg.mchost.guru（非生态白名单域）"
             }
           ],
-          "scannedFiles": 25
+          "scannedFiles": 26
         },
         "health": {
           "manifestValid": true,
@@ -26856,7 +26835,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:09:06.592Z",
+        "lastVerifiedAt": "2026-11-22T19:24:34.054Z",
         "resource": null
       },
       "resource": null
@@ -27100,11 +27079,11 @@
       }
     },
     "Amakurai/dsh-liketavern": {
-      "pushedAt": "2026-11-20T06:08:05Z",
-      "scannedAt": "2026-11-20T11:18:39.360Z",
+      "pushedAt": "2026-11-22T13:38:20Z",
+      "scannedAt": "2026-11-22T19:24:37.830Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-20T11:18:39.360Z",
+        "scannedAt": "2026-11-22T19:24:37.830Z",
         "confidence": 55,
         "security": {
           "level": "warn",
@@ -27174,7 +27153,7 @@
           "applyEntry": true,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-20T11:18:39.360Z",
+        "lastVerifiedAt": "2026-11-22T19:24:37.830Z",
         "resource": {
           "weight": "heavy",
           "hotPathHooks": [
@@ -27191,7 +27170,7 @@
           "hasCommands": false,
           "dashboards": 0,
           "scannedFiles": 1,
-          "scannedAt": "2026-11-20T11:18:39.360Z"
+          "scannedAt": "2026-11-22T19:24:37.830Z"
         }
       },
       "resource": {
@@ -27210,7 +27189,7 @@
         "hasCommands": false,
         "dashboards": 0,
         "scannedFiles": 1,
-        "scannedAt": "2026-11-20T11:18:39.360Z"
+        "scannedAt": "2026-11-22T19:24:37.830Z"
       }
     },
     "ymh0000123/dsh-theme-endfield": {
@@ -27616,11 +27595,11 @@
       "resource": null
     },
     "Yu-tao-Li/dsh-computer-use-win": {
-      "pushedAt": "2026-11-22T09:48:09Z",
-      "scannedAt": "2026-11-22T11:08:28.892Z",
+      "pushedAt": "2026-11-22T13:47:36Z",
+      "scannedAt": "2026-11-22T19:23:56.066Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:08:28.892Z",
+        "scannedAt": "2026-11-22T19:23:56.066Z",
         "confidence": 30,
         "security": {
           "level": "danger",
@@ -27739,7 +27718,7 @@
           "applyEntry": true,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:08:28.892Z",
+        "lastVerifiedAt": "2026-11-22T19:23:56.066Z",
         "resource": {
           "weight": "light",
           "hotPathHooks": [],
@@ -27748,7 +27727,7 @@
           "hasCommands": false,
           "dashboards": 4,
           "scannedFiles": 1,
-          "scannedAt": "2026-11-22T11:08:28.892Z"
+          "scannedAt": "2026-11-22T19:23:56.066Z"
         }
       },
       "resource": {
@@ -27759,7 +27738,7 @@
         "hasCommands": false,
         "dashboards": 4,
         "scannedFiles": 1,
-        "scannedAt": "2026-11-22T11:08:28.892Z"
+        "scannedAt": "2026-11-22T19:23:56.066Z"
       }
     },
     "MiaoQichuan/new-litigation-visualization": {
@@ -27815,140 +27794,70 @@
       "resource": null
     },
     "wqty123/dsh-browser": {
-      "pushedAt": "2026-11-22T10:00:20Z",
-      "scannedAt": "2026-11-22T11:09:18.445Z",
+      "pushedAt": "2026-11-22T15:14:58Z",
+      "scannedAt": "2026-11-22T19:24:50.547Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:09:18.445Z",
-        "confidence": 30,
+        "scannedAt": "2026-11-22T19:24:50.547Z",
+        "confidence": 20,
         "security": {
           "level": "danger",
           "findings": [
             {
               "rule": "dangerous-module",
               "severity": "high",
+              "file": "desktop-bridge/desktop-discovery.mjs",
+              "line": 1,
+              "detail": "静态引入 node:child_process（运行时代码）"
+            },
+            {
+              "rule": "dangerous-module",
+              "severity": "high",
               "file": "desktop-bridge/install.mjs",
-              "line": 68,
+              "line": 73,
               "detail": "静态引入 node:child_process（运行时代码）"
             },
             {
               "rule": "dangerous-module",
               "severity": "high",
-              "file": "lib/browser-electron/automatic-maintenance.js",
-              "line": 2,
-              "detail": "静态引入 node:child_process（运行时代码）"
-            },
-            {
-              "rule": "dangerous-module",
-              "severity": "high",
-              "file": "lib/browser-electron/bridge-install.js",
-              "line": 9,
-              "detail": "静态引入 node:child_process（运行时代码）"
-            },
-            {
-              "rule": "dangerous-module",
-              "severity": "high",
-              "file": "lib/browser-electron/electron-provision.js",
-              "line": 30,
-              "detail": "静态引入 node:child_process（运行时代码）"
-            },
-            {
-              "rule": "dangerous-module",
-              "severity": "medium",
-              "file": "scripts/consumer-install-check.mjs",
-              "line": 8,
-              "detail": "静态引入 node:child_process（工具链脚本）"
-            },
-            {
-              "rule": "dangerous-module",
-              "severity": "medium",
-              "file": "scripts/install-electron.mjs",
+              "file": "native-host/install.mjs",
               "line": 7,
-              "detail": "静态引入 node:child_process（工具链脚本）"
-            },
-            {
-              "rule": "dangerous-module",
-              "severity": "medium",
-              "file": "scripts/run-tests.mjs",
-              "line": 3,
-              "detail": "静态引入 node:child_process（工具链脚本）"
+              "detail": "静态引入 node:child_process（运行时代码）"
             },
             {
               "rule": "dynamic-import-dynamic",
               "severity": "medium",
-              "file": "scripts/verify-host-compat.mjs",
-              "line": 60,
-              "detail": "import() 参数为运行时表达式，路径不可静态审计"
-            },
-            {
-              "rule": "dynamic-import-dynamic",
-              "severity": "medium",
-              "file": "scripts/verify-host-compat.mjs",
-              "line": 112,
-              "detail": "import() 参数为运行时表达式，路径不可静态审计"
-            },
-            {
-              "rule": "dynamic-import-dynamic",
-              "severity": "medium",
-              "file": "scripts/verify-host-compat.mjs",
-              "line": 117,
+              "file": "desktop-bridge/profile-loader.mjs",
+              "line": 24,
               "detail": "import() 参数为运行时表达式，路径不可静态审计"
             },
             {
               "rule": "dangerous-module",
               "severity": "medium",
-              "file": "scripts/verify-preview-route.mjs",
-              "line": 7,
-              "detail": "静态引入 node:child_process（工具链脚本）"
-            },
-            {
-              "rule": "dynamic-import-dynamic",
-              "severity": "medium",
-              "file": "scripts/verify-runtime-status.mjs",
-              "line": 64,
-              "detail": "import() 参数为运行时表达式，路径不可静态审计"
-            },
-            {
-              "rule": "dynamic-import-dynamic",
-              "severity": "medium",
-              "file": "scripts/verify-runtime-status.mjs",
-              "line": 99,
-              "detail": "import() 参数为运行时表达式，路径不可静态审计"
-            },
-            {
-              "rule": "dynamic-import-dynamic",
-              "severity": "medium",
-              "file": "scripts/verify-runtime-status.mjs",
-              "line": 101,
-              "detail": "import() 参数为运行时表达式，路径不可静态审计"
-            },
-            {
-              "rule": "dangerous-module",
-              "severity": "medium",
-              "file": "tools/install-web-plugin.mjs",
-              "line": 30,
-              "detail": "静态引入 node:child_process（工具链脚本）"
-            },
-            {
-              "rule": "dangerous-module",
-              "severity": "medium",
-              "file": "tools/mutation-check.mjs",
-              "line": 16,
+              "file": "scripts/build.mjs",
+              "line": 5,
               "detail": "静态引入 node:child_process（工具链脚本）"
             },
             {
               "rule": "external-endpoint",
               "severity": "low",
-              "file": "tools/accept-desktop.mjs",
-              "line": 187,
+              "file": "verify-reference.cjs",
+              "line": 113,
+              "detail": "硬编码外联地址 cn.bing.com（非生态白名单域）"
+            },
+            {
+              "rule": "external-endpoint",
+              "severity": "low",
+              "file": "desktop-bridge/plugin-browser-bridge.js",
+              "line": 1019,
               "detail": "硬编码外联地址 example.com（非生态白名单域）"
             },
             {
               "rule": "external-endpoint",
               "severity": "low",
-              "file": "tools/accept-desktop.mjs",
-              "line": 188,
-              "detail": "硬编码外联地址 example.org（非生态白名单域）"
+              "file": "desktop-bridge/plugin-browser-bridge.js",
+              "line": 1117,
+              "detail": "硬编码外联地址 example.com（非生态白名单域）"
             }
           ],
           "scannedFiles": 30
@@ -27956,31 +27865,13 @@
         "health": {
           "manifestValid": true,
           "dshBundleDeclared": false,
-          "applyEntry": true,
+          "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:09:18.445Z",
-        "resource": {
-          "weight": "light",
-          "hotPathHooks": [],
-          "lifecycleHooks": [],
-          "modelCalls": false,
-          "hasCommands": false,
-          "dashboards": 0,
-          "scannedFiles": 1,
-          "scannedAt": "2026-11-22T11:09:18.445Z"
-        }
+        "lastVerifiedAt": "2026-11-22T19:24:50.547Z",
+        "resource": null
       },
-      "resource": {
-        "weight": "light",
-        "hotPathHooks": [],
-        "lifecycleHooks": [],
-        "modelCalls": false,
-        "hasCommands": false,
-        "dashboards": 0,
-        "scannedFiles": 1,
-        "scannedAt": "2026-11-22T11:09:18.445Z"
-      }
+      "resource": null
     },
     "WestFox-AwA/dsh-wish-specializer": {
       "pushedAt": "2026-11-07T11:57:41Z",
@@ -28191,11 +28082,11 @@
       }
     },
     "dickpy/dsh-imagegen": {
-      "pushedAt": "2026-11-21T16:07:41Z",
-      "scannedAt": "2026-11-21T17:19:13.778Z",
+      "pushedAt": "2026-11-22T13:37:04Z",
+      "scannedAt": "2026-11-22T19:24:48.845Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-21T17:19:13.778Z",
+        "scannedAt": "2026-11-22T19:24:48.845Z",
         "confidence": 45,
         "security": {
           "level": "warn",
@@ -28349,7 +28240,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-21T17:19:13.778Z",
+        "lastVerifiedAt": "2026-11-22T19:24:48.845Z",
         "resource": null
       },
       "resource": null
@@ -29184,11 +29075,11 @@
       }
     },
     "amlyczz/dsh-agy-link": {
-      "pushedAt": "2026-11-22T08:17:26Z",
-      "scannedAt": "2026-11-22T11:09:13.315Z",
+      "pushedAt": "2026-11-22T13:20:17Z",
+      "scannedAt": "2026-11-22T19:24:41.799Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:09:13.315Z",
+        "scannedAt": "2026-11-22T19:24:41.799Z",
         "confidence": 45,
         "security": {
           "level": "warn",
@@ -29216,7 +29107,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:09:13.315Z",
+        "lastVerifiedAt": "2026-11-22T19:24:41.799Z",
         "resource": null
       },
       "resource": null
@@ -31057,11 +30948,11 @@
       }
     },
     "Clarklevis1995/dsh-plugin-mobile-gateway": {
-      "pushedAt": "2026-11-22T07:23:02Z",
-      "scannedAt": "2026-11-22T11:09:20.584Z",
+      "pushedAt": "2026-11-22T11:26:49Z",
+      "scannedAt": "2026-11-22T19:24:55.368Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:09:20.584Z",
+        "scannedAt": "2026-11-22T19:24:55.368Z",
         "confidence": 20,
         "security": {
           "level": "danger",
@@ -31112,14 +31003,14 @@
               "rule": "external-endpoint",
               "severity": "low",
               "file": "lib/index.mjs",
-              "line": 2883,
+              "line": 2887,
               "detail": "硬编码外联地址 x（非生态白名单域）"
             },
             {
               "rule": "external-endpoint",
               "severity": "low",
               "file": "lib/index.mjs",
-              "line": 3517,
+              "line": 3530,
               "detail": "硬编码外联地址 lan.invalid（非生态白名单域）"
             },
             {
@@ -31145,7 +31036,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:09:20.584Z",
+        "lastVerifiedAt": "2026-11-22T19:24:55.368Z",
         "resource": {
           "weight": "medium",
           "hotPathHooks": [],
@@ -31157,7 +31048,7 @@
           "hasCommands": false,
           "dashboards": 1,
           "scannedFiles": 1,
-          "scannedAt": "2026-11-22T11:09:20.584Z"
+          "scannedAt": "2026-11-22T19:24:55.368Z"
         }
       },
       "resource": {
@@ -31171,7 +31062,7 @@
         "hasCommands": false,
         "dashboards": 1,
         "scannedFiles": 1,
-        "scannedAt": "2026-11-22T11:09:20.584Z"
+        "scannedAt": "2026-11-22T19:24:55.368Z"
       }
     },
     "Noob-stupid/dsh-plugin-gating-hub": {
@@ -32640,11 +32531,11 @@
       }
     },
     "kenz1117/dsh-ui-usage-billing": {
-      "pushedAt": "2026-11-19T08:38:07Z",
-      "scannedAt": "2026-11-19T12:47:06.307Z",
+      "pushedAt": "2026-11-22T11:26:04Z",
+      "scannedAt": "2026-11-22T19:25:04.635Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-19T12:47:06.307Z",
+        "scannedAt": "2026-11-22T19:25:04.635Z",
         "confidence": 45,
         "security": {
           "level": "warn",
@@ -32665,7 +32556,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-19T12:47:06.307Z",
+        "lastVerifiedAt": "2026-11-22T19:25:04.635Z",
         "resource": null
       },
       "resource": null
@@ -32846,11 +32737,11 @@
       }
     },
     "MichengAI/dsh-im-connect": {
-      "pushedAt": "2026-11-21T13:16:46Z",
-      "scannedAt": "2026-11-21T17:19:26.813Z",
+      "pushedAt": "2026-11-22T15:01:22Z",
+      "scannedAt": "2026-11-22T19:24:58.413Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-21T17:19:26.813Z",
+        "scannedAt": "2026-11-22T19:24:58.413Z",
         "confidence": 55,
         "security": {
           "level": "warn",
@@ -32997,7 +32888,7 @@
           "applyEntry": true,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-21T17:19:26.813Z",
+        "lastVerifiedAt": "2026-11-22T19:24:58.413Z",
         "resource": {
           "weight": "light",
           "hotPathHooks": [],
@@ -33006,7 +32897,7 @@
           "hasCommands": false,
           "dashboards": 0,
           "scannedFiles": 1,
-          "scannedAt": "2026-11-21T17:19:26.813Z"
+          "scannedAt": "2026-11-22T19:24:58.413Z"
         }
       },
       "resource": {
@@ -33017,7 +32908,7 @@
         "hasCommands": false,
         "dashboards": 0,
         "scannedFiles": 1,
-        "scannedAt": "2026-11-21T17:19:26.813Z"
+        "scannedAt": "2026-11-22T19:24:58.413Z"
       }
     },
     "universe-st/dsh-game-material-master": {
@@ -33161,11 +33052,11 @@
       }
     },
     "zaofan-make/dsh-qqbot": {
-      "pushedAt": "2026-11-21T22:37:52Z",
-      "scannedAt": "2026-11-21T23:00:41.431Z",
+      "pushedAt": "2026-11-22T19:19:30Z",
+      "scannedAt": "2026-11-22T19:24:32.549Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-21T23:00:41.431Z",
+        "scannedAt": "2026-11-22T19:24:32.549Z",
         "confidence": 45,
         "security": {
           "level": "warn",
@@ -33200,7 +33091,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-21T23:00:41.431Z",
+        "lastVerifiedAt": "2026-11-22T19:24:32.549Z",
         "resource": {
           "weight": "light",
           "hotPathHooks": [],
@@ -33209,7 +33100,7 @@
           "hasCommands": false,
           "dashboards": 0,
           "scannedFiles": 2,
-          "scannedAt": "2026-11-21T23:00:41.431Z"
+          "scannedAt": "2026-11-22T19:24:32.549Z"
         }
       },
       "resource": {
@@ -33220,15 +33111,15 @@
         "hasCommands": false,
         "dashboards": 0,
         "scannedFiles": 2,
-        "scannedAt": "2026-11-21T23:00:41.431Z"
+        "scannedAt": "2026-11-22T19:24:32.549Z"
       }
     },
     "duhu2000/dsh-mcp-connector": {
-      "pushedAt": "2026-11-22T06:44:28Z",
-      "scannedAt": "2026-11-22T11:09:24.131Z",
+      "pushedAt": "2026-11-22T15:16:26Z",
+      "scannedAt": "2026-11-22T19:24:58.537Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:09:24.131Z",
+        "scannedAt": "2026-11-22T19:24:58.537Z",
         "confidence": 30,
         "security": {
           "level": "danger",
@@ -33270,7 +33161,7 @@
           "applyEntry": true,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:09:24.131Z",
+        "lastVerifiedAt": "2026-11-22T19:24:58.537Z",
         "resource": {
           "weight": "light",
           "hotPathHooks": [],
@@ -33279,7 +33170,7 @@
           "hasCommands": false,
           "dashboards": 0,
           "scannedFiles": 1,
-          "scannedAt": "2026-11-22T11:09:24.131Z"
+          "scannedAt": "2026-11-22T19:24:58.537Z"
         }
       },
       "resource": {
@@ -33290,7 +33181,7 @@
         "hasCommands": false,
         "dashboards": 0,
         "scannedFiles": 1,
-        "scannedAt": "2026-11-22T11:09:24.131Z"
+        "scannedAt": "2026-11-22T19:24:58.537Z"
       }
     },
     "eleckoi/ElecKoi": {
@@ -33532,11 +33423,11 @@
       }
     },
     "dphmoblie/deepseek-harness-android": {
-      "pushedAt": "2026-11-22T05:30:10Z",
-      "scannedAt": "2026-11-22T11:09:22.571Z",
+      "pushedAt": "2026-11-22T14:53:11Z",
+      "scannedAt": "2026-11-22T19:24:57.092Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:09:22.570Z",
+        "scannedAt": "2026-11-22T19:24:57.092Z",
         "confidence": 20,
         "security": {
           "level": "danger",
@@ -33661,11 +33552,11 @@
               "detail": "静态引入 node:child_process（工具链脚本）"
             },
             {
-              "rule": "dangerous-module",
-              "severity": "medium",
-              "file": "scripts/run-gradle.mjs",
-              "line": 2,
-              "detail": "静态引入 node:child_process（工具链脚本）"
+              "rule": "dynamic-import-literal",
+              "severity": "low",
+              "file": "scripts/downlevel-harness-frontend.mjs",
+              "line": 73,
+              "detail": "动态 import() 固定路径 vite"
             },
             {
               "rule": "external-endpoint",
@@ -33690,17 +33581,17 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:09:22.570Z",
+        "lastVerifiedAt": "2026-11-22T19:24:57.092Z",
         "resource": null
       },
       "resource": null
     },
     "zhuzhaoyun/Molio": {
-      "pushedAt": "2026-11-21T17:23:37Z",
-      "scannedAt": "2026-11-21T23:00:23.149Z",
+      "pushedAt": "2026-11-22T17:36:25Z",
+      "scannedAt": "2026-11-22T19:24:17.674Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-21T23:00:23.149Z",
+        "scannedAt": "2026-11-22T19:24:17.674Z",
         "confidence": 20,
         "security": {
           "level": "danger",
@@ -33854,7 +33745,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-21T23:00:23.149Z",
+        "lastVerifiedAt": "2026-11-22T19:24:17.674Z",
         "resource": null
       },
       "resource": null
@@ -34042,11 +33933,11 @@
       }
     },
     "EternalNight996/memory-eternal": {
-      "pushedAt": "2026-11-21T16:40:38Z",
-      "scannedAt": "2026-11-21T17:19:07.595Z",
+      "pushedAt": "2026-11-22T19:14:17Z",
+      "scannedAt": "2026-11-22T19:24:40.910Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-21T17:19:07.595Z",
+        "scannedAt": "2026-11-22T19:24:40.910Z",
         "confidence": 30,
         "security": {
           "level": "danger",
@@ -34200,7 +34091,7 @@
           "applyEntry": true,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-21T17:19:07.595Z",
+        "lastVerifiedAt": "2026-11-22T19:24:40.910Z",
         "resource": {
           "weight": "medium",
           "hotPathHooks": [],
@@ -34211,7 +34102,7 @@
           "hasCommands": false,
           "dashboards": 1,
           "scannedFiles": 1,
-          "scannedAt": "2026-11-21T17:19:07.595Z"
+          "scannedAt": "2026-11-22T19:24:40.910Z"
         }
       },
       "resource": {
@@ -34224,7 +34115,7 @@
         "hasCommands": false,
         "dashboards": 1,
         "scannedFiles": 1,
-        "scannedAt": "2026-11-21T17:19:07.595Z"
+        "scannedAt": "2026-11-22T19:24:40.910Z"
       }
     },
     "LiarMTTT/TavernWeave": {
@@ -34454,11 +34345,11 @@
       }
     },
     "Fei2411/DS-Bot": {
-      "pushedAt": "2026-11-22T10:43:04Z",
-      "scannedAt": "2026-11-22T11:07:56.220Z",
+      "pushedAt": "2026-11-22T19:20:00Z",
+      "scannedAt": "2026-11-22T19:23:27.956Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:07:56.220Z",
+        "scannedAt": "2026-11-22T19:23:27.956Z",
         "confidence": 5,
         "security": {
           "level": "danger",
@@ -34612,7 +34503,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:07:56.220Z",
+        "lastVerifiedAt": "2026-11-22T19:23:27.956Z",
         "resource": null
       },
       "resource": null
@@ -34677,11 +34568,11 @@
       "resource": null
     },
     "LarryE135/dsh-flash-presets": {
-      "pushedAt": "2026-11-21T13:36:53Z",
-      "scannedAt": "2026-11-21T17:19:03.509Z",
+      "pushedAt": "2026-11-22T13:28:30Z",
+      "scannedAt": "2026-11-22T19:24:39.537Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-21T17:19:03.509Z",
+        "scannedAt": "2026-11-22T19:24:39.537Z",
         "confidence": 20,
         "security": {
           "level": "danger",
@@ -34772,7 +34663,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-21T17:19:03.509Z",
+        "lastVerifiedAt": "2026-11-22T19:24:39.537Z",
         "resource": {
           "weight": "medium",
           "hotPathHooks": [],
@@ -34785,7 +34676,7 @@
           "hasCommands": false,
           "dashboards": 2,
           "scannedFiles": 1,
-          "scannedAt": "2026-11-21T17:19:03.509Z"
+          "scannedAt": "2026-11-22T19:24:39.537Z"
         }
       },
       "resource": {
@@ -34800,7 +34691,7 @@
         "hasCommands": false,
         "dashboards": 2,
         "scannedFiles": 1,
-        "scannedAt": "2026-11-21T17:19:03.509Z"
+        "scannedAt": "2026-11-22T19:24:39.537Z"
       }
     },
     "kingcharleslzy-ai/dsh-purge": {
@@ -36132,11 +36023,11 @@
       }
     },
     "oceanbase/powercontext": {
-      "pushedAt": "2026-11-22T10:23:33Z",
-      "scannedAt": "2026-11-22T11:08:12.865Z",
+      "pushedAt": "2026-11-22T19:03:27Z",
+      "scannedAt": "2026-11-22T19:23:40.401Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:08:12.865Z",
+        "scannedAt": "2026-11-22T19:23:40.401Z",
         "confidence": 5,
         "security": {
           "level": "danger",
@@ -36177,6 +36068,13 @@
               "detail": "静态引入 node:child_process（运行时代码）"
             },
             {
+              "rule": "dangerous-module",
+              "severity": "medium",
+              "file": "scripts/ci_node_mirror.mjs",
+              "line": 19,
+              "detail": "静态引入 node:child_process（工具链脚本）"
+            },
+            {
               "rule": "dynamic-import-dynamic",
               "severity": "medium",
               "file": "src/powercontext/cli/dsh_config.mjs",
@@ -36189,6 +36087,13 @@
               "file": "src/powercontext/cli/dsh_config.mjs",
               "line": 176,
               "detail": "import() 参数为运行时表达式，路径不可静态审计"
+            },
+            {
+              "rule": "external-endpoint",
+              "severity": "low",
+              "file": "scripts/ci_node_mirror.mjs",
+              "line": 24,
+              "detail": "硬编码外联地址 registry.npmmirror.com（非生态白名单域）"
             },
             {
               "rule": "dynamic-import-literal",
@@ -36234,7 +36139,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:08:12.865Z",
+        "lastVerifiedAt": "2026-11-22T19:23:40.401Z",
         "resource": null
       },
       "resource": null
@@ -36589,11 +36494,11 @@
       }
     },
     "ZipengWu365/TOMC": {
-      "pushedAt": "2026-11-21T14:48:56Z",
-      "scannedAt": "2026-11-21T17:18:53.650Z",
+      "pushedAt": "2026-11-22T15:42:05Z",
+      "scannedAt": "2026-11-22T19:24:34.835Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-21T17:18:53.650Z",
+        "scannedAt": "2026-11-22T19:24:34.835Z",
         "confidence": 30,
         "security": {
           "level": "warn",
@@ -36614,17 +36519,17 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-21T17:18:53.650Z",
+        "lastVerifiedAt": "2026-11-22T19:24:34.835Z",
         "resource": null
       },
       "resource": null
     },
     "ccch1mneyyy/dsh-Go": {
-      "pushedAt": "2026-11-22T10:47:53Z",
-      "scannedAt": "2026-11-22T11:07:50.882Z",
+      "pushedAt": "2026-11-22T19:19:54Z",
+      "scannedAt": "2026-11-22T19:23:20.226Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:07:50.882Z",
+        "scannedAt": "2026-11-22T19:23:20.226Z",
         "confidence": 5,
         "security": {
           "level": "danger",
@@ -36778,17 +36683,17 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:07:50.882Z",
+        "lastVerifiedAt": "2026-11-22T19:23:20.226Z",
         "resource": null
       },
       "resource": null
     },
     "huaguoxingkong/dsh-prompt-rewriter": {
-      "pushedAt": "2026-11-22T05:15:05Z",
-      "scannedAt": "2026-11-22T11:09:00.712Z",
+      "pushedAt": "2026-11-22T13:41:42Z",
+      "scannedAt": "2026-11-22T19:24:30.272Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:09:00.712Z",
+        "scannedAt": "2026-11-22T19:24:30.272Z",
         "confidence": 45,
         "security": {
           "level": "warn",
@@ -36808,7 +36713,7 @@
               "detail": "硬编码外联地址 cdn.jsdelivr.net（非生态白名单域）"
             }
           ],
-          "scannedFiles": 8
+          "scannedFiles": 7
         },
         "health": {
           "manifestValid": true,
@@ -36816,7 +36721,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:09:00.712Z",
+        "lastVerifiedAt": "2026-11-22T19:24:30.272Z",
         "resource": {
           "weight": "medium",
           "hotPathHooks": [],
@@ -36825,7 +36730,7 @@
           "hasCommands": false,
           "dashboards": 0,
           "scannedFiles": 1,
-          "scannedAt": "2026-11-22T11:09:00.712Z"
+          "scannedAt": "2026-11-22T19:24:30.272Z"
         }
       },
       "resource": {
@@ -36836,7 +36741,7 @@
         "hasCommands": false,
         "dashboards": 0,
         "scannedFiles": 1,
-        "scannedAt": "2026-11-22T11:09:00.712Z"
+        "scannedAt": "2026-11-22T19:24:30.272Z"
       }
     },
     "op7418/dsh-guizang-design": {
@@ -37332,11 +37237,11 @@
       "resource": null
     },
     "aureth-labs/dsh-aurabot-qq": {
-      "pushedAt": "2026-11-22T08:42:38Z",
-      "scannedAt": "2026-11-22T11:08:33.385Z",
+      "pushedAt": "2026-11-22T17:22:22Z",
+      "scannedAt": "2026-11-22T19:24:04.259Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:08:33.385Z",
+        "scannedAt": "2026-11-22T19:24:04.259Z",
         "confidence": 30,
         "security": {
           "level": "danger",
@@ -37490,7 +37395,7 @@
           "applyEntry": true,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:08:33.385Z",
+        "lastVerifiedAt": "2026-11-22T19:24:04.259Z",
         "resource": {
           "weight": "heavy",
           "hotPathHooks": [
@@ -37504,7 +37409,7 @@
           "hasCommands": false,
           "dashboards": 3,
           "scannedFiles": 1,
-          "scannedAt": "2026-11-22T11:08:33.385Z"
+          "scannedAt": "2026-11-22T19:24:04.259Z"
         }
       },
       "resource": {
@@ -37520,7 +37425,7 @@
         "hasCommands": false,
         "dashboards": 3,
         "scannedFiles": 1,
-        "scannedAt": "2026-11-22T11:08:33.385Z"
+        "scannedAt": "2026-11-22T19:24:04.259Z"
       }
     },
     "Windsander/Mebular": {
@@ -37916,11 +37821,11 @@
       }
     },
     "iJetLi/dsh-providers-hub": {
-      "pushedAt": "2026-11-21T15:01:36Z",
-      "scannedAt": "2026-11-21T17:19:20.726Z",
+      "pushedAt": "2026-11-22T18:39:13Z",
+      "scannedAt": "2026-11-22T19:24:53.863Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-21T17:19:20.726Z",
+        "scannedAt": "2026-11-22T19:24:53.863Z",
         "confidence": 20,
         "security": {
           "level": "danger",
@@ -37983,7 +37888,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-21T17:19:20.726Z",
+        "lastVerifiedAt": "2026-11-22T19:24:53.863Z",
         "resource": null
       },
       "resource": null
@@ -38020,11 +37925,11 @@
       "resource": null
     },
     "poco-ai/Agentero": {
-      "pushedAt": "2026-11-22T10:51:50Z",
-      "scannedAt": "2026-11-22T11:08:08.924Z",
+      "pushedAt": "2026-11-22T17:12:43Z",
+      "scannedAt": "2026-11-22T19:23:37.158Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:08:08.924Z",
+        "scannedAt": "2026-11-22T19:23:37.158Z",
         "confidence": 20,
         "security": {
           "level": "danger",
@@ -38156,7 +38061,7 @@
               "detail": "动态 import() 固定路径 @embedpdf/models"
             }
           ],
-          "scannedFiles": 21
+          "scannedFiles": 22
         },
         "health": {
           "manifestValid": true,
@@ -38164,7 +38069,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:08:08.924Z",
+        "lastVerifiedAt": "2026-11-22T19:23:37.158Z",
         "resource": null
       },
       "resource": null
@@ -38779,11 +38684,11 @@
       "resource": null
     },
     "lijiaqi-AI-Product-Manager/dsh-agent-compare": {
-      "pushedAt": "2026-11-22T04:42:47Z",
-      "scannedAt": "2026-11-22T11:08:44.417Z",
+      "pushedAt": "2026-11-22T18:08:53Z",
+      "scannedAt": "2026-11-22T19:24:17.220Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:08:44.417Z",
+        "scannedAt": "2026-11-22T19:24:17.220Z",
         "confidence": 55,
         "security": {
           "level": "warn",
@@ -38937,7 +38842,7 @@
           "applyEntry": true,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:08:44.417Z",
+        "lastVerifiedAt": "2026-11-22T19:24:17.220Z",
         "resource": {
           "weight": "heavy",
           "hotPathHooks": [
@@ -38948,7 +38853,7 @@
           "hasCommands": false,
           "dashboards": 1,
           "scannedFiles": 1,
-          "scannedAt": "2026-11-22T11:08:44.416Z"
+          "scannedAt": "2026-11-22T19:24:17.220Z"
         }
       },
       "resource": {
@@ -38961,7 +38866,7 @@
         "hasCommands": false,
         "dashboards": 1,
         "scannedFiles": 1,
-        "scannedAt": "2026-11-22T11:08:44.416Z"
+        "scannedAt": "2026-11-22T19:24:17.220Z"
       }
     },
     "Fishsb/dsh-voice-prompt-enhancer": {
@@ -39308,11 +39213,11 @@
       }
     },
     "diqierjia/StrataGate-AgentMemory": {
-      "pushedAt": "2026-11-22T11:07:01Z",
-      "scannedAt": "2026-11-22T11:09:30.299Z",
+      "pushedAt": "2026-11-22T11:25:13Z",
+      "scannedAt": "2026-11-22T19:25:01.893Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:09:30.299Z",
+        "scannedAt": "2026-11-22T19:25:01.893Z",
         "confidence": 45,
         "security": {
           "level": "warn",
@@ -39466,7 +39371,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:09:30.299Z",
+        "lastVerifiedAt": "2026-11-22T19:25:01.893Z",
         "resource": null
       },
       "resource": null
@@ -40076,11 +39981,11 @@
       }
     },
     "dataelement/bisheng": {
-      "pushedAt": "2026-11-22T09:59:08Z",
-      "scannedAt": "2026-11-22T11:07:54.433Z",
+      "pushedAt": "2026-11-22T12:16:07Z",
+      "scannedAt": "2026-11-22T19:23:26.333Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:07:54.433Z",
+        "scannedAt": "2026-11-22T19:23:26.333Z",
         "confidence": 5,
         "security": {
           "level": "danger",
@@ -40171,7 +40076,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:07:54.433Z",
+        "lastVerifiedAt": "2026-11-22T19:23:26.333Z",
         "resource": null
       },
       "resource": null
@@ -40898,11 +40803,11 @@
       }
     },
     "webkubor/dsh-bloom-theme": {
-      "pushedAt": "2026-11-22T08:41:59Z",
-      "scannedAt": "2026-11-22T11:08:59.703Z",
+      "pushedAt": "2026-11-22T13:00:13Z",
+      "scannedAt": "2026-11-22T19:24:29.272Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:08:59.703Z",
+        "scannedAt": "2026-11-22T19:24:29.272Z",
         "confidence": 45,
         "security": {
           "level": "warn",
@@ -40964,13 +40869,6 @@
               "detail": "静态引入 node:child_process（工具链脚本）"
             },
             {
-              "rule": "dangerous-module",
-              "severity": "medium",
-              "file": "scripts/stats-table.mjs",
-              "line": 22,
-              "detail": "静态引入 node:child_process（工具链脚本）"
-            },
-            {
               "rule": "dynamic-import-literal",
               "severity": "low",
               "file": "scripts/palette-previews.mjs",
@@ -41011,6 +40909,20 @@
               "file": "scripts/shot-palette-list.mjs",
               "line": 44,
               "detail": "硬编码外联地址 s.test（非生态白名单域）"
+            },
+            {
+              "rule": "external-endpoint",
+              "severity": "low",
+              "file": "scripts/shot-v029-media.mjs",
+              "line": 61,
+              "detail": "硬编码外联地址 s.test（非生态白名单域）"
+            },
+            {
+              "rule": "external-endpoint",
+              "severity": "low",
+              "file": "scripts/shot-v029-media.mjs",
+              "line": 62,
+              "detail": "硬编码外联地址 s.test（非生态白名单域）"
             }
           ],
           "scannedFiles": 30
@@ -41021,7 +40933,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:08:59.703Z",
+        "lastVerifiedAt": "2026-11-22T19:24:29.272Z",
         "resource": {
           "weight": "light",
           "hotPathHooks": [],
@@ -41030,7 +40942,7 @@
           "hasCommands": false,
           "dashboards": 0,
           "scannedFiles": 1,
-          "scannedAt": "2026-11-22T11:08:59.703Z"
+          "scannedAt": "2026-11-22T19:24:29.272Z"
         }
       },
       "resource": {
@@ -41041,7 +40953,7 @@
         "hasCommands": false,
         "dashboards": 0,
         "scannedFiles": 1,
-        "scannedAt": "2026-11-22T11:08:59.703Z"
+        "scannedAt": "2026-11-22T19:24:29.272Z"
       }
     },
     "fourzkw/dsh-drawai": {
@@ -41356,11 +41268,11 @@
       }
     },
     "tw93/Mole": {
-      "pushedAt": "2026-11-22T07:39:05Z",
-      "scannedAt": "2026-11-22T11:07:46.642Z",
+      "pushedAt": "2026-11-22T12:12:39Z",
+      "scannedAt": "2026-11-22T19:23:16.070Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:07:46.642Z",
+        "scannedAt": "2026-11-22T19:23:16.070Z",
         "confidence": 55,
         "security": {
           "level": "pass",
@@ -41373,7 +41285,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:07:46.642Z",
+        "lastVerifiedAt": "2026-11-22T19:23:16.070Z",
         "resource": null
       },
       "resource": null
@@ -41595,11 +41507,11 @@
       "resource": null
     },
     "xiaoso456/dsh-workflow-lite": {
-      "pushedAt": "2026-11-12T02:24:29Z",
-      "scannedAt": "2026-11-12T09:39:55.592Z",
+      "pushedAt": "2026-11-22T14:14:29Z",
+      "scannedAt": "2026-11-22T19:24:30.505Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-12T09:39:55.592Z",
+        "scannedAt": "2026-11-22T19:24:30.504Z",
         "confidence": 70,
         "security": {
           "level": "pass",
@@ -41608,11 +41520,11 @@
               "rule": "external-endpoint",
               "severity": "low",
               "file": "site/astro.config.mjs",
-              "line": 51,
+              "line": 62,
               "detail": "硬编码外联地址 xiaoso456.github.io（非生态白名单域）"
             }
           ],
-          "scannedFiles": 5
+          "scannedFiles": 6
         },
         "health": {
           "manifestValid": true,
@@ -41620,7 +41532,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-12T09:39:55.592Z",
+        "lastVerifiedAt": "2026-11-22T19:24:30.504Z",
         "resource": null
       },
       "resource": null
@@ -42092,11 +42004,11 @@
       }
     },
     "nexu-io/openmotion": {
-      "pushedAt": "2026-11-22T10:37:36Z",
-      "scannedAt": "2026-11-22T11:07:52.697Z",
+      "pushedAt": "2026-11-22T17:53:15Z",
+      "scannedAt": "2026-11-22T19:23:24.372Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:07:52.697Z",
+        "scannedAt": "2026-11-22T19:23:24.372Z",
         "confidence": 45,
         "security": {
           "level": "warn",
@@ -42250,17 +42162,17 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:07:52.697Z",
+        "lastVerifiedAt": "2026-11-22T19:23:24.372Z",
         "resource": null
       },
       "resource": null
     },
     "kunkundi/crossdesk": {
-      "pushedAt": "2026-11-20T16:16:17Z",
-      "scannedAt": "2026-11-20T19:54:36.635Z",
+      "pushedAt": "2026-11-22T19:16:34Z",
+      "scannedAt": "2026-11-22T19:23:31.151Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-20T19:54:36.635Z",
+        "scannedAt": "2026-11-22T19:23:31.151Z",
         "confidence": 5,
         "security": {
           "level": "danger",
@@ -42316,7 +42228,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-20T19:54:36.635Z",
+        "lastVerifiedAt": "2026-11-22T19:23:31.151Z",
         "resource": null
       },
       "resource": null
@@ -43548,11 +43460,11 @@
       }
     },
     "oneclickvirt/ecs": {
-      "pushedAt": "2026-11-20T01:43:38Z",
-      "scannedAt": "2026-11-20T02:57:08.912Z",
+      "pushedAt": "2026-11-22T11:24:04Z",
+      "scannedAt": "2026-11-22T19:23:36.792Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-20T02:57:08.912Z",
+        "scannedAt": "2026-11-22T19:23:36.792Z",
         "confidence": 30,
         "security": {
           "level": "danger",
@@ -43706,7 +43618,7 @@
           "applyEntry": false,
           "buildStatus": "passing"
         },
-        "lastVerifiedAt": "2026-11-20T02:57:08.912Z",
+        "lastVerifiedAt": "2026-11-22T19:23:36.792Z",
         "resource": null
       },
       "resource": null
@@ -44417,11 +44329,11 @@
       }
     },
     "bruc3van/awesome-dsh-plugin-pro": {
-      "pushedAt": "2026-11-22T09:28:26Z",
-      "scannedAt": "2026-11-22T11:08:41.333Z",
+      "pushedAt": "2026-11-22T17:52:50Z",
+      "scannedAt": "2026-11-22T19:24:13.697Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:08:41.333Z",
+        "scannedAt": "2026-11-22T19:24:13.697Z",
         "confidence": 30,
         "security": {
           "level": "warn",
@@ -44491,7 +44403,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:08:41.333Z",
+        "lastVerifiedAt": "2026-11-22T19:24:13.697Z",
         "resource": null
       },
       "resource": null
@@ -44556,12 +44468,12 @@
       "resource": null
     },
     "vshulcz/deja-vu": {
-      "pushedAt": "2026-11-22T10:01:09Z",
-      "scannedAt": "2026-11-22T11:08:12.190Z",
+      "pushedAt": "2026-11-22T18:40:25Z",
+      "scannedAt": "2026-11-22T19:23:41.590Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:08:12.190Z",
-        "confidence": 15,
+        "scannedAt": "2026-11-22T19:23:41.590Z",
+        "confidence": 30,
         "security": {
           "level": "danger",
           "findings": [
@@ -44698,9 +44610,9 @@
           "manifestValid": true,
           "dshBundleDeclared": false,
           "applyEntry": false,
-          "buildStatus": "failing"
+          "buildStatus": "passing"
         },
-        "lastVerifiedAt": "2026-11-22T11:08:12.190Z",
+        "lastVerifiedAt": "2026-11-22T19:23:41.590Z",
         "resource": {
           "weight": "heavy",
           "hotPathHooks": [
@@ -44715,7 +44627,7 @@
           "hasCommands": false,
           "dashboards": 0,
           "scannedFiles": 1,
-          "scannedAt": "2026-11-22T11:08:12.190Z"
+          "scannedAt": "2026-11-22T19:23:41.590Z"
         }
       },
       "resource": {
@@ -44732,15 +44644,15 @@
         "hasCommands": false,
         "dashboards": 0,
         "scannedFiles": 1,
-        "scannedAt": "2026-11-22T11:08:12.190Z"
+        "scannedAt": "2026-11-22T19:23:41.590Z"
       }
     },
     "WNLUO/dsh-mobile-plugin": {
-      "pushedAt": "2026-11-22T09:36:57Z",
-      "scannedAt": "2026-11-22T11:09:11.113Z",
+      "pushedAt": "2026-11-22T18:25:55Z",
+      "scannedAt": "2026-11-22T19:24:38.047Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:09:11.113Z",
+        "scannedAt": "2026-11-22T19:24:38.047Z",
         "confidence": 30,
         "security": {
           "level": "danger",
@@ -44859,7 +44771,7 @@
           "applyEntry": true,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:09:11.113Z",
+        "lastVerifiedAt": "2026-11-22T19:24:38.047Z",
         "resource": {
           "weight": "light",
           "hotPathHooks": [],
@@ -44868,7 +44780,7 @@
           "hasCommands": false,
           "dashboards": 0,
           "scannedFiles": 1,
-          "scannedAt": "2026-11-22T11:09:11.113Z"
+          "scannedAt": "2026-11-22T19:24:38.047Z"
         }
       },
       "resource": {
@@ -44879,15 +44791,15 @@
         "hasCommands": false,
         "dashboards": 0,
         "scannedFiles": 1,
-        "scannedAt": "2026-11-22T11:09:11.113Z"
+        "scannedAt": "2026-11-22T19:24:38.047Z"
       }
     },
     "Contexera/dsh-agent-team": {
-      "pushedAt": "2026-11-22T08:33:45Z",
-      "scannedAt": "2026-11-22T11:09:32.996Z",
+      "pushedAt": "2026-11-22T18:31:14Z",
+      "scannedAt": "2026-11-22T19:25:03.597Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:09:32.996Z",
+        "scannedAt": "2026-11-22T19:25:03.597Z",
         "confidence": 20,
         "security": {
           "level": "danger",
@@ -44999,7 +44911,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:09:32.996Z",
+        "lastVerifiedAt": "2026-11-22T19:25:03.597Z",
         "resource": null
       },
       "resource": null
@@ -45064,11 +44976,11 @@
       "resource": null
     },
     "OrderG-X/dsh-design-studio": {
-      "pushedAt": "2026-11-21T17:29:24Z",
-      "scannedAt": "2026-11-21T23:00:57.710Z",
+      "pushedAt": "2026-11-22T16:33:17Z",
+      "scannedAt": "2026-11-22T19:25:00.110Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-21T23:00:57.710Z",
+        "scannedAt": "2026-11-22T19:25:00.110Z",
         "confidence": 20,
         "security": {
           "level": "danger",
@@ -45222,7 +45134,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-21T23:00:57.710Z",
+        "lastVerifiedAt": "2026-11-22T19:25:00.110Z",
         "resource": {
           "weight": "heavy",
           "hotPathHooks": [
@@ -45235,7 +45147,7 @@
           "hasCommands": false,
           "dashboards": 1,
           "scannedFiles": 1,
-          "scannedAt": "2026-11-21T23:00:57.710Z"
+          "scannedAt": "2026-11-22T19:25:00.110Z"
         }
       },
       "resource": {
@@ -45250,7 +45162,7 @@
         "hasCommands": false,
         "dashboards": 1,
         "scannedFiles": 1,
-        "scannedAt": "2026-11-21T23:00:57.710Z"
+        "scannedAt": "2026-11-22T19:25:00.110Z"
       }
     },
     "EricWang1358/dsh-web-studyhub": {
@@ -45316,176 +45228,12 @@
         "scannedAt": "2026-11-22T11:09:18.770Z"
       }
     },
-    "sol5766/dshm": {
-      "pushedAt": "2026-10-08T03:23:30Z",
-      "scannedAt": "2026-11-19T21:22:13.786Z",
-      "verification": {
-        "status": "verified",
-        "scannedAt": "2026-11-19T21:22:13.786Z",
-        "confidence": 5,
-        "security": {
-          "level": "danger",
-          "findings": [
-            {
-              "rule": "new-function",
-              "severity": "high",
-              "file": "tools/assert-fs-search-fallback.mjs",
-              "line": 104,
-              "detail": "new Function() 动态构造并执行代码"
-            },
-            {
-              "rule": "new-function",
-              "severity": "high",
-              "file": "tools/assert-fs-search-fallback.mjs",
-              "line": 187,
-              "detail": "new Function() 动态构造并执行代码"
-            },
-            {
-              "rule": "dangerous-module",
-              "severity": "medium",
-              "file": "tools/assert-fs-search-fallback.mjs",
-              "line": 16,
-              "detail": "静态引入 node:vm（工具链脚本）"
-            },
-            {
-              "rule": "dangerous-module",
-              "severity": "medium",
-              "file": "tools/assert-fs-search-fallback.mjs",
-              "line": 17,
-              "detail": "静态引入 node:child_process（工具链脚本）"
-            },
-            {
-              "rule": "dangerous-module",
-              "severity": "medium",
-              "file": "tools/assert-speech-syntax.mjs",
-              "line": 24,
-              "detail": "静态引入 node:child_process（工具链脚本）"
-            },
-            {
-              "rule": "dangerous-module",
-              "severity": "medium",
-              "file": "tools/check-arkts-entry.mjs",
-              "line": 24,
-              "detail": "静态引入 node:child_process（工具链脚本）"
-            },
-            {
-              "rule": "dangerous-module",
-              "severity": "medium",
-              "file": "tools/check-custom-api-discovery.mjs",
-              "line": 17,
-              "detail": "静态引入 node:child_process（工具链脚本）"
-            },
-            {
-              "rule": "dangerous-module",
-              "severity": "medium",
-              "file": "tools/check-custom-api-save.mjs",
-              "line": 26,
-              "detail": "静态引入 node:child_process（工具链脚本）"
-            },
-            {
-              "rule": "dynamic-import-dynamic",
-              "severity": "medium",
-              "file": "tools/check-denial-hints.mjs",
-              "line": 77,
-              "detail": "import() 参数为运行时表达式，路径不可静态审计"
-            },
-            {
-              "rule": "dynamic-import-dynamic",
-              "severity": "medium",
-              "file": "tools/check-denial-hints.mjs",
-              "line": 152,
-              "detail": "import() 参数为运行时表达式，路径不可静态审计"
-            },
-            {
-              "rule": "dangerous-module",
-              "severity": "medium",
-              "file": "tools/check-fetch-shim.cjs",
-              "line": 46,
-              "detail": "工具链脚本引入 node:child_process"
-            },
-            {
-              "rule": "dangerous-module",
-              "severity": "medium",
-              "file": "tools/check-fs-local-permission.mjs",
-              "line": 41,
-              "detail": "静态引入 node:child_process（工具链脚本）"
-            },
-            {
-              "rule": "dangerous-module",
-              "severity": "medium",
-              "file": "tools/check-internal-undici.mjs",
-              "line": 47,
-              "detail": "静态引入 node:child_process（工具链脚本）"
-            },
-            {
-              "rule": "external-endpoint",
-              "severity": "low",
-              "file": "devrel/bili-discover.mjs",
-              "line": 225,
-              "detail": "硬编码外联地址 www.bilibili.com（非生态白名单域）"
-            },
-            {
-              "rule": "external-endpoint",
-              "severity": "low",
-              "file": "devrel/bili-discover.mjs",
-              "line": 260,
-              "detail": "硬编码外联地址 api.bilibili.com（非生态白名单域）"
-            },
-            {
-              "rule": "external-endpoint",
-              "severity": "low",
-              "file": "devrel/bili-discover.mjs",
-              "line": 268,
-              "detail": "硬编码外联地址 api.bilibili.com（非生态白名单域）"
-            },
-            {
-              "rule": "external-endpoint",
-              "severity": "low",
-              "file": "devrel/bili-discover.mjs",
-              "line": 600,
-              "detail": "硬编码外联地址 www.bilibili.com（非生态白名单域）"
-            },
-            {
-              "rule": "external-endpoint",
-              "severity": "low",
-              "file": "tools/check-custom-api-save.mjs",
-              "line": 160,
-              "detail": "硬编码外联地址 192.168.7.7（非生态白名单域）"
-            },
-            {
-              "rule": "external-endpoint",
-              "severity": "low",
-              "file": "tools/check-custom-api-save.mjs",
-              "line": 161,
-              "detail": "硬编码外联地址 10.4.4.4（非生态白名单域）"
-            },
-            {
-              "rule": "external-endpoint",
-              "severity": "low",
-              "file": "tools/check-dshm-installer.cjs",
-              "line": 232,
-              "detail": "硬编码外联地址 gitlab.com（非生态白名单域）"
-            }
-          ],
-          "scannedFiles": 30
-        },
-        "health": {
-          "manifestValid": false,
-          "dshBundleDeclared": false,
-          "applyEntry": false,
-          "buildStatus": "unknown"
-        },
-        "lastVerifiedAt": "2026-11-19T21:22:13.786Z",
-        "resource": null
-      },
-      "resource": null
-    },
     "ai-timon/timon": {
-      "pushedAt": "2026-11-22T08:33:44Z",
-      "scannedAt": "2026-11-22T11:08:35.102Z",
+      "pushedAt": "2026-11-22T14:30:43Z",
+      "scannedAt": "2026-11-22T19:24:06.207Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:08:35.102Z",
+        "scannedAt": "2026-11-22T19:24:06.207Z",
         "confidence": 30,
         "security": {
           "level": "warn",
@@ -45639,7 +45387,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:08:35.102Z",
+        "lastVerifiedAt": "2026-11-22T19:24:06.207Z",
         "resource": null
       },
       "resource": null
@@ -45981,11 +45729,11 @@
       "resource": null
     },
     "mochi-fish/dsh-fish": {
-      "pushedAt": "2026-11-21T16:11:36Z",
-      "scannedAt": "2026-11-21T17:19:18.331Z",
+      "pushedAt": "2026-11-22T15:45:34Z",
+      "scannedAt": "2026-11-22T19:24:53.791Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-21T17:19:18.331Z",
+        "scannedAt": "2026-11-22T19:24:53.791Z",
         "confidence": 30,
         "security": {
           "level": "danger",
@@ -46083,7 +45831,7 @@
           "applyEntry": true,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-21T17:19:18.331Z",
+        "lastVerifiedAt": "2026-11-22T19:24:53.791Z",
         "resource": {
           "weight": "light",
           "hotPathHooks": [],
@@ -46092,7 +45840,7 @@
           "hasCommands": false,
           "dashboards": 0,
           "scannedFiles": 1,
-          "scannedAt": "2026-11-21T17:19:18.331Z"
+          "scannedAt": "2026-11-22T19:24:53.791Z"
         }
       },
       "resource": {
@@ -46103,7 +45851,7 @@
         "hasCommands": false,
         "dashboards": 0,
         "scannedFiles": 1,
-        "scannedAt": "2026-11-21T17:19:18.331Z"
+        "scannedAt": "2026-11-22T19:24:53.791Z"
       }
     },
     "AI4XE/ai4ai": {
@@ -46270,11 +46018,11 @@
       }
     },
     "JimLiu/open-artifact": {
-      "pushedAt": "2026-11-22T06:21:59Z",
-      "scannedAt": "2026-11-22T11:09:03.684Z",
+      "pushedAt": "2026-11-22T19:13:09Z",
+      "scannedAt": "2026-11-22T19:24:26.410Z",
       "verification": {
         "status": "verified",
-        "scannedAt": "2026-11-22T11:09:03.684Z",
+        "scannedAt": "2026-11-22T19:24:26.410Z",
         "confidence": 5,
         "security": {
           "level": "danger",
@@ -46282,8 +46030,85 @@
             {
               "rule": "dangerous-module",
               "severity": "high",
+              "file": "e2e/cloudflare-data.test.mjs",
+              "line": 13,
+              "detail": "静态引入 node:child_process（运行时代码）"
+            },
+            {
+              "rule": "dangerous-module",
+              "severity": "high",
+              "file": "e2e/cloudflare-link.test.mjs",
+              "line": 23,
+              "detail": "静态引入 node:child_process（运行时代码）"
+            },
+            {
+              "rule": "dangerous-module",
+              "severity": "high",
+              "file": "e2e/cloudflare-plugins.test.mjs",
+              "line": 17,
+              "detail": "静态引入 node:child_process（运行时代码）"
+            },
+            {
+              "rule": "dangerous-module",
+              "severity": "high",
+              "file": "e2e/cloudflare.test.mjs",
+              "line": 18,
+              "detail": "静态引入 node:child_process（运行时代码）"
+            },
+            {
+              "rule": "dangerous-module",
+              "severity": "high",
               "file": "e2e/design.test.mjs",
               "line": 6,
+              "detail": "静态引入 node:child_process（运行时代码）"
+            },
+            {
+              "rule": "dangerous-module",
+              "severity": "high",
+              "file": "e2e/host-auto.test.mjs",
+              "line": 16,
+              "detail": "静态引入 node:child_process（运行时代码）"
+            },
+            {
+              "rule": "dangerous-module",
+              "severity": "high",
+              "file": "e2e/host-data.test.mjs",
+              "line": 18,
+              "detail": "静态引入 node:child_process（运行时代码）"
+            },
+            {
+              "rule": "dangerous-module",
+              "severity": "high",
+              "file": "e2e/host-exports.test.mjs",
+              "line": 22,
+              "detail": "静态引入 node:child_process（运行时代码）"
+            },
+            {
+              "rule": "dangerous-module",
+              "severity": "high",
+              "file": "e2e/host-home.test.mjs",
+              "line": 16,
+              "detail": "静态引入 node:child_process（运行时代码）"
+            },
+            {
+              "rule": "dangerous-module",
+              "severity": "high",
+              "file": "e2e/host-plugins.test.mjs",
+              "line": 16,
+              "detail": "静态引入 node:child_process（运行时代码）"
+            },
+            {
+              "rule": "dangerous-module",
+              "severity": "high",
+              "file": "e2e/host-same-site.test.mjs",
+              "line": 25,
+              "detail": "静态引入 node:child_process（运行时代码）"
+            },
+            {
+              "rule": "dangerous-module",
+              "severity": "high",
+              "file": "e2e/host.test.mjs",
+              "line": 25,
               "detail": "静态引入 node:child_process（运行时代码）"
             },
             {
@@ -46298,55 +46123,6 @@
               "severity": "high",
               "file": "e2e/slides.test.mjs",
               "line": 3,
-              "detail": "静态引入 node:child_process（运行时代码）"
-            },
-            {
-              "rule": "dangerous-module",
-              "severity": "high",
-              "file": "test-artifacts/open.mjs",
-              "line": 7,
-              "detail": "静态引入 node:child_process（运行时代码）"
-            },
-            {
-              "rule": "dangerous-module",
-              "severity": "high",
-              "file": "e2e/bench/canvas.mjs",
-              "line": 21,
-              "detail": "静态引入 node:child_process（运行时代码）"
-            },
-            {
-              "rule": "dangerous-module",
-              "severity": "high",
-              "file": "e2e/bench/slides.mjs",
-              "line": 26,
-              "detail": "静态引入 node:child_process（运行时代码）"
-            },
-            {
-              "rule": "dangerous-module",
-              "severity": "high",
-              "file": "e2e/bench/whiteboard.mjs",
-              "line": 26,
-              "detail": "静态引入 node:child_process（运行时代码）"
-            },
-            {
-              "rule": "dangerous-module",
-              "severity": "high",
-              "file": "e2e/lib/browser.mjs",
-              "line": 20,
-              "detail": "静态引入 node:child_process（运行时代码）"
-            },
-            {
-              "rule": "dangerous-module",
-              "severity": "high",
-              "file": "e2e/lib/cli.mjs",
-              "line": 4,
-              "detail": "静态引入 node:child_process（运行时代码）"
-            },
-            {
-              "rule": "dangerous-module",
-              "severity": "high",
-              "file": "e2e/lib/target.mjs",
-              "line": 12,
               "detail": "静态引入 node:child_process（运行时代码）"
             },
             {
@@ -46390,34 +46166,6 @@
               "file": "scripts/publish-npm.mjs",
               "line": 21,
               "detail": "静态引入 node:child_process（工具链脚本）"
-            },
-            {
-              "rule": "dynamic-import-dynamic",
-              "severity": "medium",
-              "file": "e2e/bench/canvas-engine.mjs",
-              "line": 33,
-              "detail": "import() 参数为运行时表达式，路径不可静态审计"
-            },
-            {
-              "rule": "dynamic-import-dynamic",
-              "severity": "medium",
-              "file": "e2e/bench/canvas-engine.mjs",
-              "line": 265,
-              "detail": "import() 参数为运行时表达式，路径不可静态审计"
-            },
-            {
-              "rule": "external-endpoint",
-              "severity": "low",
-              "file": "e2e/data.test.mjs",
-              "line": 84,
-              "detail": "硬编码外联地址 example.com（非生态白名单域）"
-            },
-            {
-              "rule": "dynamic-import-literal",
-              "severity": "low",
-              "file": "e2e/data.test.mjs",
-              "line": 270,
-              "detail": "动态 import() 固定路径 ../packages/type-server/src/index.ts"
             }
           ],
           "scannedFiles": 30
@@ -46428,7 +46176,7 @@
           "applyEntry": false,
           "buildStatus": "unknown"
         },
-        "lastVerifiedAt": "2026-11-22T11:09:03.684Z",
+        "lastVerifiedAt": "2026-11-22T19:24:26.410Z",
         "resource": null
       },
       "resource": null
@@ -46776,6 +46524,37 @@
         "scannedFiles": 1,
         "scannedAt": "2026-11-22T11:09:31.737Z"
       }
+    },
+    "FeatherHunter/dsh-opencode-palette": {
+      "pushedAt": "2026-11-08T23:54:53Z",
+      "scannedAt": "2026-11-22T19:25:05.725Z",
+      "verification": {
+        "status": "verified",
+        "scannedAt": "2026-11-22T19:25:05.725Z",
+        "confidence": 20,
+        "security": {
+          "level": "danger",
+          "findings": [
+            {
+              "rule": "dangerous-module",
+              "severity": "high",
+              "file": "prototypes/generate-group-boundary-68.mjs",
+              "line": 7,
+              "detail": "静态引入 node:vm（运行时代码）"
+            }
+          ],
+          "scannedFiles": 15
+        },
+        "health": {
+          "manifestValid": true,
+          "dshBundleDeclared": false,
+          "applyEntry": false,
+          "buildStatus": "unknown"
+        },
+        "lastVerifiedAt": "2026-11-22T19:25:05.725Z",
+        "resource": null
+      },
+      "resource": null
     }
   }
 }
